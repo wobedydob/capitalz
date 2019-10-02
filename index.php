@@ -1,5 +1,3 @@
-<?php?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,6 +19,9 @@
     <!-- Page Content -->
     <div id="page-content-wrapper">
 
+        <!-- Navbar -->
+        <?php include("./layout/navbar.php"); ?>
+
         <section class="container-fluid">
             <?php
             if (isset($_GET["content"])) {
@@ -36,6 +37,9 @@
     </div>
 
 </div>
+
+<!-- Footer -->
+<?php include("./layout/footer.php"); ?>
 
 <!-- Include the needed scripts. -->
 <?php include("./index/js.php"); ?>
