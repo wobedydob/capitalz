@@ -14,35 +14,35 @@
 
 <body>
 
-    <!-- Include the footer. -->
-    <?php include("./layout/navbar.php"); ?>
+<!-- Include the footer. -->
+<?php include("./layout/navbar.php"); ?>
 
-    <div class="content d-flex" id="wrapper">
+<div class="content d-flex" id="wrapper">
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
 
-            <section class="container-fluid">
-                <?php
-                if (isset($_GET["content"])) {
-                    include("./pages/" . $_GET["content"] . ".php");
-                } else if (empty(isset($_GET["content"]))) {
-                    include("./pages/homepage.php");
-                } else {
-                    include("./pages/homepage.php");
-                }
-                ?>
-            </section>
-
-        </div>
+        <section class="container-fluid">
+            <?php
+            if (isset($_GET["content"])) {
+                include("./pages/" . $_GET["content"] . ".php");
+            } else if (empty(isset($_GET["content"]))) {
+                include("./pages/homepage.php");
+            } else {
+                include("./pages/homepage.php");
+            }
+            ?>
+        </section>
 
     </div>
 
-    <!-- Include the footer. -->
-    <?php include("./layout/footer.php"); ?>
+</div>
 
-    <!-- Include the needed scripts. -->
-    <?php include("./index/js.php"); ?>
+<!-- Include the footer. -->
+<?php include("./layout/footer.php"); ?>
+
+<!-- Include the needed scripts. -->
+<?php include("./index/js.php"); ?>
 
 </body>
 
