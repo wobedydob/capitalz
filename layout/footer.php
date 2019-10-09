@@ -1,0 +1,1 @@
+<div class="footer">&copy;Made by IJuanTM</div>

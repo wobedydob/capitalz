@@ -8,41 +8,41 @@
     include("./index/css.php");
     ?>
 
-    <title>ZZP.nl</title>
+    <title>Starter_template</title>
 
 </head>
 
 <body>
 
-<div class="content d-flex" id="wrapper">
+    <!-- Include the footer. -->
+    <?php include("./layout/navbar.php"); ?>
 
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
+    <div class="content d-flex" id="wrapper">
 
-        <!-- Navbar -->
-        <?php include("./layout/navbar.php"); ?>
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
 
-        <section class="container-fluid">
-            <?php
-            if (isset($_GET["content"])) {
-                include("./pages/" . $_GET["content"] . ".php");
-            } else if (empty(isset($_GET["content"]))) {
-                include("./pages/homepage.php");
-            } else {
-                include("./pages/homepage.php");
-            }
-            ?>
-        </section>
+            <section class="container-fluid">
+                <?php
+                if (isset($_GET["content"])) {
+                    include("./pages/" . $_GET["content"] . ".php");
+                } else if (empty(isset($_GET["content"]))) {
+                    include("./pages/homepage.php");
+                } else {
+                    include("./pages/homepage.php");
+                }
+                ?>
+            </section>
+
+        </div>
 
     </div>
 
-</div>
+    <!-- Include the footer. -->
+    <?php include("./layout/footer.php"); ?>
 
-<!-- Footer -->
-<?php include("./layout/footer.php"); ?>
-
-<!-- Include the needed scripts. -->
-<?php include("./index/js.php"); ?>
+    <!-- Include the needed scripts. -->
+    <?php include("./index/js.php"); ?>
 
 </body>
 
