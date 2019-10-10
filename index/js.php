@@ -5,3 +5,4 @@
 
 <!-- Custom Java script files -->
 <script src="./js/script.js"></script>
+<script src="./js/icons.js" crossorigin="anonymous"></script>

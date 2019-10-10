@@ -14,7 +14,7 @@
 
 <body>
 
-<!-- Include the footer. -->
+<!-- Include the navbar. -->
 <?php include("./layout/navbar.php"); ?>
 
 <div class="content d-flex" id="wrapper">

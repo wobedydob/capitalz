@@ -3,8 +3,44 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    padding: 3px;
-    text-align: center;
-    font-size: .7em;
-    background-color: lightgray;
+    background-color: #4386f4 !important;
+    padding: .8em;
+    padding-bottom: 0 !important;
+    max-height: 180px;
+    min-height: 180px;
+}
+
+.footer a {
+    color: whitesmoke;
+}
+
+.footer a:hover {
+    color: lightgray;
+}
+
+.footer-header {
+    font-family: Montserrat, sans-serif;
+    font-weight: 800;
+    color: whitesmoke;
+}
+
+.footer-row {
+    margin-top: 0;
+    margin-bottom: 0.2em;
+    background-color: whitesmoke;
+}
+
+.footer-text {
+    font-family: Gotham Light, sans-serif;
+    color: whitesmoke;
+}
+
+.footer-copyright {
+    color: lightgray;
+    font-size: 0.8em;
+    bottom: 0;
+}
+
+.footer-copyright a {
+    color: lightgray;
 }
