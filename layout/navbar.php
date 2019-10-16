@@ -5,7 +5,7 @@
             <a class="nav-link" href="#">Log in</a>
         </li>
         <li class="nav-item">
-            <a href="#">
+            <a href="./pages/registration_bedrijf.php">
                 <button class="btn btn-primary">Registreer</button>
             </a>
         </li>
