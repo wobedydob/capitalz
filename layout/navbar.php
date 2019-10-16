@@ -2,13 +2,40 @@
 
     <a class="navbar-brand" href="#">ZZP.nl</a>
 
+    <ul class="navbar-nav ml-auto">
+
+<li class="nav-item">
+    <a class="nav-link" href="#">Log in</a>
+</li>
+
+<li class="nav-item">
+    <a href="#">
+        <button class="btn btn-primary">Registreer</button>
+    </a>
+</li>
+
+</ul>
+
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-blue">
+
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbar" aria-controls="navbar" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbar">
-
-        <ul class="navbar-nav ml-auto">
+<table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+        <ul class="navbar-nav mx-auto">
             <form method="post">
                 <div class="form-row">
 
@@ -36,20 +63,7 @@
             </form>
         </ul>
 
-        <ul class="navbar-nav ml-auto">
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">Log in</a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#">
-                    <button class="btn btn-primary">Registreer</button>
-                </a>
-            </li>
-
-        </ul>
-
     </div>
 
 </nav>
+
