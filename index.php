@@ -8,20 +8,19 @@
     include("./index/css.php");
     ?>
 
-    <title>Starter_template</title>
+    <title>ZZP.nl</title>
 
 </head>
 
 <body>
 
-<!-- Include the navbar. -->
-<?php include("./layout/navbar.php"); ?>
-
-
 <!-- Page Content -->
-<div id="page-content-wrapper">
+<main id="contents">
 
-    <section class="container-fluid">
+    <!-- Include the navbar. -->
+    <?php include("./layout/navbar.php"); ?>
+
+    <section class="content">
         <?php
         if (isset($_GET["content"])) {
             include("./pages/" . $_GET["content"] . ".php");
@@ -33,8 +32,7 @@
         ?>
     </section>
 
-</div>
-
+</main>
 
 <!-- Include the footer. -->
 <?php include("./layout/footer.php"); ?>

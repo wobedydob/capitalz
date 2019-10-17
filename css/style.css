@@ -2,3 +2,8 @@ body {
     font-family: Montserrat, sans-serif;
     background-color: #F9F9F9;
 }
+
+.content {
+    min-height: calc(100vh - 292px);
+    padding: 25px;
+}

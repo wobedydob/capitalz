@@ -7,8 +7,7 @@
             <div class="col-12 col-sm-4">
                 <h5 class="footer-header">Welkom bij zzp.nl!</h5>
                 <hr class="footer-row">
-                <h6 class="footer-text">Als je nu niet oprot ga ik je moeder in de grond douwen en vervolgens overrijden met een heftruck.
-                    <br><br>Vervolgens maak ik haar lijk zwanger.</h6>
+                <h6 class="footer-text">ZZP.nl bied u als zzp'er een makkelijke en overzichtelijke site voor u om opdrachten te vinden!</h6>
             </div>
 
             <div class="col-12 col-sm-2"></div>
