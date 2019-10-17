@@ -4,6 +4,6 @@ body {
 }
 
 .content {
-    min-height: calc(100vh - 292px);
+    min-height: calc(100vh - 180px);
     padding: 25px;
 }
