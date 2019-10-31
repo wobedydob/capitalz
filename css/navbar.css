@@ -5,3 +5,7 @@
 .navbar-blue {
     background-color: #4386f4 !important;
 }
+
+.logo {
+    transform: scale(0.8)
+}

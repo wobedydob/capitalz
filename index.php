@@ -8,7 +8,14 @@
     include("./index/css.php");
     ?>
 
-    <title>ZZP.nl</title>
+    <!-- Pagina Titel -->
+    <title>CapitalZ.net</title>
+
+    <!-- Page icons -->
+    <link rel="shortcut icon" href="./img/icon.PNG">
+    <link rel="apple-touch-icon-precomposed" sizes="200x200" href="./img/icon.PNG">
+    <link rel="icon" href="./img/icon.PNG" type="image/x-icon">
+    <link rel="icon" href="./img/icon.PNG">
 
 </head>
 
