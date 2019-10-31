@@ -9,11 +9,8 @@
                 <div class="col-12 col-md-10 col-lg-10">
                     <form>
                         <div class="form-row">
-
                             <div class="col-7">
-                                <div class="input-group mb-2 mr-sm-2">
-                                    <input type="text" class="form-control" id="wat" placeholder="Wat:">
-                                </div>
+                                <input type="text" class="form-control" id="wat" placeholder="Wat:">
                             </div>
 
                             <div class="col">
@@ -47,13 +44,12 @@
                             <div class="col-auto">
                                 <button type="submit" class="btn btn-primary mb-2">Zoeken</button>
                             </div>
-
                         </div>
                     </form>
                 </div>
                 <div class="col-0 col-md-1 col-lg-1"></div>
             </div>
-            <h6>Bent u eigenaar van een bedrijf? En wilt u uw opracht plaatsen? Klik dan <a href=""><u>hier!</u></a></h6>
+            <h6>Bent u eigenaar van een bedrijf? En wilt u uw opracht plaatsen? Klik dan <a href=""><u>hier</u></a>!</h6>
         </div>
         <div class="col-0 col-md-1 col-lg-2"></div>
     </div>

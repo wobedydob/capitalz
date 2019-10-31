@@ -12,24 +12,25 @@ h6 {
     padding: 25px;
 }
 
-.home {
-}
-
 .home-text {
     font-family: "Gotham Light", sans-serif;
     text-align: center;
 }
 
-/*.dirty-fix {*/
-/*    position: absolute;*/
-/*    top: 50%;*/
-/*    left: 50%;*/
-/*    -moz-transform: translateX(-50%) translateY(-50%);*/
-/*    -webkit-transform: translateX(-50%) translateY(-50%);*/
-/*    -o-transform: translateX(-50%) translateY(-50%);*/
-/*    -ms-transform: translateX(-50%) translateY(-50%);*/
-/*    transform: translateX(-50%) translateY(-50%);*/
-/*}*/
+section.content {
+    position: relative;
+}
+
+.home {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
 
 .home-zoek {
     padding-top: 30px;
