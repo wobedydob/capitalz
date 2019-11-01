@@ -4,8 +4,8 @@
 <head>
     <!-- Include the bootstrap css and meta links. -->
     <?php
-    include("./index/meta.php");
-    include("./index/css.php");
+    include("index/meta.php");
+    include("index/css.php");
     ?>
 
     <!-- Pagina Titel -->
@@ -25,16 +25,16 @@
 <main id="contents">
 
     <!-- Include the navbar. -->
-    <?php include("./layout/navbar.php"); ?>
+    <?php include("layout/navbar.php"); ?>
 
     <section class="content">
         <?php
         if (isset($_GET["content"])) {
-            include("./pages/" . $_GET["content"] . ".php");
+            include("pages/" . $_GET["content"] . ".php");
         } else if (empty(isset($_GET["content"]))) {
-            include("./pages/homepage.php");
+            include("pages/homepage.php");
         } else {
-            include("./pages/homepage.php");
+            include("pages/homepage.php");
         }
         ?>
     </section>
@@ -42,10 +42,10 @@
 </main>
 
 <!-- Include the footer. -->
-<?php include("./layout/footer.php"); ?>
+<?php include("layout/footer.php"); ?>
 
 <!-- Include the needed scripts. -->
-<?php include("./index/js.php"); ?>
+<?php include("index/js.php"); ?>
 
 </body>
 

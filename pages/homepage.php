@@ -1,3 +1,4 @@
+<div id="particles-js"></div>
 <div class="container home">
     <div class="row">
         <div class="col-0 col-md-1 col-lg-2"></div>
@@ -10,37 +11,25 @@
                     <form>
                         <div class="form-row">
                             <div class="col-7">
-                                <input type="text" class="form-control" id="wat" placeholder="Wat:">
+                                <input type="text" class="form-control" placeholder="Wat:">
                             </div>
-
                             <div class="col">
                                 <select class="custom-select mr-sm-2" id="locatie">
                                     <option selected disabled>Waar:</option>
-                                    <option value="1">Alkmaar</option>
-                                    <option value="2">Almere</option>
-                                    <option value="3">Amersfoort</option>
-                                    <option value="4">Amsterdam</option>
-                                    <option value="5">Arnhem</option>
-                                    <option value="6">Bergen Op Zoom</option>
-                                    <option value="7">Breda</option>
-                                    <option value="8">Den Bosch</option>
-                                    <option value="9">Den Haag</option>
-                                    <option value="10">Eindhoven</option>
-                                    <option value="11">Groningen</option>
-                                    <option value="12">Haarlem</option>
-                                    <option value="13">Leeuwarden</option>
-                                    <option value="14">Lelystad</option>
-                                    <option value="15">Maastricht</option>
-                                    <option value="16">Nijmegen</option>
-                                    <option value="17">Oss</option>
-                                    <option value="18">Middelburg</option>
-                                    <option value="19">Rotterdam</option>
-                                    <option value="20">Tilburg</option>
-                                    <option value="21">Utrecht</option>
-                                    <option value="22">Zwolle</option>
+                                    <option value="1">Drenthe</option>
+                                    <option value="2">Flevoland</option>
+                                    <option value="3">Friesland</option>
+                                    <option value="4">Gelderland</option>
+                                    <option value="5">Groningen</option>
+                                    <option value="6">Limburg</option>
+                                    <option value="7">Noord-Brabant</option>
+                                    <option value="8">Noord-Holland</option>
+                                    <option value="9">Overrijsel</option>
+                                    <option value="10">Utrecht</option>
+                                    <option value="11">Zeeland</option>
+                                    <option value="12">Zuid-Holland</option>
                                 </select>
                             </div>
-
                             <div class="col-auto">
                                 <button type="submit" class="btn btn-primary mb-2">Zoeken</button>
                             </div>
