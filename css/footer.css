@@ -3,8 +3,7 @@
     background-color: #4386f4 !important;
     padding: .8em;
     padding-bottom: 0 !important;
-    max-height: 180px;
-    min-height: 180px;
+    min-height: 160px;
 }
 
 .footer a {

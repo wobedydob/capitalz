@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 
 <!-- Theme color: Chrome, Firefox OS and Opera -->
-<meta name="theme-color" content="#343A40">
+<meta name="theme-color" content="#4386f4">
 <meta name="apple-mobile-web-app-status-bar-style" content="#343A40"/>
 
 <!-- Theme color: Windows Phone -->

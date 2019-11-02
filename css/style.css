@@ -1,24 +1,23 @@
 body {
     font-family: Montserrat, sans-serif;
-    background-color: #F9F9F9;
+    background-color: #f9f9f9;
 }
 
 h6 {
     font-size: .8em;
 }
 
+/*CONTENT*/
+
 .content {
     min-height: calc(100vh - 254px);
-}
-
-.home-text {
-    font-family: "Gotham Light", sans-serif;
-    text-align: center;
 }
 
 section.content {
     position: relative;
 }
+
+/*PARTICLES*/
 
 canvas {
     display: block;
@@ -27,11 +26,13 @@ canvas {
 
 #particles-js {
     width: 100%;
-    height: 550px;
+    height: 683px;
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
 }
+
+/*HOME*/
 
 .home {
     position: absolute;
@@ -48,10 +49,8 @@ canvas {
     padding-top: 25px;
 }
 
-.login-text {
 
-}
-
-.register-text {
-
+.home-text {
+    font-family: "Gotham Light", sans-serif;
+    text-align: center;
 }

@@ -10,10 +10,9 @@
 
 <?php
 // Hier worden de balgrijke constanten gedefineert voor het maken van een verbinding
-    define("HOSTNAME", "localhost");
-    define("USERNAME", "zzp_admin");
-    define("PASSWORD", "ruKgAwtmjVPHl6eH");
-    define("DBNAME","zzp_db");
+define("HOSTNAME", "localhost");
+define("USERNAME", "zzp_admin");
+define("PASSWORD", "ruKgAwtmjVPHl6eH");
+define("DBNAME", "zzp_db");
 // Maak verbinding met de database
-    $conn = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DBNAME);
-?>
+$conn = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DBNAME);
