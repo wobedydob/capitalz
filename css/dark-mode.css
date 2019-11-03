@@ -7,6 +7,10 @@
     background-color: #5a6268;
 }
 
+[data-theme="dark"] .navbar .logo {
+    content: url("../img/logo_w.png");
+}
+
 [data-theme="dark"] .navbar .nav-link {
     color: #ffffff
 }
@@ -16,6 +20,6 @@
 }
 
 [data-theme="dark"] .footer {
-    background-color: #5a6268;
+    background-color: #5a6268 !important;
     color: white;
 }

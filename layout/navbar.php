@@ -3,7 +3,7 @@
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
             <a href="../index.php?content=homepage">
-                <img src="../img/logo.png" width="160px" alt="logo"></a>
+                <img class="logo" src="../img/logo_b.png" width="160px" alt="logo"></a>
         </li>
     </ul>
 

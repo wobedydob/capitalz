@@ -2,6 +2,7 @@
     bottom: 0;
     background-color: #4386f4 !important;
     padding: .8em;
+    padding-top: .3em;
     padding-bottom: 0 !important;
     min-height: 160px;
 }
@@ -21,6 +22,7 @@
 }
 
 .footer-row {
+    height: 2px;
     margin-top: 0;
     margin-bottom: 0.2em;
     background-color: whitesmoke;
@@ -34,6 +36,7 @@
 .footer-copyright {
     color: lightgray;
     font-size: 0.8em;
+    padding-bottom: .3em;
     bottom: 0;
 }
 
