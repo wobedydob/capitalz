@@ -1,17 +1,17 @@
 <div id="particles-js"></div>
-<div class="container home">
+<div class="container center invis">
     <div class="row">
         <div class="col-0 col-md-1 col-lg-2"></div>
         <div class="home-text col-12 col-md-10 col-lg-8">
-            <h1>Welkom bij CapitalZ!</h1>
-            <h5>Dé site voor bedrijven en zpp'ers!</h5>
+            <h1 class="normal">Welkom bij CapitalZ!</h1>
+            <h5 class="normal">Dé site voor bedrijven en zpp'ers!</h5>
             <div class="home-zoek row">
                 <div class="col-0 col-md-1 col-lg-1"></div>
                 <div class="col-12 col-md-10 col-lg-10">
                     <form>
-                        <div class="form-row">
+                        <div class="form-row normal">
                             <div class="col-7">
-                                <input type="text" class="form-control" placeholder="Wat:">
+                                <input type="text" class="form-control" placeholder="Zoek opdrachten:">
                             </div>
                             <div class="col">
                                 <select class="custom-select mr-sm-2" id="locatie">
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-0 col-md-1 col-lg-1"></div>
             </div>
-            <h6>Bent u eigenaar van een bedrijf? En wilt u uw opracht plaatsen? Klik dan <a href=""><u>hier</u></a>!</h6>
+            <h6 class="normal">Bent u eigenaar van een bedrijf? En wilt u uw opracht plaatsen? Klik dan <a href=""><u>hier</u></a>!</h6>
         </div>
         <div class="col-0 col-md-1 col-lg-2"></div>
     </div>

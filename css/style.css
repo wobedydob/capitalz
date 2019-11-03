@@ -7,6 +7,25 @@ h6 {
     font-size: .8em;
 }
 
+.invis {
+    pointer-events: none;
+}
+
+.normal {
+    pointer-events: auto;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
 /*CONTENT*/
 
 .content {
@@ -36,23 +55,22 @@ canvas {
 
 /*HOME*/
 
-.home {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    -o-transform: translateX(-50%) translateY(-50%);
-    -ms-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-}
-
 .home-zoek {
     padding-top: 25px;
 }
 
 
 .home-text {
-    font-family: "Gotham Light", sans-serif;
+    font-family: "Gotham Light", Gotham-Light, sans-serif;
     text-align: center;
+}
+
+/*LOGIN*/
+
+.login {
+
+}
+
+.form-detail {
+    font-size: .6em;
 }

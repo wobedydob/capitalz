@@ -2,9 +2,22 @@
     bottom: 0;
     background-color: #4386f4 !important;
     padding: .8em;
-    padding-top: .3em;
+    padding-top: .2em;
     padding-bottom: 0 !important;
-    min-height: 160px;
+}
+
+.footer-toggle {
+    text-align: right;
+}
+
+.footer-icon {
+    padding: 0;
+    position: absolute;
+    bottom: 1px;
+}
+
+.footer-icon i {
+    color: white;
 }
 
 .footer a {
@@ -13,6 +26,10 @@
 
 .footer a:hover {
     color: lightgray;
+}
+
+.footer ul {
+    margin-bottom: .4em;
 }
 
 .footer-header {
@@ -29,17 +46,30 @@
 }
 
 .footer-text {
-    font-family: Gotham Light, sans-serif;
+    font-family: "Gotham Light", Gotham-Light, sans-serif;
     color: whitesmoke;
 }
 
 .footer-copyright {
     color: lightgray;
-    font-size: 0.8em;
+    font-size: .8em;
     padding-bottom: .3em;
     bottom: 0;
 }
 
 .footer-copyright a {
     color: lightgray;
+}
+
+.rotate {
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.rotate.down {
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
 }
