@@ -2,6 +2,20 @@
     background-color: white;
 }
 
-.logo {
-    transform: scale(0.8)
+#logo {
+    width: 160px;
+    height: 100%;
+}
+
+.navbar-toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 4.5rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.navbar-toggler:focus {
+    outline: 0;
 }

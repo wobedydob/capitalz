@@ -5,6 +5,8 @@
     <?php
     require_once("index/meta.php");
     require_once("index/css.php");
+
+    require_once("script/svg-helper.php");
     ?>
     <!-- Pagina Titel -->
     <title>CapitalZ.net</title>

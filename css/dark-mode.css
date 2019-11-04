@@ -3,12 +3,18 @@
     color: white;
 }
 
+[data-theme="dark"] .hamburger-inner,
+[data-theme="dark"] .hamburger-inner::before,
+[data-theme="dark"] .hamburger-inner::after {
+    background-color: white !important;
+}
+
 [data-theme="dark"] .navbar {
     background-color: #5a6268;
 }
 
-[data-theme="dark"] .navbar .logo {
-    content: url("../img/logo_w.png");
+[data-theme="dark"] .navbar #logo-text {
+    fill: white
 }
 
 [data-theme="dark"] .navbar .nav-link {

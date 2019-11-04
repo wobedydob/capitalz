@@ -8,3 +8,8 @@ $("#footer-toggle").click(function (e) {
 $(".rotate").click(function () {
     $(this).toggleClass("down");
 });
+
+const hamburger = document.querySelector(".hamburger");
+hamburger.addEventListener("click", function () {
+    hamburger.classList.toggle("is-active");
+});
