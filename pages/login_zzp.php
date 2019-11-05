@@ -1,5 +1,8 @@
 <div id="particles-js"></div>
 <div class="container center invis">
+    <div class="form-head">
+        <h1 class="normal">LOGIN</h1>
+    </div>
     <div class="row">
         <div class="col-1 col-md-2 col-lg-3"></div>
         <div class="col-10 col-md-8 col-lg-6">

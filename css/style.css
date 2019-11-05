@@ -3,6 +3,10 @@ body {
     background-color: #ededf1;
 }
 
+h1 {
+    font-size: 1.2em;
+}
+
 h6 {
     font-size: .8em;
 }
@@ -73,4 +77,9 @@ canvas {
 
 .form-detail {
     font-size: .6em;
+}
+
+.form-head {
+    font-size: 4em;
+    text-align: center;
 }
