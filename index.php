@@ -5,16 +5,15 @@
     <?php
     require_once("index/meta.php");
     require_once("index/css.php");
-
     require_once("script/svg-helper.php");
     ?>
     <!-- Pagina Titel -->
     <title>CapitalZ.net</title>
     <!-- Page icons -->
-    <link rel="shortcut icon" href="img/icon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="200x200" href="img/icon.png">
-    <link rel="icon" href="img/icon.png" type="image/x-icon">
-    <link rel="icon" href="img/icon.png">
+    <link rel="shortcut icon" href="img/svg/icon.svg">
+    <link rel="apple-touch-icon-precomposed" sizes="200x200" href="img/svg/icon.svg">
+    <link rel="icon" href="img/svg/icon.svg" type="image/x-icon">
+    <link rel="icon" href="img/svg/icon.svg">
 </head>
 <body>
 <!-- Page Content -->

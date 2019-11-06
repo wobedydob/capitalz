@@ -3,6 +3,10 @@
     color: white;
 }
 
+[data-theme="dark"] #white-blck {
+    background-color: #505050;
+}
+
 [data-theme="dark"] .hamburger-inner,
 [data-theme="dark"] .hamburger-inner::before,
 [data-theme="dark"] .hamburger-inner::after {
