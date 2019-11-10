@@ -3,8 +3,8 @@
     color: white;
 }
 
-[data-theme="dark"] #white-blck {
-    background-color: #505050;
+[data-theme="dark"] hr {
+    background-color: #e4e4e4;
 }
 
 [data-theme="dark"] .hamburger-inner,
@@ -13,6 +13,7 @@
     background-color: white !important;
 }
 
+/*Navbar*/
 [data-theme="dark"] .navbar {
     background-color: #5a6268;
 }
@@ -29,7 +30,20 @@
     color: #dddddd;
 }
 
+/*Footer*/
 [data-theme="dark"] .footer {
     background-color: #5a6268 !important;
     color: white;
+}
+
+[data-theme="dark"] .footer-copyright {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] .footer-copyright a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .footer-copyright a:hover {
+    color: rgba(255, 255, 255, 0.5);
 }

@@ -1,62 +1,22 @@
 .footer {
     bottom: 0;
-    background-color: #4386f4 !important;
+    background-color: white !important;
     padding: .8em;
     padding-top: .2em;
     padding-bottom: 0 !important;
 }
 
-.footer-toggle {
-    text-align: right;
-}
-
-.footer-icon {
-    padding: 0;
-    position: absolute;
-    bottom: 1px;
-}
-
-.footer-icon i {
-    color: white;
-}
-
-.footer a {
-    color: whitesmoke;
-}
-
-.footer a:hover {
-    color: lightgray;
-}
-
-.footer ul {
-    margin-bottom: .4em;
-}
-
-.footer-header {
-    font-family: Montserrat, sans-serif;
-    font-weight: 800;
-    color: whitesmoke;
-}
-
-.footer-row {
-    height: 2px;
-    margin-top: 0;
-    margin-bottom: 0.2em;
-    background-color: whitesmoke;
-}
-
-.footer-text {
-    font-family: "Gotham Light", Gotham-Light, sans-serif;
-    color: whitesmoke;
-}
-
 .footer-copyright {
-    color: lightgray;
+    color: rgba(0, 0, 0, 0.5);
     font-size: .8em;
     padding-bottom: .3em;
     bottom: 0;
 }
 
 .footer-copyright a {
-    color: lightgray;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.footer-copyright a:hover {
+    color: rgba(0, 0, 0, 0.5);
 }

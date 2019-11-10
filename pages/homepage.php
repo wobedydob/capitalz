@@ -3,12 +3,14 @@
     <h1 class="home-head normal">Welkom bij CapitalZ!</h1>
     <h5 class="home-text normal">Dé site voor bedrijven en zpp'ers!</h5>
     <form>
-        <div class="form-row home-form normal">
+        <div class="form-row home-form">
+            <!--Wat invoer-->
             <div class="col-7">
-                <input type="text" class="form-control" placeholder="Zoek opdrachten:">
+                <input type="text" class="form-control normal" id="zoek" placeholder="Zoek opdrachten:">
             </div>
-            <div class="col">
-                <select class="custom-select mr-sm-2" id="locatie">
+            <!--Plaats invoer-->
+            <div class="col-3">
+                <select class="custom-select mr-sm-2 normal" id="locatie">
                     <option selected disabled>Waar:</option>
                     <option value="1">Drenthe</option>
                     <option value="2">Flevoland</option>
@@ -24,10 +26,11 @@
                     <option value="12">Zuid-Holland</option>
                 </select>
             </div>
-            <div class="col-auto">
-                <button type="submit" class="btn btn-primary mb-2">Zoeken</button>
+            <!--Zoek button-->
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary mb-2 normal">Zoeken</button>
             </div>
         </div>
     </form>
-    <h6 class="home-detail normal">Bent u eigenaar van een bedrijf? En wilt u uw opracht plaatsen? Klik dan <a href=""><u>hier</u></a>!</h6>
+    <h6 class="home-detail normal">Bent u eigenaar van een bedrijf? En wilt u uw opracht plaatsen? Klik dan <a href="../index.php?content=registreer_bedrijf"><u>hier</u></a>!</h6>
 </div>

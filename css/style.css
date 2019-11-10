@@ -7,6 +7,10 @@ h6 {
     font-size: .8em;
 }
 
+hr {
+    background-color: #cacaca;
+}
+
 .invis {
     pointer-events: none;
 }
@@ -26,10 +30,12 @@ h6 {
     transform: translateX(-50%) translateY(-50%);
 }
 
-#white-blck {
-    background-color: white;
-    padding: 25px;
-    border-radius: 25px;
+.required {
+    color: red;
+}
+
+.hr-bottom {
+    margin-top: 0;
 }
 
 /*CONTENT*/
@@ -127,6 +133,11 @@ canvas {
     .login-btn {
         width: 250px;
     }
+
+    .login-reg {
+        text-align: center;
+        font-size: .7em;
+    }
 }
 
 @media (max-width: 576px) {
@@ -151,17 +162,23 @@ canvas {
     .login-btn {
         width: 150px;
     }
+
+    .login-reg {
+        text-align: center;
+        font-size: .6em;
+    }
 }
 
 .login-btn-row {
     text-align: center;
+    margin-bottom: .6rem;
 }
 
 /*REGISTER*/
 
 @media (min-width: 576px) {
     .register {
-        max-width: 500px;
+        max-width: 700px;
     }
 
     .register-head {
@@ -174,7 +191,12 @@ canvas {
     }
 
     .reg-btn {
-        width: 250px;
+        width: 350px;
+    }
+
+    .reg-bedr {
+        text-align: center;
+        font-size: .7em;
     }
 }
 
@@ -200,8 +222,14 @@ canvas {
     .reg-btn {
         width: 150px;
     }
+
+    .reg-bedr {
+        text-align: center;
+        font-size: .6em;
+    }
 }
 
 .reg-btn-row {
     text-align: center;
+    margin-bottom: .6rem;
 }

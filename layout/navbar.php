@@ -18,7 +18,7 @@
                 </div>
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="../index.php?content=login_zzp">Log in</a>
+                <a class="nav-link" href="../index.php?content=login">Log in</a>
             </li>
             <li class="nav-item">
                 <a href="../index.php?content=registreer_zzp">
