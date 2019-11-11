@@ -32,5 +32,5 @@
             </div>
         </div>
     </form>
-    <h6 class="home-detail normal">Bent u eigenaar van een bedrijf? En wilt u uw opracht plaatsen? Klik dan <a href="../index.php?content=registreer_bedrijf"><u>hier</u></a>!</h6>
+    <h6 class="home-detail normal">Bent u eigenaar van een bedrijf? En wilt u uw opdracht plaatsen? Klik dan <a href="../index.php?content=registreer_bedrijf"><u>hier</u></a>!</h6>
 </div>

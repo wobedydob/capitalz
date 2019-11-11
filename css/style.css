@@ -233,3 +233,18 @@ canvas {
     text-align: center;
     margin-bottom: .6rem;
 }
+
+/*DASHBOARD*/
+
+.dash {
+    padding-top: 15px;
+}
+
+.dashboard-head {
+    font-size: 3em;
+    text-align: center;
+}
+
+.card-dashboard {
+    height: 160px;
+}

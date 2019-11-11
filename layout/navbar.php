@@ -11,12 +11,12 @@
     </button>
     <div class="collapse navbar-collapse" id="nav-collapse">
         <ul class="navbar-nav ml-auto">
-            <div class="nav-link">
+            <li class="nav-link">
                 <div class="custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" id="darkSwitch">
                     <label class="custom-control-label" for="darkSwitch">Dark Mode</label>
                 </div>
-            </div>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="../index.php?content=login">Log in</a>
             </li>
