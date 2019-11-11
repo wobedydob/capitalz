@@ -2,6 +2,7 @@
 <div class="container home center invis">
     <h1 class="home-head normal">Welkom bij CapitalZ!</h1>
     <h5 class="home-text normal">Dé site voor bedrijven en zpp'ers!</h5>
+    <hr>
     <form>
         <div class="form-row home-form">
             <!--Wat invoer-->
@@ -32,5 +33,5 @@
             </div>
         </div>
     </form>
-    <h6 class="home-detail normal">Bent u eigenaar van een bedrijf? En wilt u uw opracht plaatsen? Klik dan <a href="../index.php?content=registreer_bedrijf"><u>hier</u></a>!</h6>
+    <h6 class="home-detail normal">Bent u eigenaar van een bedrijf? En wilt u uw opdracht plaatsen? Klik dan <a href="../index.php?content=registreer_bedrijf"><u>hier</u></a>!</h6>
 </div>

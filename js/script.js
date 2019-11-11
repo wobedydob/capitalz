@@ -10,12 +10,3 @@ $(document).on('click', '.toggle-password', function () {
     const input = $("#wachtwoord1");
     input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password');
 });
-
-function clearSelection() {
-    if (document.selection && document.selection.empty) {
-        document.selection.empty();
-    } else if (window.getSelection) {
-        var sel = window.getSelection();
-        sel.removeAllRanges();
-    }
-}

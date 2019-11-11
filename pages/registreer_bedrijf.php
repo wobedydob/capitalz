@@ -13,7 +13,7 @@
                     </div>
                     <input type="email" class="form-control" id="email" placeholder="E-mail" required>
                 </div>
-                <span class="normal register-detail">Voer een geldig bedrijfs email in, na aanmelding wordt uw aanvraag gecontroleerd door een admin. Dit kan maximaal een dag duren, vervolgens zult u een verificatie mail ontvangen.</span>
+                <span class="normal register-detail">Voer een geldig bedrijfsemail in, na aanmelding wordt uw aanvraag gecontroleerd door een admin. Dit kan maximaal een dag duren, vervolgens zult u een verificatie mail ontvangen.</span>
             </div>
         </div>
         <!--Wachtwoord row-->
