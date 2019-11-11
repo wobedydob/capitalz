@@ -2,6 +2,7 @@
 <div class="container home center invis">
     <h1 class="home-head normal">Welkom bij CapitalZ!</h1>
     <h5 class="home-text normal">Dé site voor bedrijven en zpp'ers!</h5>
+    <hr>
     <form>
         <div class="form-row home-form">
             <!--Wat invoer-->
