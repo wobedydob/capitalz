@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 265 265"><defs><style>.cls-1{fill:#4386f3;}.cls-2{fill:#fff;}</style></defs><title>icon</title><g id="Layer_2" data-name="Layer 2"><g id="logo"><g id="icon"><circle id="icon_circle" data-name="icon circle" class="cls-1" cx="132.5" cy="132.5" r="132.5"/><path id="icon_z" data-name="icon z" class="cls-2" d="M75.83,193,173.46,73.13h-96V60.6H189.84V71.72L93.42,191.59h96.22v12.53H75.84V193Z"/></g></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 265 265">
+    <defs>
+        <style>.cls-1{fill:#4386f3;}.cls-2{fill:#fff;}</style>
+    </defs>
+    <title>icon</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="logo">
+            <g id="icon">
+                <circle id="icon_circle" data-name="icon circle" class="cls-1" cx="132.5" cy="132.5" r="132.5"/>
+                <path id="icon_z" data-name="icon z" class="cls-2" d="M75.83,193,173.46,73.13h-96V60.6H189.84V71.72L93.42,191.59h96.22v12.53H75.84V193Z"/>
+            </g>
+        </g>
+    </g>
+</svg>
