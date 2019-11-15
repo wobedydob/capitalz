@@ -17,6 +17,9 @@ class RegisterPage
         } else if ($urlArr['pageVars'] == 'bedrijf') {
             $this->register_bedrijf();
         }
+
+        var_dump($urlArr['pageVars']);
+
     }
 
     private function register_zzp()

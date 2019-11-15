@@ -1,5 +1,11 @@
-<?php if (isset($this->pageObj->zzpForm)) : ?>
-    <?= $this->pageObj->zzpForm ?>
-<?php elseif (isset($this->pageObj->bedrijfForm)) : ?>
-    <?= $this->pageObj->bedrijfForm ?>
-<?php endif ?>
+<?php
+
+var_dump($this->pageObj);
+
+if (isset($this->pageObj->zzpForm)) {
+    $this->pageObj->zzpForm;
+} elseif (isset($this->pageObj->bedrijfForm)) {
+    $this->pageObj->bedrijfForm;
+}
+
+var_dump($this->pageObj->zzpForm);
