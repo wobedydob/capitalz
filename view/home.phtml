@@ -3,7 +3,7 @@
     <h1 class="home-head normal">Welkom bij CapitalZ!</h1>
     <h5 class="home-text normal">Dé site voor bedrijven en zpp'ers!</h5>
     <hr>
-    <form>
+    <form method="post" action="<?= $this->urlArr['baseUrl'] ?>task">
         <div class="form-row home-form">
             <!--Wat invoer-->
             <div class="col-7">
@@ -33,5 +33,5 @@
             </div>
         </div>
     </form>
-    <h6 class="home-detail normal">Bent u eigenaar van een bedrijf? En wilt u uw opdracht plaatsen? Klik dan <a href="../index.php?content=registreer_bedrijf"><u>hier</u></a>!</h6>
+    <h6 class="home-detail normal">Bent u eigenaar van een bedrijf? En wilt u uw opdracht plaatsen? Klik dan <a href="<?= $this->urlArr['baseUrl'] ?>register/zzp"><u>hier</u></a>!</h6>
 </div>

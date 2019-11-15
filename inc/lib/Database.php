@@ -1,6 +1,7 @@
-<?php 
+<?php
 
-class Database {
+class Database
+{
     private $host;
     private $dbName;
     private $user;
@@ -12,38 +13,40 @@ class Database {
 
     private $stmt;
 
-    public function __construct() {
-        $this->host     = 'localhost';
-        $this->dbName   = 'capitalz_db';
-        $this->user     = 'root';
-        $this->pass     = '';
+    public function __construct()
+    {
+        $this->host = 'localhost';
+        $this->dbName = 'capitalz_db';
+        $this->user = 'root';
+        $this->pass = '';
 
         define('AES', 'GRoAQlppK0kDOcyxd8ZQb81cOn6h6jMg');
 
         //dsn for mysql
-        $dsn = "mysql:host=".$this->host.";dbname=".$this->dbName;
+        $dsn = "mysql:host=" . $this->host . ";dbname=" . $this->dbName;
         $options = array(
-            PDO::ATTR_PERSISTENT=> true,
+            PDO::ATTR_PERSISTENT => true,
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         );
 
-        try{
+        try {
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
-        }
-            //catch any errors
-        catch (PDOException $e){
+        } //catch any errors
+        catch (PDOException $e) {
             $this->error = $e->getMessage();
         }
 
     }
 
-    public function query($query){
+    public function query($query)
+    {
         $this->stmt = $this->dbh->prepare($query);
     }
 
-    public function bind($param, $value, $type = null){
-        if(is_null($type)){
-            switch (true){
+    public function bind($param, $value, $type = null)
+    {
+        if (is_null($type)) {
+            switch (true) {
                 case is_int($value):
                     $type = PDO::PARAM_INT;
                     break;
@@ -60,53 +63,63 @@ class Database {
         $this->stmt->bindValue($param, $value, $type);
     }
 
-    public function execute(){
+    public function execute()
+    {
         return $this->stmt->execute();
 
         $this->qError = $this->dbh->errorInfo();
-        if(!is_null($this->qError[2])){
+        if (!is_null($this->qError[2])) {
             echo $this->qError[2];
         }
         echo 'done with query';
     }
 
-    public function resultset(){
+    public function resultset()
+    {
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function single(){
+    public function single()
+    {
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function rowCount(){
+    public function rowCount()
+    {
         return $this->stmt->rowCount();
     }
 
-    public function lastInsertId(){
+    public function lastInsertId()
+    {
         return $this->dbh->lastInsertId();
     }
 
-    public function beginTransaction(){
+    public function beginTransaction()
+    {
         return $this->dbh->beginTransaction();
     }
 
-    public function endTransaction(){
+    public function endTransaction()
+    {
         return $this->dbh->commit();
     }
 
-    public function cancelTransaction(){
+    public function cancelTransaction()
+    {
         return $this->dbh->rollBack();
     }
 
-    public function debugDumpParams(){
+    public function debugDumpParams()
+    {
         return $this->stmt->debugDumpParams();
     }
 
-    public function queryError(){
+    public function queryError()
+    {
         $this->qError = $this->dbh->errorInfo();
-        if(!is_null($qError[2])){
+        if (!is_null($qError[2])) {
             echo $qError[2];
         }
     }

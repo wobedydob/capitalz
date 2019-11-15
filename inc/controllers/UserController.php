@@ -1,8 +1,9 @@
 <?php
 
-class UserController extends UserModel {
+class UserController extends UserModel
+{
 
-    public function __construct( int $userId = 0, string $email = '', string $password = '' )
+    public function __construct(int $userId = 0, string $email = '', string $password = '')
     {
         if (!empty($userId)) $this->set_userId($userId);
         if (!empty($email)) $this->set_email($email);
@@ -11,7 +12,7 @@ class UserController extends UserModel {
 
     public function register()
     {
-        
+
     }
 
     public function login()

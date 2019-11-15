@@ -1,12 +1,13 @@
 <?php
 
-class ApplicationModel {
+class ApplicationModel
+{
 
-	public $urlArr;
+    public $urlArr;
 
-	public function set_urlArr( array $urlArr )
-	{
-		$this->urlArr = $urlArr;
-	}
+    public function set_urlArr(array $urlArr)
+    {
+        $this->urlArr = $urlArr;
+    }
 
 }

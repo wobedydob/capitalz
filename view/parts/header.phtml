@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include the bootstrap css and meta links. -->
+    <?php
+    $this->get_part('meta');
+    $this->get_part('css');
+    require_once("script/svg-helper.php");
+    ?>
+    <!-- Pagina Titel -->
+    <title>CapitalZ.net</title>
+    <!-- Page icons -->
+    <link rel="shortcut icon" href="<?= $this->urlArr['baseUrl'] ?>/img/svg/icon.svg">
+    <link rel="apple-touch-icon-precomposed" sizes="200x200" href="<?= $this->urlArr['baseUrl'] ?>/img/svg/icon.svg">
+    <link rel="icon" href="<?= $this->urlArr['baseUrl'] ?>/img/svg/icon.svg" type="image/x-icon">
+    <link rel="icon" href="<?= $this->urlArr['baseUrl'] ?>/img/svg/icon.svg">
+</head>
+<body>
+<!-- Page Content -->
+<main id="contents">
+
+    <!--Navbar-->
+    <?php $this->get_part('navbar'); ?>
+    <!--Content-->
+    <section class="content">

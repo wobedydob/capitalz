@@ -1,70 +1,81 @@
 <?php
 
-class ApplicationController extends ApplicationModel {
+class ApplicationController extends ApplicationModel
+{
 
-	public function __construct()
-	{
-		$this->parse_url( 'http://www.capitalz.net/' );
-		var_dump($this->urlArr);
-		$this->load_page();
-		//$this->set_pageObj( new PageController( $this->urlArr ) );
-	}
-	
-	/*
-	 * private parse_url method
-	 * @return array
-	 */
-	private function parse_url( $baseUrl ) 
-	{
-		// Remove the baseurl from the whole url.
-		// Using the REDIRECT_URL or the REQUEST_URI, depending on if REDIRECT_URL is set. 
-		$varStr 	= str_replace($baseUrl, '', (isset($_SERVER['REDIRECT_URL']) ? $_SERVER['REDIRECT_URL'] : $_SERVER['REQUEST_URI']));
+    public $pageObj;
 
-		// Make an array out of it by splitting the string on the /
-		$urlVars 	= (strpos($varStr, '/') !== false ? explode('/', $varStr) : array($varStr)) ;
-		// Count the amount of variables
-		$count 		= count($urlVars);
+    public function __construct()
+    {
+        $this->parse_url('http://www.capitalz.net/');
+        $this->load_page();
+        //$this->set_pageObj( new PageController( $this->urlArr ) );
+    }
 
-		// Set the variables to false to avoid "undefined variables" error
-		$urlArr['baseUrl'] = $baseUrl;
-		$urlArr['pagename']	= false;
-		$urlArr['pageVars']	= false;
+    private function parse_url($baseUrl)
+    {
+        $varStr = str_replace($baseUrl, '', (isset($_SERVER['REDIRECT_URL']) ? $_SERVER['REDIRECT_URL'] : $_SERVER['REQUEST_URI']));
+        $urlVars = (strpos($varStr, '/') !== false ? explode('/', $varStr) : array($varStr));
 
-		// Check if last value of the array has a file extension. 
-		// If it does, stop this method. 
-		if (strpos(end($urlVars), '.') !== false) return;
+        $count = count($urlVars);
 
-		// If the array count is more than 0 means that there are vars to be parsed
-		if ( $count > 0 ) {
+        $urlArr['baseUrl'] = $baseUrl;
+        $urlArr['pagename'] = false;
+        $urlArr['pageVars'] = false;
 
-			// For loop, runs as long as the count is high
-			for ( $i = 0; $i < $count; $i++ ) {
+        if (strpos(end($urlVars), '.') !== false) return;
 
-				// If the variable is empty, it can be skipped. 
-				if ( !empty( $urlVars[ $i ] ) ) {
+        if ($count > 0) {
+            for ($i = 0; $i < $count; $i++) {
+                if (!empty($urlVars[$i])) {
+                    if ($i == 1) $urlArr['pagename'] = $urlVars[$i];
+                    else $urlArr['pageVars'][$i] = $urlVars[$i];
+                }
+            }
+        }
 
-					// First value is used as pagename
-					// Else it is considered a page variable
+        $this->set_urlArr($urlArr);
+    }
 
-					if ( $i == 1 )  $urlArr['pagename'] = $urlVars[ $i ];
-					else $urlArr['pageVars'][ $i ] = $urlVars[ $i ];
-				}
-			}
-		}
-
-		// Calling the set_urlArr method from the ApplicationModel
-		$this->set_urlArr($urlArr);
-	}
-
-	private function load_page()
+    private function load_page()
     {
         $page = $this->urlArr['pagename'];
 
         if (empty($page)) $page = 'home';
 
-        $objName = ucfirst(strtolower($page)).'Page';
-        $obj = new $objName();
+        $objName = ucfirst(strtolower($page)) . 'Page';
+        $this->pageObj = new $objName($this->urlArr);
 
-        include 'view/'.$page.'.phtml';
+        $this->get_part('header');
+
+        require 'view/' . $page . '.phtml';
+
+        $this->get_part('footer');
+    }
+
+    public function get_part($name, array $vars = array())
+    {
+        $file = 'view/parts/' . $name . '.phtml';
+
+        if (file_exists($file)) include $file;
+        else var_dump($file);
+    }
+
+    public static function get_part_string($name, array $vars = array())
+    {
+        $file = 'view/parts/' . $name . '.phtml';
+
+        if (file_exists($file)) {
+            ob_start();
+            require $file;
+            $return = ob_get_contents();
+        } else {
+            $return = false;
+        }
+
+        ob_end_clean();
+
+        return $return;
+
     }
 }

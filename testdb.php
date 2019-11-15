@@ -6,7 +6,7 @@ $db = new Database();
 
 $db->query('SELECT
                 userId,
-                AES_DECRYPT(email, "'.AES.'") AS email, 
+                AES_DECRYPT(email, "' . AES . '") AS email, 
                 password, 
                 userrole
             FROM user');
@@ -20,16 +20,15 @@ $db->bind(':userid', (int)$userArr['userId']);
 $db->execute();
 $infoArr = $db->resultset();
 
-var_dump($infoArr);
 $formatArr = array();
 foreach ($infoArr as $value) {
     $formatArr[$value['key']] = $value['value'];
 }
 
-function get_userinfo( string $key = '' )
+function get_userinfo(string $key = '')
 {
-    if ($key) return $formatArr[$key];
-    else return $formatArr;
+    if ($key) return $this->formatArr[$key];
+    else return $this->formatArr;
 }
 
 echo get_userinfo('kvk');
