@@ -29,7 +29,7 @@ class ApplicationController extends ApplicationModel
             for ($i = 0; $i < $count; $i++) {
                 if (!empty($urlVars[$i])) {
                     if ($i == 1) $urlArr['pagename'] = $urlVars[$i];
-                    else $urlArr['pageVars'][$i] = $urlVars[$i];
+                    else $urlArr['pageVars'][] = $urlVars[$i];
                 }
             }
         }

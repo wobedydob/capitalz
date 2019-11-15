@@ -1,11 +1,11 @@
-<?php
-
-var_dump($this->pageObj);
-
-if (isset($this->pageObj->zzpForm)) {
-    $this->pageObj->zzpForm;
-} elseif (isset($this->pageObj->bedrijfForm)) {
-    $this->pageObj->bedrijfForm;
-}
-
-var_dump($this->pageObj->zzpForm);
+<?php if (isset($this->pageObj->zzpForm)) : ?>
+	<div class="zzp-form">
+		<?=$this->pageObj->zzpForm?>
+	</div>
+<?php elseif (isset($this->pageObj->bedrijfForm)) : ?>
+	<div class="zzp-form">
+		<?=$this->pageObj->bedrijfForm?>
+	</div>
+<?php else : ?>
+	<span class="error-message">Er is iets fout gegaan.</span>
+<?php endif; ?>

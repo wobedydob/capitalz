@@ -10,15 +10,12 @@ class RegisterPage
     {
         $this->urlArr = $urlArr;
 
-        var_dump($urlArr);
-
-        if ($urlArr['pageVars'] == 'zzp') {
+        // Selecting the first value in the pageVars array
+        if ($urlArr['pageVars'][0] == 'zzp') {
             $this->register_zzp();
-        } else if ($urlArr['pageVars'] == 'bedrijf') {
+        } else if ($urlArr['pageVars'][0] == 'bedrijf') {
             $this->register_bedrijf();
         }
-
-        var_dump($urlArr['pageVars']);
 
     }
 
