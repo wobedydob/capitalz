@@ -76,6 +76,5 @@ class ApplicationController extends ApplicationModel
         ob_end_clean();
 
         return $return;
-
     }
 }

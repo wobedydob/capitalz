@@ -10,3 +10,4 @@ $(document).on('click', '.toggle-password', function () {
     const input = $("#wachtwoord1");
     input.attr('type') === 'password' ? input.attr('type', 'text') : input.attr('type', 'password');
 });
+

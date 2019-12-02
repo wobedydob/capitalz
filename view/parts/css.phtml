@@ -7,6 +7,12 @@
 <!-- Custom CSS files -->
 <link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/style.css">
 <link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/hamburgers.css">
-<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/navbar.css">
-<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/footer.css">
 <link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/dark-mode.css">
+<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/particles.css">
+
+<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/view/parts/content.css">
+<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/view/parts/navbar.css">
+<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/view/parts/footer.css">
+
+<?php if (empty($this->urlArr['pagename'])) $this->urlArr['pagename'] = 'home'; ?>
+<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/view/<?= $this->urlArr['pagename'] ?>.css">

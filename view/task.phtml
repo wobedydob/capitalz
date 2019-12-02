@@ -1,35 +1,43 @@
-<div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
-        <form method="post" action="">
-            <div class="form-row">
-                <div class="col">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">Wat:</div>
-                        </div>
-                        <input type="text" class="form-control" id="trefwoorden" placeholder="Trefwoorden">
-                    </div>
+<div class="container-fluid task center invis">
+    <div class="container task-head">
+        <h1 class="task-head-text normal">Opdrachten</h1>
+        <hr>
+        <form method="post" action="<?= $this->urlArr['baseUrl'] ?>task">
+            <div class="form-row home-form">
+                <!--Wat invoer-->
+                <div class="col-8 col-sm-7">
+                    <input type="text" class="form-control mb-2 normal" id="zoek" placeholder="Zoek opdrachten:">
                 </div>
-                <div class="col-5">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">Waar:</div>
-                        </div>
-                        <select class="custom-select" id="locatie">
-                            <option selected>Kies Locatie...</option>
-                            <option value="1">Amsterdam</option>
-                            <option value="2">Den Haag</option>
-                            <option value="3">Rotterdam</option>
-                            <option value="4">Utrecht</option>
-                        </select>
-                    </div>
+                <!--Plaats invoer-->
+                <div class="col-4 col-sm-3">
+                    <select class="custom-select mb-2 mr-sm-2 normal" id="locatie">
+                        <option selected disabled>Waar:</option>
+                        <option value="1">Drenthe</option>
+                        <option value="2">Flevoland</option>
+                        <option value="3">Friesland</option>
+                        <option value="4">Gelderland</option>
+                        <option value="5">Groningen</option>
+                        <option value="6">Limburg</option>
+                        <option value="7">Noord-Brabant</option>
+                        <option value="8">Noord-Holland</option>
+                        <option value="9">Overrijsel</option>
+                        <option value="10">Utrecht</option>
+                        <option value="11">Zeeland</option>
+                        <option value="12">Zuid-Holland</option>
+                    </select>
                 </div>
-                <div class="col-auto">
-                    <button type="submit" class="btn btn-secondary">Zoeken</button>
+                <!--Zoek button-->
+                <div class="col-12 col-sm-2">
+                    <button type="submit" class="btn btn-block btn-primary mb-2 normal">Zoeken</button>
                 </div>
             </div>
         </form>
     </div>
-    <div class="col-4"></div>
+
+    <div class="task-body">
+        <hr>
+        <div class="task-card">
+
+        </div>
+    </div>
 </div>

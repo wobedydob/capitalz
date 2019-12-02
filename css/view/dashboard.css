@@ -1,0 +1,119 @@
+/*DASHBOARD*/
+
+.dash {
+    padding-top: 15px;
+}
+
+@media (min-width: 576px) {
+
+    .dashboard-head {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .card-dashboard {
+        text-align: left;
+        display: inline-block;
+        width: 400px;
+        margin: 8px;
+        padding: 0;
+    }
+
+    .card-header {
+        color: black;
+        font-size: 2rem;
+    }
+
+    .card-text {
+        color: black;
+        font-size: 14px;
+        margin-bottom: 8px !important;
+    }
+
+    .card-body {
+        padding: 15px 0 15px 0;
+    }
+
+    .card-icon {
+        color: #cacaca;
+        font-size: 100px;
+    }
+
+    .card-btn {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .dashboard-head {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .card-dashboard {
+        text-align: left;
+        display: inline-block;
+        width: 300px;
+        margin: 8px;
+        padding: 0;
+    }
+
+    .card-header {
+        color: black;
+        font-size: 1rem;
+    }
+
+    .card-text {
+        color: black;
+        font-size: 8px;
+        margin-bottom: 8px !important;
+    }
+
+    .card-body {
+        padding: 8px 0 8px 0;
+    }
+
+    .card-icon {
+        color: #cacaca;
+        font-size: 60px;
+    }
+
+    .card-btn {
+        font-size: 0.75rem;
+    }
+}
+
+.card-row {
+    text-align: center;
+    display: block;
+    width: 100%;
+    font-size: 0;
+}
+
+.card-icon-row {
+    text-align: center;
+}
+
+.card-btn {
+    border-radius: .3rem;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1.5;
+    overflow: visible;
+    padding: .5rem 1rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    width: 100%;
+}
+
+.card-content {
+    position: relative;
+}
+
+.card-btn-row {
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+}

@@ -1,6 +1,6 @@
 <?php
 
-class RegisterPage
+class ProfilePage
 {
     private $urlArr;
     public $zzpForm;
@@ -12,23 +12,23 @@ class RegisterPage
 
         // Selecting the first value in the pageVars array
         if ($urlArr['pageVars'][0] == 'zzp') {
-            $this->register_zzp();
+            $this->profile_zzp();
         } else if ($urlArr['pageVars'][0] == 'bedrijf') {
-            $this->register_bedrijf();
+            $this->profile_bedrijf();
         } else {
             header("Refresh: 2; url=" . $urlArr['baseUrl'] . "home");
         }
 
     }
 
-    private function register_zzp()
+    private function profile_zzp()
     {
-        $this->zzpForm = ApplicationController::get_part_string('register/zzp', array('baseUrl' => $this->urlArr['baseUrl']));
+        $this->zzpForm = ApplicationController::get_part_string('profile/zzp', array('baseUrl' => $this->urlArr['baseUrl']));
 
     }
 
-    private function register_bedrijf()
+    private function profile_bedrijf()
     {
-        $this->bedrijfForm = ApplicationController::get_part_string('register/bedrijf', array('baseUrl' => $this->urlArr['baseUrl']));
+        $this->bedrijfForm = ApplicationController::get_part_string('profile/bedrijf', array('baseUrl' => $this->urlArr['baseUrl']));
     }
 }

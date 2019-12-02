@@ -72,5 +72,4 @@ class UserModel
         else return $this->infoArr;
     }
 
-
 }

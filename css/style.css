@@ -4,11 +4,16 @@ body {
 }
 
 h6 {
-    font-size: .8em;
+    font-size: .8rem;
 }
 
 hr {
     background-color: #cacaca;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .invis {
@@ -38,213 +43,22 @@ hr {
     margin-top: 0;
 }
 
-/*CONTENT*/
-
-.content {
-    position: relative;
-    min-height: calc(100vh - 102px);
-}
-
-section.content {
-    position: relative;
-}
-
-/*PARTICLES*/
-
-canvas {
-    display: block;
-    vertical-align: bottom;
-}
-
-#particles-js {
+.error-message {
     width: 100%;
-    height: 100%;
-    position: absolute;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-}
-
-/*HOME*/
-
-@media (min-width: 576px) {
-    .home {
-        max-width: 700px;
-    }
-
-    .home-head {
-        font-size: 3em;
-        text-align: center;
-    }
-
-    .home-text {
-        font-size: 1em;
-        text-align: center;
-    }
-
-    .home-detail {
-        font-size: .8em;
-        text-align: center;
-    }
-}
-
-@media (max-width: 576px) {
-    .home {
-        padding-right: 30px;
-        padding-left: 30px;
-    }
-
-    .home-head {
-        font-size: 2.5em;
-        text-align: center;
-    }
-
-    .home-text {
-        font-size: .8em;
-        text-align: center;
-    }
-
-    .home-detail {
-        font-size: .7em;
-        text-align: center;
-    }
-}
-
-.home-form {
-    margin-top: 25px;
-}
-
-/*LOGIN*/
-
-@media (min-width: 576px) {
-    .login {
-        max-width: 500px;
-    }
-
-    .login-head {
-        font-size: 3em;
-        text-align: center;
-    }
-
-    .login-detail {
-        font-size: .8em;
-    }
-
-    .login-btn {
-        width: 250px;
-    }
-
-    .login-reg {
-        text-align: center;
-        font-size: .7em;
-    }
-}
-
-@media (max-width: 576px) {
-    .login {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    .login-head {
-        font-size: 2.5em;
-        text-align: center;
-    }
-
-    .login form label {
-        font-size: .8em;
-    }
-
-    .login-detail {
-        font-size: .7em;
-    }
-
-    .login-btn {
-        width: 150px;
-    }
-
-    .login-reg {
-        text-align: center;
-        font-size: .6em;
-    }
-}
-
-.login-btn-row {
-    text-align: center;
-    margin-bottom: .6rem;
-}
-
-/*REGISTER*/
-
-@media (min-width: 576px) {
-    .register {
-        max-width: 700px;
-    }
-
-    .register-head {
-        font-size: 3em;
-        text-align: center;
-    }
-
-    .register-detail {
-        font-size: .8em;
-    }
-
-    .reg-btn {
-        width: 350px;
-    }
-
-    .reg-bedr {
-        text-align: center;
-        font-size: .7em;
-    }
-}
-
-@media (max-width: 576px) {
-    .register {
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-
-    .register-head {
-        font-size: 2.5em;
-        text-align: center;
-    }
-
-    .register form label {
-        font-size: .8em;
-    }
-
-    .register-detail {
-        font-size: .7em;
-    }
-
-    .reg-btn {
-        width: 150px;
-    }
-
-    .reg-bedr {
-        text-align: center;
-        font-size: .6em;
-    }
-}
-
-.reg-btn-row {
-    text-align: center;
-    margin-bottom: .6rem;
-}
-
-/*DASHBOARD*/
-
-.dash {
-    padding-top: 15px;
-}
-
-.dashboard-head {
-    font-size: 3em;
+    color: red;
+    font-family: Gotham, sans-serif;
     text-align: center;
 }
 
-.card-dashboard {
-    height: 160px;
+.error-main {
+    font-size: 4rem;
+}
+
+.error-detail {
+    font-size: 2rem;
+}
+
+.input-group input {
+    height: 2.5rem;
+    padding: .75rem;
 }

@@ -6,12 +6,12 @@
     <form method="post" action="<?= $this->urlArr['baseUrl'] ?>task">
         <div class="form-row home-form">
             <!--Wat invoer-->
-            <div class="col-7">
-                <input type="text" class="form-control normal" id="zoek" placeholder="Zoek opdrachten:">
+            <div class="col-8 col-sm-7">
+                <input type="text" class="form-control mb-2 normal" id="zoek" placeholder="Zoek opdrachten:">
             </div>
             <!--Plaats invoer-->
-            <div class="col-3">
-                <select class="custom-select mr-sm-2 normal" id="locatie">
+            <div class="col-4 col-sm-3">
+                <select class="custom-select mb-2 mr-sm-2 normal" id="locatie">
                     <option selected disabled>Waar:</option>
                     <option value="1">Drenthe</option>
                     <option value="2">Flevoland</option>
@@ -28,8 +28,8 @@
                 </select>
             </div>
             <!--Zoek button-->
-            <div class="col-2">
-                <button type="submit" class="btn btn-primary mb-2 normal">Zoeken</button>
+            <div class="col-12 col-sm-2">
+                <button type="submit" class="btn btn-block btn-primary mb-2 normal">Zoeken</button>
             </div>
         </div>
     </form>

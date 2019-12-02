@@ -1,0 +1,63 @@
+/*REGISTER*/
+
+@media (min-width: 576px) {
+    .register {
+        max-width: 700px;
+    }
+
+    .register-head {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .register-detail {
+        font-size: .8rem;
+    }
+
+    .reg-btn {
+        width: 350px;
+    }
+
+    .reg-bedr {
+        text-align: center;
+        font-size: .7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .register {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .register-head {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .register form label {
+        font-size: .8rem;
+    }
+
+    .register-detail {
+        font-size: .7rem;
+    }
+
+    .reg-btn {
+        width: 150px;
+    }
+
+    .reg-bedr {
+        text-align: center;
+        font-size: .6rem;
+    }
+
+    .form-group {
+        margin-bottom: .5rem !important;
+    }
+}
+
+.reg-btn-row {
+    text-align: center;
+    margin-bottom: .6rem;
+}

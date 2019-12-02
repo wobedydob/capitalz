@@ -1,0 +1,48 @@
+/*task*/
+
+@media (min-width: 576px) {
+    .task {
+        max-width: 700px;
+    }
+
+    .task-head-text {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .task-text {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .task-detail {
+        font-size: .8rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .task {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+
+    .task-head-text {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .task-text {
+        font-size: .8rem;
+        text-align: center;
+    }
+
+    .task-detail {
+        font-size: .7rem;
+        text-align: center;
+    }
+}
+
+.task-form {
+    margin-top: 25px;
+}
