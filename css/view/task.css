@@ -2,6 +2,14 @@
 
 @media (min-width: 576px) {
     .task {
+        max-width: 1400px;
+    }
+
+    .task-title {
+        font-size: 1.6rem
+    }
+
+    .task-head {
         max-width: 700px;
     }
 
@@ -21,10 +29,14 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
     .task {
         padding-right: 30px;
         padding-left: 30px;
+    }
+
+    .task-title {
+        font-size: 1.4rem;
     }
 
     .task-head-text {
@@ -43,6 +55,63 @@
     }
 }
 
-.task-form {
-    margin-top: 25px;
+.task-content {
+    margin-top: -8px;
+}
+
+.task-title {
+    margin-bottom: 0;
+}
+
+.task-card {
+    margin: 0;
+}
+
+.task-card-text {
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    height: 47px;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.task-card-row {
+    height: 100%;
+}
+
+.task-img {
+    position: absolute;
+    height: 100%;
+    filter: blur(.05em);
+}
+
+.task-footer {
+    padding: .5rem .5rem .5rem 1rem;
+}
+
+.task-card-body {
+    padding: 1rem 1rem;
+}
+
+.task-btn {
+    padding: .1rem .3rem .1rem .3rem;
+    font-size: .8rem;
+}
+
+.task-text-blue {
+    color: #007bff;
+}
+
+.task-filter-head {
+    font-size: 0.9rem;
+}
+
+.slider-text {
+    font-size: .7rem;
 }

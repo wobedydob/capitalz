@@ -1,10 +1,10 @@
 /*DASHBOARD*/
 
-.dash {
-    padding-top: 15px;
-}
-
 @media (min-width: 576px) {
+
+    .dash {
+        max-width: 1300px;
+    }
 
     .dashboard-head {
         font-size: 3rem;
@@ -44,7 +44,7 @@
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
 
     .dashboard-head {
         font-size: 2rem;

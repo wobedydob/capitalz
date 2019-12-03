@@ -1,9 +1,9 @@
-<div class="container-fluid task center invis">
+<div class="container-fluid task">
     <div class="container task-head">
         <h1 class="task-head-text normal">Opdrachten</h1>
         <hr>
         <form method="post" action="<?= $this->urlArr['baseUrl'] ?>task">
-            <div class="form-row home-form">
+            <div class="form-row task-form">
                 <!--Wat invoer-->
                 <div class="col-8 col-sm-7">
                     <input type="text" class="form-control mb-2 normal" id="zoek" placeholder="Zoek opdrachten:">
@@ -33,11 +33,279 @@
             </div>
         </form>
     </div>
-
-    <div class="task-body">
+    <div class="task-content">
         <hr>
-        <div class="task-card">
-
+        <div class="row">
+            <!--Filter balk-->
+            <div class="col-12 col-lg-3">
+                <div class="task-filter-row">
+                    <div class="task-filter-card h-100 card mb-3">
+                        <div class="card-header">
+                            <h3 class="task-title card-title">Filter:</h3>
+                        </div>
+                        <div class="task-filter-body card-body">
+                            <div class="row">
+                                <div class="col-12 col-sm-4 col-lg-12">
+                                    <label class="task-filter-head" for="tags"><b>Tags:</b></label>
+                                    <select class="custom-select mb-2 mr-sm-2 normal" id="tags">
+                                        <option selected disabled>Kies Tags:</option>
+                                        <option value="1">Web Development</option>
+                                        <option value="2">Schoonmaak</option>
+                                        <option value="3">Administratie</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-4 col-lg-12">
+                                    <label class="task-filter-head" for="locatie"><b>Locatie:</b></label>
+                                    <select class="custom-select mb-2 mr-sm-2 normal" id="locatie">
+                                        <option selected disabled>Kies Locaties:</option>
+                                        <option value="1">Drenthe</option>
+                                        <option value="2">Flevoland</option>
+                                        <option value="3">Friesland</option>
+                                        <option value="4">Gelderland</option>
+                                        <option value="5">Groningen</option>
+                                        <option value="6">Limburg</option>
+                                        <option value="7">Noord-Brabant</option>
+                                        <option value="8">Noord-Holland</option>
+                                        <option value="9">Overrijsel</option>
+                                        <option value="10">Utrecht</option>
+                                        <option value="11">Zeeland</option>
+                                        <option value="12">Zuid-Holland</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 col-sm-4 col-lg-12">
+                                    <label class="task-filter-head" for="bedrijf"><b>Bedrijf:</b></label>
+                                    <select class="custom-select mb-2 mr-sm-2 normal" id="bedrijf">
+                                        <option selected disabled>Kies Bedrijven:</option>
+                                        <option value="1">Bakker Bart</option>
+                                        <option value="2">Dolfijn.nl</option>
+                                        <option value="3">TipTop.org</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-6 col-lg-12">
+                                    <label class="task-filter-head" for="UurSlider"><b>Aantal Uren:</b></label>
+                                    <input type="range" class="custom-range" min="0" max="500" step="25" id="UurSlider">
+                                    <div class="row no-gutters slider-text">
+                                        <div class="col-4"><h6 class="text-left">0 uur</h6></div>
+                                        <div class="col-4"><h6 class="text-center"><b><span id="UurOutput"></span> uur</b></h6></div>
+                                        <div class="col-4"><h6 class="text-right">500 uur</h6></div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-12">
+                                    <label class="task-filter-head" for="SalSlider"><b>Uur Salaris:</b></label>
+                                    <input type="range" class="custom-range" min="5" max="20" step="0.5" id="SalSlider">
+                                    <div class="row no-gutters slider-text">
+                                        <div class="col-4"><h6 class="text-left">€5/uur</h6></div>
+                                        <div class="col-4"><h6 class="text-center"><b>€<span id="SalOutput"></span>/uur</b></h6></div>
+                                        <div class="col-4"><h6 class="text-right">€20/uur</h6></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Opdracht cards-->
+            <div class="col-12 col-lg-9">
+                <div class="task-body">
+                    <!--Webdeveloper voorbeeld-->
+                    <div class="task-card h-100 card mb-3">
+                        <div class="row no-gutters task-card-row">
+                            <div class="col-md-4">
+                                <img class="task-img card-img" src="../img/task-img/coding.jpg" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-header">
+                                    <div class="row no-gutters">
+                                        <div class="col-6">
+                                            <h2 class="task-title">Website Maken</h2>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="row no-gutters">
+                                                <div class="col-6">
+                                                    <h6 class="card-text text-right"><b>Bedrijf:</b></h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h6 class="card-text task-text-blue text-right">Bakker Bart</h6>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col-6">
+                                                    <h6 class="card-text text-right"><b>KvK-Nummer:</b></h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h6 class="card-text task-text-blue text-right">42531823</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-card-body card-body">
+                                    <p class="task-card-text card-text">Wij zoeken iemand die voor ons een website kan maken. Het is een website voor onze bakkerij. Hier moeten mensen ons assortiment kunnen inzien en locaties waar onze winkels zitten.</p>
+                                </div>
+                                <div class="task-footer card-footer">
+                                    <div class="row no-gutters">
+                                        <div class="col-6 col-sm-5">
+                                            <div class="row no-gutters">
+                                                <div class="col-4">
+                                                    <h6 class="card-text mb-2"><b>Aantal uur:</b></h6>
+                                                </div>
+                                                <div class="col-8">
+                                                    <h6 class="card-text text-center mb-2">30</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-sm-5">
+                                            <div class="row no-gutters">
+                                                <div class="col-4">
+                                                    <h6 class="card-text mb-2"><b>Uur salaris:</b></h6>
+                                                </div>
+                                                <div class="col-8">
+                                                    <h6 class="card-text text-center mb-2">€14/uur</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-2">
+                                            <button type="button" class="btn btn-block btn-primary task-btn">Meld aan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Schoonmaker voorbeeld-->
+                    <div class="task-card h-100 card mb-3">
+                        <div class="row no-gutters task-card-row">
+                            <div class="col-md-4">
+                                <img class="task-img card-img" src="../img/task-img/cleaner.jpg" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-header">
+                                    <div class="row no-gutters">
+                                        <div class="col-6">
+                                            <h2 class="task-title">Schoonmaker gezocht!</h2>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="row no-gutters">
+                                                <div class="col-6">
+                                                    <h6 class="card-text text-right"><b>Bedrijf:</b></h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h6 class="card-text task-text-blue text-right">Dolfijn.nl</h6>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col-6">
+                                                    <h6 class="card-text text-right"><b>KvK-Nummer:</b></h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h6 class="card-text task-text-blue text-right">73234144</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-card-body card-body">
+                                    <p class="task-card-text card-text">Gezocht: Professionele schoonmaker die voor een bepaalde periode ons kantoor kan komen schoon maken.</p>
+                                </div>
+                                <div class="task-footer card-footer">
+                                    <div class="row no-gutters">
+                                        <div class="col-6 col-sm-5">
+                                            <div class="row no-gutters">
+                                                <div class="col-4">
+                                                    <h6 class="card-text mb-2"><b>Aantal uur:</b></h6>
+                                                </div>
+                                                <div class="col-8">
+                                                    <h6 class="card-text text-center mb-2">400</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-sm-5">
+                                            <div class="row no-gutters">
+                                                <div class="col-4">
+                                                    <h6 class="card-text mb-2"><b>Uur salaris:</b></h6>
+                                                </div>
+                                                <div class="col-8">
+                                                    <h6 class="card-text text-center mb-2">€8/uur</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-2">
+                                            <button type="button" class="btn btn-block btn-primary task-btn">Meld aan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Administratie voorbeeld-->
+                    <div class="task-card h-100 card mb-3">
+                        <div class="row no-gutters task-card-row">
+                            <div class="col-md-4">
+                                <img class="task-img card-img" src="../img/task-img/administration.jpg" alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-header">
+                                    <div class="row no-gutters">
+                                        <div class="col-6">
+                                            <h2 class="task-title">Administratie</h2>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="row no-gutters">
+                                                <div class="col-6">
+                                                    <h6 class="card-text text-right"><b>Bedrijf:</b></h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h6 class="card-text task-text-blue text-right">TipTop.org</h6>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters">
+                                                <div class="col-6">
+                                                    <h6 class="card-text text-right"><b>KvK-Nummer:</b></h6>
+                                                </div>
+                                                <div class="col-6">
+                                                    <h6 class="card-text task-text-blue text-right">97234255</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="task-card-body card-body">
+                                    <p class="task-card-text card-text">Bent u goed met papieren? En wilt u graag een goed zakcentje verdienen? Dan zoeken wij jou! Kom nu bij ons werken als administratief medewerker!</p>
+                                </div>
+                                <div class="task-footer card-footer">
+                                    <div class="row no-gutters">
+                                        <div class="col-6 col-sm-5">
+                                            <div class="row no-gutters">
+                                                <div class="col-4">
+                                                    <h6 class="card-text mb-2"><b>Aantal uur:</b></h6>
+                                                </div>
+                                                <div class="col-8">
+                                                    <h6 class="card-text text-center mb-2">200</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-sm-5">
+                                            <div class="row no-gutters">
+                                                <div class="col-4">
+                                                    <h6 class="card-text mb-2"><b>Uur salaris:</b></h6>
+                                                </div>
+                                                <div class="col-8">
+                                                    <h6 class="card-text text-center mb-2">€11/uur</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-sm-2">
+                                            <button type="button" class="btn btn-block btn-primary task-btn">Meld aan</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

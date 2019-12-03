@@ -1,20 +1,36 @@
 /*PROFILE*/
 
-.profile {
-    max-width: 720px;
+@media (min-width: 576px) {
+    .profile {
+        max-width: 720px;
+    }
+
+    .profile-head-text {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .pro-pic {
+        width: 100%;
+        border-radius: 50%;
+    }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
     .profile-head-text {
         font-size: 2rem;
         text-align: center;
     }
-}
 
-@media (min-width: 576px) {
-    .profile-head-text {
-        font-size: 3rem;
+    .pf-row {
+        display: flex;
+        justify-content: center;
+    }
+
+    .pro-pic {
+        width: 100%;
         text-align: center;
+        border-radius: 50%;
     }
 }
 
@@ -23,86 +39,31 @@
     display: inline-block;
 }
 
-@media (max-width: 576px) {
-    .pf-row {
-        display: flex;
-        justify-content: center;
-    }
-
-    .pro-pic {
-        width: 50%;
-        text-align: center;
-        border-radius: 50%;
-    }
-}
-
-@media (min-width: 576px) {
-    .pro-pic {
-        width: 100%;
-        border-radius: 50%;
-    }
-}
-
 .profile-head {
     background-color: #f9f9f9;
     border-radius: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-@media (min-width: 576px) {
-    .pro-head-body h5 {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .pro-head-body h5 {
-        font-size: 0.7rem;
-    }
-}
-
-@media (max-width: 798px) {
-    .pro-head-body h5 {
-        font-size: 1.2rem;
-    }
 }
 
 @media (min-width: 576px) {
     .pro-head-body {
-        position: absolute;
-        top: 50%;
-        left: 70%;
-        -moz-transform: translateX(-50%) translateY(-50%);
-        -webkit-transform: translateX(-50%) translateY(-50%);
-        -o-transform: translateX(-50%) translateY(-50%);
-        -ms-transform: translateX(-50%) translateY(-50%);
-        transform: translateX(-50%) translateY(-50%);
         padding: 15px;
+    }
+
+    .pro-head-body h5 {
+        font-size: 1.2rem;
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
     .pro-head-body {
         position: relative;
     }
+
+    .pro-head-body h5 {
+        font-size: 1.1rem;
+    }
 }
 
-.pro-head-body div {
-    padding: 0;
-}
-
-.pro-head-body .col-1 {
-    padding: 0;
-}
-
-.pro-head-body .col-5 {
-    padding: 0;
-}
-
-.pro-head-body .col-6 {
-    padding: 0;
-}
 
 .pro-head-text {
     color: #007bff;
