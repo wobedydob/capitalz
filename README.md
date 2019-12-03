@@ -20,5 +20,5 @@ Na de hand krijgen beide de zzp'er en het bedrijf de optie om een recentie te sc
 
 ### In opdracht van:
 
-Klant:                Willem van Ré
-Verantwoordelijke:    Sander van de Coolwijk
+- Klant:                Willem van Ré
+- Verantwoordelijke:    Sander van de Coolwijk
