@@ -3,8 +3,25 @@
     color: white;
 }
 
-[data-theme="dark"] hr {
-    background-color: #e4e4e4;
+@media (min-width: 576px) {
+    [data-theme="dark"] .home {
+        background-color: #5a6268;
+        box-shadow: 0 0 4px 4px #5a6268;
+    }
+
+    [data-theme="dark"] .login {
+        background-color: #5a6268;
+        box-shadow: 0 0 4px 4px #5a6268;
+    }
+
+    [data-theme="dark"] .register {
+        background-color: #5a6268;
+        box-shadow: 0 0 4px 4px #5a6268;
+    }
+
+    [data-theme="dark"] hr {
+        background-color: #e4e4e4;
+    }
 }
 
 [data-theme="dark"] .error-message {
@@ -67,4 +84,8 @@
 
 [data-theme="dark"] .card-icon {
     color: #fdfdfd;
+}
+
+[data-theme="dark"] .card-footer {
+    background-color: #686868;
 }

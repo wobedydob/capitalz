@@ -6,21 +6,21 @@ hamburger.addEventListener("click", function () {
     hamburger.classList.toggle("is-active");
 });
 
-//Wachtwoord oog icoon toggle
+//Wachtwoord eye icon toggle
 $(document).on('click', '.toggle-password', function () {
     $(this).toggleClass("fa-eye fa-eye-slash");
-    const input1 = $("#wachtwoord_login");
-    input1.attr('type') === 'password' ? input1.attr('type', 'text') : input1.attr('type', 'password');
+    const passIconLog = $("#wachtwoord_login");
+    passIconLog.attr('type') === 'password' ? passIconLog.attr('type', 'text') : passIconLog.attr('type', 'password');
 
-    const input2 = $("#wachtwoord_reg_zzp1");
-    input2.attr('type') === 'password' ? input2.attr('type', 'text') : input2.attr('type', 'password');
-    const input3 = $("#wachtwoord_reg_zzp2");
-    input3.attr('type') === 'password' ? input3.attr('type', 'text') : input3.attr('type', 'password');
+    const passIconRegZzp1 = $("#wachtwoord_reg_zzp1");
+    passIconRegZzp1.attr('type') === 'password' ? passIconRegZzp1.attr('type', 'text') : passIconRegZzp1.attr('type', 'password');
+    const passIconRegZzp2 = $("#wachtwoord_reg_zzp2");
+    passIconRegZzp2.attr('type') === 'password' ? passIconRegZzp2.attr('type', 'text') : passIconRegZzp2.attr('type', 'password');
 
-    const input4 = $("#wachtwoord_reg_bedrijf1");
-    input4.attr('type') === 'password' ? input4.attr('type', 'text') : input4.attr('type', 'password');
-    const input5 = $("#wachtwoord_reg_bedrijf2");
-    input5.attr('type') === 'password' ? input5.attr('type', 'text') : input5.attr('type', 'password');
+    const passIconRegBedrijf1 = $("#wachtwoord_reg_bedrijf1");
+    passIconRegBedrijf1.attr('type') === 'password' ? passIconRegBedrijf1.attr('type', 'text') : passIconRegBedrijf1.attr('type', 'password');
+    const passIconRegBedrijf2 = $("#wachtwoord_reg_bedrijf2");
+    passIconRegBedrijf2.attr('type') === 'password' ? passIconRegBedrijf2.attr('type', 'text') : passIconRegBedrijf2.attr('type', 'password');
 });
 
 //Task filter slider aantal Uren

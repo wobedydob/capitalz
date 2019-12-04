@@ -1,5 +1,9 @@
 /*DASHBOARD*/
 
+.dash {
+    padding-top: 15px;
+}
+
 @media (min-width: 576px) {
 
     .dash {

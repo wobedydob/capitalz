@@ -28,7 +28,7 @@
     }
 
     .pro-pic {
-        width: 100%;
+        width: 80%;
         text-align: center;
         border-radius: 50%;
     }
@@ -36,7 +36,7 @@
 
 .pf-row {
     padding: 15px;
-    display: inline-block;
+    max-width: 100%;
 }
 
 .profile-head {
@@ -47,6 +47,8 @@
 @media (min-width: 576px) {
     .pro-head-body {
         padding: 15px;
+        display: grid;
+        align-content: center;
     }
 
     .pro-head-body h5 {
@@ -56,7 +58,7 @@
 
 @media (max-width: 575.98px) {
     .pro-head-body {
-        position: relative;
+        display: grid;
     }
 
     .pro-head-body h5 {
