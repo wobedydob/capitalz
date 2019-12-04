@@ -23,5 +23,5 @@ Na de hand krijgen beide de zzp'er en het bedrijf de optie om een recentie te sc
 - Willem van Ré             -   Klant
 - Sander van de Coolwijk    -   Verantwoordelijke
 ```
-#<br><br><br>
+# <br><br><br>
 ###### *© 2019 Copyright: CapitalZ.net*
