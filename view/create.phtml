@@ -1,13 +1,42 @@
 <div class="container create">
-    <h1 class="login-head normal ">Taak Aanmaken</h1>
+    <h1 class="create-head">Taak Aanmaken</h1>
     <hr>
     <form class="create-form" method="post" action="">
         <div class="form-row">
             <div class="col-6">
-                <input type="text" class="form-control mb-2 normal" id="zoek" placeholder="Zoek opdrachten:" autofocus>
+                <label class="create-title" for="titel">Titel:</label>
+                <input type="text" class="form-control mb-2" id="titel" placeholder="Taak titel:" required autofocus>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+                <label class="create-title" for="tag">Tag:</label>
+                <select class="custom-select mb-2 mr-sm-2" id="tag" required>
+                    <option selected disabled>Tag:</option>
+                    <option value="1">Webdevelop</option>
+                    <option value="2">Schoonmaker</option>
+                    <option value="3">Administratie</option>
+                </select></div>
+            <div class="col-1"></div>
+            <div class="col-2">
+                <label class="create-title" for="bedrijf">Bedrijf:</label>
+                <input type="text" class="form-control mb-2" id="bedrijf" value="Bakker Bart" readonly>
+            </div>
+        </div>
+        <div class="form-row">
+            <label class="create-title" for="desc">Beschrijving:</label>
+            <textarea class="form-control mb-2" id="desc" rows="5"></textarea>
+        </div>
+        <div class="form-row">
+            <div class="col-3">
+                <label class="create-title" for="date-start">Datum Begin:</label>
+                <input type="date" class="form-control mb-2" id="date-start">
+            </div>
+            <div class="col-3">
+                <label class="create-title" for="date-end">Datum Eind:</label>
+                <input type="date" class="form-control mb-2" id="date-end">
             </div>
             <div class="col-6">
-
+                <label class="create-title" for="image">Image:</label>
             </div>
         </div>
     </form>

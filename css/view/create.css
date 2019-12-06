@@ -1,0 +1,24 @@
+/*create*/
+
+.create {
+    padding-top: 15px;
+}
+
+@media (min-width: 576px) {
+    .create {
+        max-width: 1000px;
+    }
+
+    .create-head {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .create-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+
+}

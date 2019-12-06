@@ -53,9 +53,17 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-address-book"></i></div>
                     </div>
-                    <input type="text" class="form-control normal" id="bnummer" placeholder="Bijvoorbeeld: NL-001234567-B34:">
+                    <input type="text" class="form-control normal" id="bnummer" placeholder="Bijvoorbeeld: NL-001234567-B34:" required>
                 </div>
                 <span class="normal register-detail">Voer uw btw-identificatienummer in.</span>
+            </div>
+        </div>
+        <!--Akkoord row-->
+        <div class="form-group">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="akkoord" required>
+                <label class="custom-control-label" for="akkoord">Ik ga akkoord met de voorwaarden.</label>
+                <div class="invalid-feedback">Je moet eerst akkoort gaan voor dat je verder kunt!</div>
             </div>
         </div>
         <!--Register button-->
