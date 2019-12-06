@@ -36,11 +36,16 @@
         font-size: .8rem;
         text-align: center;
     }
+
+    .filter-row {
+        visibility: hidden;
+        margin: 0;
+    }
 }
 
 @media (max-width: 575.98px) {
     .task-title {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 
     .task-head-text {
@@ -61,6 +66,14 @@
     .task-detail {
         font-size: .7rem;
         text-align: center;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .filter-row {
+        visibility: visible;
+        margin-top: 16px;
+        margin-bottom: 16px;
     }
 }
 
@@ -106,9 +119,14 @@
     padding: 1rem 1rem;
 }
 
+.task-card-row {
+    padding: 0;
+}
+
 .task-btn {
     padding: .1rem .3rem .1rem .3rem;
     font-size: .8rem;
+    height: 100%;
 }
 
 .task-text-blue {

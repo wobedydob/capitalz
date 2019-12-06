@@ -6,7 +6,6 @@
             resetTheme();
         });
 
-        // Epic gamer moment below!
         if (localStorage.getItem("darkSwitch") === "dark") {
             $("#toggle-icon").toggleClass("fa-sun");
         } else {

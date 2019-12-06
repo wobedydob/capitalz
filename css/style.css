@@ -62,3 +62,11 @@ hr {
     height: 2.5rem;
     padding: .75rem;
 }
+
+table tbody {
+    background-color: #f9f9f9;
+}
+
+table thead {
+    background-color: #ededed;
+}

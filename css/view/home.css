@@ -3,10 +3,6 @@
 @media (min-width: 576px) {
     .home {
         max-width: 700px;
-        background-color: #fdfdfd;
-        padding: 25px;
-        border-radius: 5px;
-        box-shadow: 0 0 4px 4px white;
     }
 
     .home-head {

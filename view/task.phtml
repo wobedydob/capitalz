@@ -2,8 +2,8 @@
     <div class="container task-head">
         <h1 class="task-head-text normal">Opdrachten</h1>
         <hr>
-        <form method="post" action="<?= $this->urlArr['baseUrl'] ?>task">
-            <div class="form-row task-form">
+        <form class="task-form" method="post" action="<?= $this->urlArr['baseUrl'] ?>task">
+            <div class="form-row">
                 <!--Wat invoer-->
                 <div class="col-8 col-sm-7">
                     <input type="text" class="form-control mb-2 normal" id="zoek" placeholder="Zoek opdrachten:">
@@ -39,7 +39,7 @@
             <!--Filter balk-->
             <div class="col-12 col-lg-3">
                 <div class="task-filter-row">
-                    <div class="task-filter-card h-100 card mb-3">
+                    <div class="task-filter-card h-100 card">
                         <div class="card-header">
                             <h3 class="task-title card-title">Filter:</h3>
                         </div>
@@ -107,7 +107,8 @@
                 </div>
             </div>
             <!--Opdracht cards-->
-            <div class="col-12 col-lg-9">
+            <div class="col-12 col-lg-9 task-card-row">
+                <hr class="filter-row">
                 <div class="task-body">
                     <!--Webdeveloper voorbeeld-->
                     <div class="task-card h-100 card mb-3">
@@ -132,7 +133,7 @@
                                             </div>
                                             <div class="row no-gutters">
                                                 <div class="col-6">
-                                                    <h6 class="card-text text-right"><b>KvK-Nummer:</b></h6>
+                                                    <h6 class="card-text text-right"><b>KvK-Nr:</b></h6>
                                                 </div>
                                                 <div class="col-6">
                                                     <h6 class="card-text task-text-blue text-right">42531823</h6>
@@ -148,20 +149,20 @@
                                     <div class="row no-gutters">
                                         <div class="col-6 col-sm-5">
                                             <div class="row no-gutters">
-                                                <div class="col-4">
-                                                    <h6 class="card-text mb-2"><b>Aantal uur:</b></h6>
+                                                <div class="col-6 col-sm-4">
+                                                    <h6 class="card-text"><b>Aantal uur:</b></h6>
                                                 </div>
-                                                <div class="col-8">
+                                                <div class="col-6 col-sm-8">
                                                     <h6 class="card-text text-center mb-2">30</h6>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-6 col-sm-5">
                                             <div class="row no-gutters">
-                                                <div class="col-4">
-                                                    <h6 class="card-text mb-2"><b>Uur salaris:</b></h6>
+                                                <div class="col-6 col-sm-4">
+                                                    <h6 class="card-text"><b>Uur salaris:</b></h6>
                                                 </div>
-                                                <div class="col-8">
+                                                <div class="col-6 col-sm-8">
                                                     <h6 class="card-text text-center mb-2">€14/uur</h6>
                                                 </div>
                                             </div>
@@ -184,7 +185,7 @@
                                 <div class="card-header">
                                     <div class="row no-gutters">
                                         <div class="col-6">
-                                            <h2 class="task-title">Schoonmaker gezocht!</h2>
+                                            <h2 class="task-title">Schoonmaker</h2>
                                         </div>
                                         <div class="col-6">
                                             <div class="row no-gutters">
@@ -197,7 +198,7 @@
                                             </div>
                                             <div class="row no-gutters">
                                                 <div class="col-6">
-                                                    <h6 class="card-text text-right"><b>KvK-Nummer:</b></h6>
+                                                    <h6 class="card-text text-right"><b>KvK-Nr:</b></h6>
                                                 </div>
                                                 <div class="col-6">
                                                     <h6 class="card-text task-text-blue text-right">73234144</h6>
@@ -213,20 +214,20 @@
                                     <div class="row no-gutters">
                                         <div class="col-6 col-sm-5">
                                             <div class="row no-gutters">
-                                                <div class="col-4">
-                                                    <h6 class="card-text mb-2"><b>Aantal uur:</b></h6>
+                                                <div class="col-6 col-sm-4">
+                                                    <h6 class="card-text"><b>Aantal uur:</b></h6>
                                                 </div>
-                                                <div class="col-8">
+                                                <div class="col-6 col-sm-8">
                                                     <h6 class="card-text text-center mb-2">400</h6>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-6 col-sm-5">
                                             <div class="row no-gutters">
-                                                <div class="col-4">
-                                                    <h6 class="card-text mb-2"><b>Uur salaris:</b></h6>
+                                                <div class="col-6 col-sm-4">
+                                                    <h6 class="card-text"><b>Uur salaris:</b></h6>
                                                 </div>
-                                                <div class="col-8">
+                                                <div class="col-6 col-sm-8">
                                                     <h6 class="card-text text-center mb-2">€8/uur</h6>
                                                 </div>
                                             </div>
@@ -262,7 +263,7 @@
                                             </div>
                                             <div class="row no-gutters">
                                                 <div class="col-6">
-                                                    <h6 class="card-text text-right"><b>KvK-Nummer:</b></h6>
+                                                    <h6 class="card-text text-right"><b>KvK-Nr:</b></h6>
                                                 </div>
                                                 <div class="col-6">
                                                     <h6 class="card-text task-text-blue text-right">97234255</h6>
@@ -278,20 +279,20 @@
                                     <div class="row no-gutters">
                                         <div class="col-6 col-sm-5">
                                             <div class="row no-gutters">
-                                                <div class="col-4">
-                                                    <h6 class="card-text mb-2"><b>Aantal uur:</b></h6>
+                                                <div class="col-6 col-sm-4">
+                                                    <h6 class="card-text"><b>Aantal uur:</b></h6>
                                                 </div>
-                                                <div class="col-8">
+                                                <div class="col-6 col-sm-8">
                                                     <h6 class="card-text text-center mb-2">200</h6>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-6 col-sm-5">
                                             <div class="row no-gutters">
-                                                <div class="col-4">
-                                                    <h6 class="card-text mb-2"><b>Uur salaris:</b></h6>
+                                                <div class="col-6 col-sm-4">
+                                                    <h6 class="card-text"><b>Uur salaris:</b></h6>
                                                 </div>
-                                                <div class="col-8">
+                                                <div class="col-6 col-sm-8">
                                                     <h6 class="card-text text-center mb-2">€11/uur</h6>
                                                 </div>
                                             </div>

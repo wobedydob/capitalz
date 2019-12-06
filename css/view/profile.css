@@ -1,5 +1,10 @@
 /*PROFILE*/
 
+.profile {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 @media (min-width: 576px) {
     .profile {
         max-width: 720px;
@@ -66,7 +71,20 @@
     }
 }
 
-
 .pro-head-text {
     color: #007bff;
+}
+
+.profile-loctation {
+    position: relative;
+    text-align: right;
+    height: 500px;
+    width: 100%;
+}
+
+#profile-map {
+    overflow: hidden;
+    background: none !important;
+    height: 500px;
+    width: 100%;
 }
