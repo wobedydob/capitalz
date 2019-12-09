@@ -15,10 +15,34 @@
     }
 
     .create-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+    }
+
+    .create-detail {
+        font-size: .8rem;
     }
 }
 
-@media (max-width: 575.98px) {
+@media (min-width: 768px) {
+    .create-group {
+        padding-left: 35px !important;
+    }
+}
 
+@media (max-width: 576.98px) {
+    .create-title {
+        font-size: 1.4rem;
+    }
+
+    .create-detail {
+        font-size: .7rem;
+    }
+}
+
+.create-image img {
+    height: 200px !important;
+}
+
+input[type="checkbox"][id^="image-check"] {
+    display: none;
 }

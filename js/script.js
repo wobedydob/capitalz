@@ -56,3 +56,7 @@ SalSlider.oninput = function () {
         });
     }, false);
 })();
+
+$(document).on('click', '.carousel-item', function () {
+    $(this).toggleClass("selected");
+});
