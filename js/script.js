@@ -23,7 +23,7 @@ $(document).on('click', '.toggle-password', function () {
     passIconRegBedrijf2.attr('type') === 'password' ? passIconRegBedrijf2.attr('type', 'text') : passIconRegBedrijf2.attr('type', 'password');
 });
 
-//Task filter slider aantal Uren
+//TaskPage filter slider aantal Uren
 const UurSlider = document.getElementById("UurSlider");
 const UurOutput = document.getElementById("UurOutput");
 UurOutput.innerHTML = UurSlider.value;
@@ -31,7 +31,7 @@ UurSlider.oninput = function () {
     UurOutput.innerHTML = this.value;
 };
 
-//Task filter slider Salaris
+//TaskPage filter slider Salaris
 const SalSlider = document.getElementById("SalSlider");
 const SalOutput = document.getElementById("SalOutput");
 SalOutput.innerHTML = SalSlider.value;
