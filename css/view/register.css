@@ -3,6 +3,14 @@
 .register {
     padding-top: 1rem;
     padding-bottom: 1rem;
+    position: relative;
+    top: auto;
+    left: auto;
+    -moz-transform: translateX(0) translateY(0);
+    -webkit-transform: translateX(0) translateY(0);
+    -o-transform: translateX(0) translateY(0);
+    -ms-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
 }
 
 @media (min-width: 576px) {
@@ -49,7 +57,7 @@
     }
 
     .reg-btn {
-        width: 150px;
+        width: 250px;
     }
 
     .reg-bedr {

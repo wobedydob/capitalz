@@ -119,8 +119,8 @@
     padding: 1rem 1rem;
 }
 
-.tasklist-card-row {
-    padding: 0;
+.tasklist-body-row {
+    padding: 0 .5rem;
 }
 
 .tasklist-btn {

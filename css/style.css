@@ -30,6 +30,7 @@ h1, h2, h3, h4, h5, h6, p, input, label, select, button, canvas {
     transform: translateX(-50%) translateY(-50%);
 }
 
+
 .input-group-append, .input-group-prepend {
     pointer-events: all;
 }
@@ -61,55 +62,6 @@ h1, h2, h3, h4, h5, h6, p, input, label, select, button, canvas {
 .input-group input {
     height: 2.5rem;
     padding: .75rem;
-}
-
-.carousel-item img {
-    border-radius: 0.25rem !important;
-}
-
-.carousel-item input {
-    margin: 0;
-    padding: 0;
-}
-
-.carousel-item label {
-    margin: 0;
-    padding: 0;
-}
-
-.carousel-check {
-    visibility: hidden;
-    pointer-events: none;
-    color: #28a745 !important;
-    opacity: .8;
-}
-
-.carousel-item:hover ~ .carousel-check {
-    visibility: visible;
-}
-
-.carousel-item:hover ~ .carousel-item img {
-    border: #28a745 solid 2px;
-}
-
-.carousel-indicators {
-    margin-bottom: .5rem;
-}
-
-.carousel-indicators li {
-    height: 12px;
-    width: 12px;
-    border-radius: 50%;
-}
-
-.carousel-control-prev-icon {
-    transform: rotate(180deg) scale(1.5);
-    background: url("../img/svg/chevron.svg");
-}
-
-.carousel-control-next-icon {
-    transform: scale(1.5);
-    background: url("../img/svg/chevron.svg");
 }
 
 table tbody {

@@ -3,5 +3,4 @@
 .content {
     position: relative;
     min-height: calc(100vh - 102px);
-    transform: scale(.9);
 }
