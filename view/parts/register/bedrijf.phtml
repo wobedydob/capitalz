@@ -1,26 +1,26 @@
 <div id="particles-js"></div>
 <div class="container register center">
-    <h1 class="register-head normal">Registreren Bedrijf</h1>
+    <h1 class="register-head">Registreren Bedrijf</h1>
     <hr>
-    <form class="register-bedrijf-form" method="post" action="">
+    <form class="register-bedrijf-form" action="" method="POST">
         <!--Email row-->
         <div class="form-row">
             <div class="form-group col-12">
-                <label class="normal" for="email">E-mail:</label><span class="required">*</span>
-                <div class="normal input-group">
+                <label for="email_reg_bedrijf">E-mail:</label><span class="required">*</span>
+                <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-at"></i></div>
                     </div>
-                    <input type="email" class="form-control" id="email" placeholder="E-mail" required autofocus>
+                    <input type="email" class="form-control" id="email_reg_bedrijf" placeholder="E-mail" required autofocus>
                 </div>
-                <span class="normal register-detail">Voer een geldig bedrijfsemail in, na aanmelding wordt uw aanvraag gecontroleerd door een admin. Dit kan maximaal een dag duren, vervolgens zult u een verificatie mail ontvangen.</span>
+                <span class="register-detail">Voer een geldig bedrijfsemail in, na aanmelding wordt uw aanvraag gecontroleerd door een admin. Dit kan maximaal een dag duren, vervolgens zult u een verificatie mail ontvangen.</span>
             </div>
         </div>
         <!--Wachtwoord row-->
         <div class="form-row">
             <div class="form-group col-12 col-md-6">
-                <label class="normal" for="wachtwoord1">Wachtwoord:</label><span class="required">*</span>
-                <div class="normal input-group">
+                <label for="wachtwoord_reg_bedrijf1">Wachtwoord:</label><span class="required">*</span>
+                <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-key"></i></div>
                     </div>
@@ -29,11 +29,11 @@
                         <div class="input-group-text"><i class="fas fa-fw fa-eye toggle-password"></i></div>
                     </div>
                 </div>
-                <span class="normal register-detail">Het wachtwoord moet minstens 8 karakters lang zijn en 1 hoofdletter bevatten.</span>
+                <span class="register-detail">Het wachtwoord moet minstens 8 karakters lang zijn en 1 hoofdletter bevatten.</span>
             </div>
             <div class="form-group col-12 col-md-6">
-                <label class="normal" for="wachtwoord2">Herhaal wachtwoord:</label><span class="required">*</span>
-                <div class="normal input-group">
+                <label for="wachtwoord_reg_bedrijf2">Herhaal wachtwoord:</label><span class="required">*</span>
+                <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-key"></i></div>
                     </div>
@@ -42,35 +42,47 @@
                         <div class="input-group-text"><i class="fas fa-fw fa-eye toggle-password"></i></div>
                     </div>
                 </div>
-                <span class="normal register-detail">Herhaal het wachtwoord ter controle.</span>
+                <span class="register-detail">Herhaal het wachtwoord ter controle.</span>
             </div>
         </div>
-        <!--belasting row-->
+        <!--Belasting row-->
         <div class="form-row">
             <div class="form-group col-12 col-md-12">
-                <label class="normal" for="bnummer">KvK-nummer:</label><span class="required">*</span>
-                <div class="normal input-group">
+                <label for="bnummer">KvK-nummer:</label><span class="required">*</span>
+                <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-address-book"></i></div>
                     </div>
-                    <input type="text" class="form-control normal" id="bnummer" placeholder="Bijvoorbeeld: 12345678:">
+                    <input type="number" class="form-control" id="bnummer" placeholder="Bijvoorbeeld: 12345678:" maxlength="8">
                 </div>
-                <span class="normal register-detail">Voer uw KvK-nummer in.</span>
+                <span class="register-detail">Voer uw KvK-nummer in.</span>
             </div>
         </div>
         <!--Akkoord row-->
-        <div class="form-group">
-            <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="akkoord" required>
-                <label class="custom-control-label" for="akkoord">Ik ga akkoord met de voorwaarden.</label>
-                <div class="invalid-feedback">Je moet eerst akkoort gaan voor dat je verder kunt!</div>
+        <div class="form-row">
+            <div class="form-group col-12">
+                <div class="row no-gutters">
+                    <!--Terms & Conditions-->
+                    <div class="terms col-12 col-sm-6">
+                        <div class="custom-control custom-checkbox mb-2">
+                            <input type="checkbox" class="custom-control-input" id="akkoord" required>
+                            <label class="custom-control-label" for="akkoord">Ik ga akkoord met de voorwaarden.</label>
+                            <div class="invalid-feedback">Je moet eerst akkoord gaan voor dat je verder kunt!</div>
+                        </div>
+                    </div>
+                    <!--reCAPTCHA-->
+                    <div class="captcha col-12 col-sm-6">
+                        <div class="g-recaptcha" data-sitekey="6LcB58YUAAAAAPegXRs_NuncFTfvfs-gPDiDyunC"></div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!--Register button-->
         <hr class="hr-bottom">
+        <!--Register button-->
         <div class="reg-btn-row">
-            <button type="submit" class="btn reg-btn btn-primary normal ">Registreer</button>
+            <button type="submit" class="btn reg-btn btn-primary">Registreer</button>
         </div>
-        <h6 class="normal reg-bedr">Of bent u zzp'er? Klik dan <a href="<?= $vars['baseUrl'] ?>register/zzp">hier</a>.</h6>
+        <!--Detail text-->
+        <h6 class="reg-bedr">Of bent u zzp'er? Klik dan <a href="<?= $vars['baseUrl'] ?>register/zzp">hier</a>.</h6>
     </form>
 </div>

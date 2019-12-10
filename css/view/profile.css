@@ -1,8 +1,8 @@
 /*PROFILE*/
 
 .profile {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 @media (min-width: 576px) {

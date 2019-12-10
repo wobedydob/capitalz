@@ -11,17 +11,12 @@ hr {
     background-color: #cacaca;
 }
 
-.row {
-    margin-left: 0;
-    margin-right: 0;
+h1, h2, h3, h4, h5, h6, p, input, label, select, button, canvas {
+    pointer-events: all !important;
 }
 
-.invis {
+#particles-js > * {
     pointer-events: none;
-}
-
-.normal {
-    pointer-events: auto;
 }
 
 .center {
@@ -35,8 +30,13 @@ hr {
     transform: translateX(-50%) translateY(-50%);
 }
 
+.input-group-append, .input-group-prepend {
+    pointer-events: all;
+}
+
 .required {
     color: red;
+    pointer-events: all;
 }
 
 .hr-bottom {
@@ -118,4 +118,22 @@ table tbody {
 
 table thead {
     background-color: #ededed;
+}
+
+#load {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background: url('../img/gif/loading.gif') center no-repeat white;
+    background-size: 200px;
+}
+
+#load-text {
+    display: block;
+    text-align: center;
+    color: black;
+    margin-top: 63vh;
 }

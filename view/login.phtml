@@ -1,13 +1,13 @@
 <div id="particles-js"></div>
 <div class="container login center">
-    <h1 class="login-head normal ">Login Zzp'er</h1>
+    <h1 class="login-head ">Login</h1>
     <hr>
     <form class="login-form" method="post" action="">
         <!--Email row-->
         <div class="form-row">
             <div class="form-group col-12">
-                <label class="normal" for="email">E-mail:</label>
-                <div class="normal input-group">
+                <label for="email">E-mail:</label>
+                <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-at"></i></div>
                     </div>
@@ -18,8 +18,8 @@
         <!--Wachtwoord row-->
         <div class="form-row">
             <div class="form-group col-12">
-                <label class="normal" for="wachtwoord">Wachtwoord:</label>
-                <div class="normal input-group">
+                <label for="wachtwoord">Wachtwoord:</label>
+                <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-key"></i></div>
                     </div>
@@ -28,14 +28,21 @@
                         <div class="input-group-text"><i class="fas fa-fw fa-eye toggle-password"></i></div>
                     </div>
                 </div>
-                <span class="normal login-detail">Wachtwoord vergeten? Klik <a href="">hier</a>.</span>
+                <span class="login-detail">Wachtwoord vergeten? Klik <a href="">hier</a>.</span>
+            </div>
+        </div>
+        <!--Onthoud row-->
+        <div class="form-group">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="onthoud">
+                <label class="custom-control-label" for="onthoud">Onthoud mijn gegevens.</label>
             </div>
         </div>
         <!--Login button-->
         <hr class="hr-bottom">
         <div class="login-btn-row">
-            <button type="submit" class="btn login-btn btn-primary normal ">Log in</button>
+            <button type="submit" class="btn login-btn btn-primary ">Log in</button>
         </div>
-        <h6 class="normal login-reg">Heeft u nog geen account? Klik dan <a href="<?= $this->urlArr['baseUrl'] ?>register/zzp">hier</a>.</h6>
+        <h6 class="login-reg">Heeft u nog geen account? Klik dan <a href="<?= $this->urlArr['baseUrl'] ?>register/zzp">hier</a>.</h6>
     </form>
 </div>

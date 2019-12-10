@@ -1,7 +1,7 @@
 /*create*/
 
 .create {
-    padding-top: 15px;
+    padding-top: 1rem;
 }
 
 @media (min-width: 576px) {
@@ -37,10 +37,22 @@
     .create-detail {
         font-size: .7rem;
     }
+
+    .create-image img {
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .create-image img {
+        height: 300px !important;
+    }
 }
 
 .create-image img {
-    height: 200px !important;
+    filter: blur(.05em);
+    height: 200px;
+    width: 100%;
 }
 
 input[type="checkbox"][id^="image-check"] {

@@ -6,7 +6,7 @@
             <div class="form-group col-12 col-md-6">
                 <label class="create-title" for="titel">Titel:</label>
                 <input type="text" class="form-control" id="titel" placeholder="Taak titel:" required autofocus maxlength="20">
-                <span class="normal create-detail">Een korte maar duidelijke titel voor de opdracht.</span>
+                <span class="create-detail">Een korte maar duidelijke titel voor de opdracht.</span>
             </div>
             <div class="form-group create-group col-6 col-md-3">
                 <label class="create-title" for="tag">Tag:</label>
@@ -49,7 +49,7 @@
                             </div>
                             <input type="date" class="form-control" value="<?php echo date('Y-m-d'); ?>" id="date-start">
                         </div>
-                        <span class="normal create-detail">Begin datum van opdracht</span>
+                        <span class="create-detail">Begin datum van opdracht</span>
                     </div>
                     <div class="form-group col-12 col-sm-6">
                         <label class="create-title" for="date-end">Datum Eind:</label>
@@ -59,7 +59,7 @@
                             </div>
                             <input type="date" class="form-control" value="<?php echo date('Y-m-d', strtotime(' + 7 days')); ?>" id="date-end">
                         </div>
-                        <span class="normal create-detail">Eind datum van opdracht.</span>
+                        <span class="create-detail">Eind datum van opdracht.</span>
                     </div>
                 </div>
                 <div class="form-row">
@@ -71,7 +71,7 @@
                             </div>
                             <input type="number" class="form-control" id="aantal-uur" max="500" value="0">
                         </div>
-                        <span class="normal create-detail">Maximaal 500 uur</span>
+                        <span class="create-detail">Maximaal 500 uur</span>
                     </div>
                     <div class="form-group col-12 col-sm-6">
                         <label class="create-title" for="sal-uur">Uur Salaris:</label>
@@ -81,7 +81,7 @@
                             </div>
                             <input type="number" class="form-control" id="sal-uur" min="5" max="20" value="5">
                         </div>
-                        <span class="normal create-detail">Tussen de €5 en €20 per uur.</span>
+                        <span class="create-detail">Tussen de €5 en €20 per uur.</span>
                     </div>
                 </div>
             </div>
@@ -98,8 +98,7 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <input type="checkbox" id="image-check">
-                            <label for="image-check"><img src="../img/task-img/administration.jpg" class="d-block w-100" alt="img1"></label>
+                            <img src="../img/task-img/administration.jpg" class="d-block w-100" alt="img1">
                         </div>
                         <div class="carousel-item">
                             <img src="../img/task-img/cleaner.jpg" class="d-block w-100" alt="img2">
@@ -116,7 +115,6 @@
                         <div class="carousel-item">
                             <img src="../img/task-img/school.jpg" class="d-block w-100" alt="img6">
                         </div>
-
                         <div class="carousel-check center">
                             <i class="fas fa-5x fa-check"></i>
                         </div>

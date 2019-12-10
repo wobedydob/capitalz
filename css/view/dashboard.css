@@ -1,7 +1,7 @@
 /*DASHBOARD*/
 
 .dash {
-    padding-top: 15px;
+    padding-top: 1rem;
 }
 
 @media (min-width: 576px) {

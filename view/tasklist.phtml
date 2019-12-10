@@ -1,16 +1,16 @@
 <div class="container-fluid tasklist">
     <div class="container tasklist-head">
-        <h1 class="tasklist-head-text normal">Opdrachten</h1>
+        <h1 class="tasklist-head-text">Opdrachten</h1>
         <hr>
         <form class="tasklist-form" method="post" action="<?= $this->urlArr['baseUrl'] ?>tasklist">
             <div class="form-row">
                 <!--Wat invoer-->
                 <div class="col-8 col-sm-7">
-                    <input type="text" class="form-control mb-2 normal" id="zoek" placeholder="Zoek opdrachten:">
+                    <input type="text" class="form-control mb-2" id="zoek" placeholder="Zoek opdrachten:">
                 </div>
                 <!--Plaats invoer-->
                 <div class="col-4 col-sm-3">
-                    <select class="custom-select mb-2 normal" id="locatie">
+                    <select class="custom-select mb-2" id="locatie">
                         <option selected disabled>Waar:</option>
                         <option value="1">Drenthe</option>
                         <option value="2">Flevoland</option>
@@ -28,7 +28,7 @@
                 </div>
                 <!--Zoek button-->
                 <div class="col-12 col-sm-2">
-                    <button type="submit" class="btn btn-block btn-primary mb-2 normal">Zoeken</button>
+                    <button type="submit" class="btn btn-block btn-primary mb-2">Zoeken</button>
                 </div>
             </div>
         </form>
@@ -47,7 +47,7 @@
                             <div class="row">
                                 <div class="col-12 col-sm-4 col-lg-12">
                                     <label class="tasklist-filter-head" for="tags"><b>Tags:</b></label>
-                                    <select class="custom-select mb-2 normal" id="tags">
+                                    <select class="custom-select mb-2" id="tags">
                                         <option selected disabled>Kies Tags:</option>
                                         <option value="1">Web Development</option>
                                         <option value="2">Schoonmaak</option>
@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="col-12 col-sm-4 col-lg-12">
                                     <label class="tasklist-filter-head" for="locatie"><b>Locatie:</b></label>
-                                    <select class="custom-select mb-2 normal" id="locatie">
+                                    <select class="custom-select mb-2" id="locatie">
                                         <option selected disabled>Kies Locaties:</option>
                                         <option value="1">Drenthe</option>
                                         <option value="2">Flevoland</option>
@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="col-12 col-sm-4 col-lg-12">
                                     <label class="tasklist-filter-head" for="bedrijf"><b>Bedrijf:</b></label>
-                                    <select class="custom-select mb-2 normal" id="bedrijf">
+                                    <select class="custom-select mb-2" id="bedrijf">
                                         <option selected disabled>Kies Bedrijven:</option>
                                         <option value="1">Bakker Bart</option>
                                         <option value="2">Dolfijn.nl</option>
