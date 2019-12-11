@@ -26,8 +26,8 @@ $(document).on('click', '.toggle-password', function () {
 
 //TaskPage filter slider aantal Uren
 if (document.getElementById("UurSlider") !== null) {
-    let UurSlider = document.getElementById("UurSlider");
-    let UurOutput = document.getElementById("UurOutput");
+    const UurSlider = document.getElementById("UurSlider");
+    const UurOutput = document.getElementById("UurOutput");
     UurOutput.innerHTML = UurSlider.value;
     UurSlider.oninput = function () {
         UurOutput.innerHTML = this.value;
@@ -43,23 +43,6 @@ if (document.getElementById("SalSlider") !== null) {
         SalOutput.innerHTML = this.value;
     };
 }
-
-//Terms of Service
-(function () {
-    'use strict';
-    window.addEventListener('load', function () {
-        const forms = document.getElementsByClassName('needs-validation');
-        Array.prototype.filter.call(forms, function (form) {
-            form.addEventListener('submit', function (event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        });
-    }, false);
-})();
 
 //Carousel select
 $(document).on('click', '.carousel-item', function () {

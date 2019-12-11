@@ -11,7 +11,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-at"></i></div>
                     </div>
-                    <input type="email" class="form-control" id="email_reg_bedrijf" placeholder="E-mail" required autofocus>
+                    <input type="email" class="form-control" id="email_reg_bedrijf" name="email_reg_bedrijf" placeholder="E-mail" required autofocus>
                 </div>
                 <span class="register-detail">Voer een geldig bedrijfsemail in, na aanmelding wordt uw aanvraag gecontroleerd door een admin. Dit kan maximaal een dag duren, vervolgens zult u een verificatie mail ontvangen.</span>
             </div>
@@ -24,7 +24,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-key"></i></div>
                     </div>
-                    <input type="password" class="form-control" id="wachtwoord_reg_bedrijf1" placeholder="Wachtwoord" minlength="8" required>
+                    <input type="password" class="form-control" id="wachtwoord_reg_bedrijf1" name="wachtwoord_reg_bedrijf1" placeholder="Wachtwoord" minlength="8" required>
                     <div class="input-group-append">
                         <div class="input-group-text"><i class="fas fa-fw fa-eye toggle-password"></i></div>
                     </div>
@@ -37,7 +37,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-key"></i></div>
                     </div>
-                    <input type="password" class="form-control" id="wachtwoord_reg_bedrijf2" placeholder="Wachtwoord" minlength="8" required>
+                    <input type="password" class="form-control" id="wachtwoord_reg_bedrijf2" name="wachtwoord_reg_bedrijf2" placeholder="Wachtwoord" minlength="8" required>
                     <div class="input-group-append">
                         <div class="input-group-text"><i class="fas fa-fw fa-eye toggle-password"></i></div>
                     </div>
@@ -48,12 +48,12 @@
         <!--Belasting row-->
         <div class="form-row">
             <div class="form-group col-12 col-md-12">
-                <label for="bnummer">KvK-nummer:</label><span class="required">*</span>
+                <label for="kvk_nummer">KvK-nummer:</label><span class="required">*</span>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-address-book"></i></div>
                     </div>
-                    <input type="number" class="form-control" id="bnummer" placeholder="Bijvoorbeeld: 12345678:" maxlength="8">
+                    <input type="number" class="form-control" id="kvk_nummer" name="kvk_nummer" placeholder="Bijvoorbeeld: 12345678:" maxlength="8">
                 </div>
                 <span class="register-detail">Voer uw KvK-nummer in.</span>
             </div>
@@ -65,9 +65,8 @@
                     <!--Terms & Conditions-->
                     <div class="terms col-12 col-sm-6">
                         <div class="custom-control custom-checkbox mb-2">
-                            <input type="checkbox" class="custom-control-input" id="akkoord" required>
-                            <label class="custom-control-label" for="akkoord">Ik ga akkoord met de voorwaarden.</label>
-                            <div class="invalid-feedback">Je moet eerst akkoord gaan voor dat je verder kunt!</div>
+                            <input type="checkbox" class="custom-control-input" id="akkoord_bedrijf" required>
+                            <label class="custom-control-label" for="akkoord_bedrijf">Ik ga akkoord met de voorwaarden.</label>
                         </div>
                     </div>
                     <!--reCAPTCHA-->
