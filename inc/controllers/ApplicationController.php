@@ -77,4 +77,25 @@ class ApplicationController extends ApplicationModel
 
         return $return;
     }
+
+    public static function sanitize($raw_data)
+    {
+        $data = htmlspecialchars($raw_data);
+        $data = self::escape($data);
+        return $data;
+    }
+
+    public static function escape($value)
+    {
+        $return = '';
+        for ($i = 0; $i < strlen($value); ++$i) {
+            $char = $value[$i];
+            $ord = ord($char);
+            if ($char !== "'" && $char !== "\"" && $char !== '\\' && $ord >= 32 && $ord <= 126)
+                $return .= $char;
+            else
+                $return .= '\\x' . dechex($ord);
+        }
+        return $return;
+    }
 }

@@ -17,10 +17,8 @@ class Database
     {
         $this->host = 'localhost';
         $this->dbName = 'capitalz_db';
-        $this->user = 'root';
-        $this->pass = '';
-
-        define('AES', 'GRoAQlppK0kDOcyxd8ZQb81cOn6h6jMg');
+        $this->user = 'adminZ';
+        $this->pass = 'login';
 
         //dsn for mysql
         $dsn = "mysql:host=" . $this->host . ";dbname=" . $this->dbName;
@@ -119,8 +117,8 @@ class Database
     public function queryError()
     {
         $this->qError = $this->dbh->errorInfo();
-        if (!is_null($qError[2])) {
-            echo $qError[2];
+        if (!is_null($this->qError[2])) {
+            echo $this->qError[2];
         }
     }
 
