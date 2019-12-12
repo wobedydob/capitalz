@@ -39,7 +39,7 @@ class RegisterPage
 
                 $db->execute();
                 var_dump($db->resultset());
-                exit;
+
 
                 if (mysqli_num_rows($result) > 0) {
                     header("refresh:2; url=./index.php?content=register");
