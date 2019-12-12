@@ -1,20 +1,20 @@
 <div class="container-fluid dash">
-    <h1 class="dashboard-head normal">Bedrijf Dashboard</h1>
+    <h1 class="dashboard-head">Bedrijf Dashboard</h1>
     <hr>
-    <div class="card-row">
+    <div class="card-deck-row">
         <div class="card card-dashboard">
-            <h5 class="card-header">Profiel</h5>
+            <h5 class="card-header">Bedrijf</h5>
             <div class="card-body">
-                <div class="row">
+                <div class="row card-row no-gutters">
                     <div class="card-icon-row col-4">
-                        <i class="card-icon fas fa-user"></i>
+                        <i class="card-icon far fa-building"></i>
                     </div>
                     <div class="card-content col-8">
-                        <div class="row">
-                            <h6 class="card-text">Bekijk hier uw profiel en pas deze aan.</h6>
+                        <div class="card-text-row row">
+                            <h6 class="card-text">Bekijk hier uw bedrijf pagina en pas deze aan.</h6>
                         </div>
                         <div class="card-btn-row row">
-                            <a href="<?= $vars['baseUrl'] ?>profile/bedrijf" class="btn btn-primary btn-block card-btn">Mijn profiel</a>
+                            <a href="<?= $vars['baseUrl'] ?>profile/bedrijf" class="btn btn-primary btn-block card-btn">Mijn bedrijf</a>
                         </div>
                     </div>
                 </div>
@@ -23,16 +23,16 @@
         <div class="card card-dashboard">
             <h5 class="card-header">Opdrachten</h5>
             <div class="card-body">
-                <div class="row">
+                <div class="row card-row no-gutters">
                     <div class="card-icon-row col-4">
                         <i class="card-icon fas fa-clipboard-list"></i>
                     </div>
                     <div class="card-content col-8">
-                        <div class="row">
+                        <div class="card-text-row row">
                             <h6 class="card-text">Bekijk jouw huidige en oude opdrachten hier.</h6>
                         </div>
                         <div class="card-btn-row row">
-                            <a href="" class="btn btn-primary btn-block card-btn">Mijn opdrachten</a>
+                            <a href="<?= $vars['baseUrl'] ?>task-bedrijf" class="btn btn-primary btn-block card-btn">Mijn opdrachten</a>
                         </div>
                     </div>
                 </div>
@@ -41,16 +41,16 @@
         <div class="card card-dashboard">
             <h5 class="card-header">Instellingen</h5>
             <div class="card-body">
-                <div class="row">
+                <div class="row card-row no-gutters">
                     <div class="card-icon-row col-4">
                         <i class="card-icon fas fa-cog"></i>
                     </div>
                     <div class="card-content col-8">
-                        <div class="row">
+                        <div class="card-text-row row">
                             <h6 class="card-text">Account instellingen, als wachtwoord veranderen.</h6>
                         </div>
                         <div class="card-btn-row row">
-                            <a href="" class="btn btn-primary btn-block card-btn">Instellingen</a>
+                            <a href="<?= $vars['baseUrl'] ?>settings/bedrijf" class="btn btn-primary btn-block card-btn">Instellingen</a>
                         </div>
                     </div>
                 </div>

@@ -1,17 +1,17 @@
 <div id="particles-js"></div>
-<div class="container home center invis">
-    <h1 class="home-head normal">Welkom bij CapitalZ!</h1>
-    <h5 class="home-text normal">Dé site voor bedrijven en zpp'ers!</h5>
+<div class="container home center">
+    <h1 class="home-head">Welkom bij CapitalZ!</h1>
+    <h5 class="home-text">Dé site voor bedrijven en ZZP'ers!</h5>
     <hr>
-    <form class="home-form" method="post" action="<?= $this->urlArr['baseUrl'] ?>task">
+    <form class="home-form" method="post" action="<?= $this->urlArr['baseUrl'] ?>tasklist">
         <div class="form-row">
             <!--Wat invoer-->
             <div class="col-8 col-sm-7">
-                <input type="text" class="form-control mb-2 normal" id="zoek" placeholder="Zoek opdrachten:" autofocus>
+                <input type="text" class="form-control mb-2" id="zoek" placeholder="Zoek opdrachten:" autofocus>
             </div>
             <!--Plaats invoer-->
             <div class="col-4 col-sm-3">
-                <select class="custom-select mb-2 normal" id="locatie">
+                <select class="custom-select mb-2" id="locatie">
                     <option selected disabled>Waar:</option>
                     <option value="1">Drenthe</option>
                     <option value="2">Flevoland</option>
@@ -29,9 +29,9 @@
             </div>
             <!--Zoek button-->
             <div class="col-12 col-sm-2">
-                <button type="submit" class="btn btn-block btn-primary mb-2 normal">Zoeken</button>
+                <button type="submit" class="btn btn-block btn-primary mb-2">Zoeken</button>
             </div>
         </div>
     </form>
-    <h6 class="home-detail normal">Bent u eigenaar van een bedrijf? En wilt u uw opdracht plaatsen? Klik dan <a href="<?= $this->urlArr['baseUrl'] ?>register/bedrijf"><u>hier</u></a>!</h6>
+    <h6 class="home-detail">Bent u eigenaar van een bedrijf? En wilt u uw opdracht plaatsen? Klik dan <a href="<?= $this->urlArr['baseUrl'] ?>register/bedrijf"><u>hier</u></a>!</h6>
 </div>

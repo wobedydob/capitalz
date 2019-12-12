@@ -1,7 +1,7 @@
 /*DASHBOARD*/
 
 .dash {
-    padding-top: 15px;
+    padding-top: 1rem;
 }
 
 @media (min-width: 576px) {
@@ -88,15 +88,28 @@
     }
 }
 
-.card-row {
+.card-deck-row {
     text-align: center;
     display: block;
     width: 100%;
     font-size: 0;
 }
 
+.card-row {
+    width: 100%;
+    margin: 0;
+}
+
+.card-text-row {
+    width: 100%;
+    margin: 0;
+    padding: 0 5px 11px 5px;
+    text-align: center;
+}
+
 .card-icon-row {
     text-align: center;
+    padding-left: 14px !important;
 }
 
 .card-btn {
@@ -117,7 +130,6 @@
 }
 
 .card-btn-row {
-    position: absolute;
-    bottom: 0;
-    width: 90%;
+    margin: 0 auto;
+    width: 90%
 }

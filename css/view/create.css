@@ -1,7 +1,7 @@
 /*create*/
 
 .create {
-    padding-top: 15px;
+    padding-top: 1rem;
 }
 
 @media (min-width: 576px) {
@@ -37,10 +37,72 @@
     .create-detail {
         font-size: .7rem;
     }
+
+    .create-image img {
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .create-image img {
+        height: 300px !important;
+    }
 }
 
 .create-image img {
-    height: 200px !important;
+    filter: blur(.05em);
+    height: 200px;
+    width: 100%;
+}
+
+.carousel-item img {
+    border-radius: 0.25rem !important;
+}
+
+.carousel-item input {
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-item label {
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-check {
+    visibility: hidden;
+    pointer-events: none;
+    color: #28a745 !important;
+    opacity: .8;
+}
+
+.carousel-item:hover ~ .carousel-check {
+    visibility: visible;
+}
+
+.carousel-item:hover ~ .carousel-item img {
+    border: #28a745 solid 2px;
+    box-shadow: #28a745;
+}
+
+.carousel-indicators {
+    margin-bottom: .5rem;
+}
+
+.carousel-indicators li {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+}
+
+.carousel-control-prev-icon {
+    transform: rotate(180deg) scale(1.5);
+    background: url("../../img/svg/chevron.svg");
+}
+
+.carousel-control-next-icon {
+    transform: scale(1.5);
+    background: url("../../img/svg/chevron.svg");
 }
 
 input[type="checkbox"][id^="image-check"] {

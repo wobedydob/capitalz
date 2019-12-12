@@ -1,5 +1,18 @@
 /*REGISTER*/
 
+.register {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+    top: auto;
+    left: auto;
+    -moz-transform: translateX(0) translateY(0);
+    -webkit-transform: translateX(0) translateY(0);
+    -o-transform: translateX(0) translateY(0);
+    -ms-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+}
+
 @media (min-width: 576px) {
     .register {
         max-width: 700px;
@@ -44,7 +57,7 @@
     }
 
     .reg-btn {
-        width: 150px;
+        width: 250px;
     }
 
     .reg-bedr {
@@ -55,9 +68,25 @@
     .form-group {
         margin-bottom: .5rem !important;
     }
+
+    .captcha {
+        justify-content: flex-start !important;
+    }
 }
 
 .reg-btn-row {
     text-align: center;
     margin-bottom: .6rem;
+}
+
+.terms {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.captcha {
+    display: inline-flex;
+    justify-content: flex-end;
+    pointer-events: all;
 }

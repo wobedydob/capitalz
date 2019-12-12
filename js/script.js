@@ -1,3 +1,4 @@
+//Particles
 particlesJS.load('particles-js', '../../particles.json');
 
 //Navbar collapse icoon
@@ -23,40 +24,43 @@ $(document).on('click', '.toggle-password', function () {
     passIconRegBedrijf2.attr('type') === 'password' ? passIconRegBedrijf2.attr('type', 'text') : passIconRegBedrijf2.attr('type', 'password');
 });
 
-//Task filter slider aantal Uren
-const UurSlider = document.getElementById("UurSlider");
-const UurOutput = document.getElementById("UurOutput");
-UurOutput.innerHTML = UurSlider.value;
-UurSlider.oninput = function () {
-    UurOutput.innerHTML = this.value;
-};
+//TaskPage filter slider aantal Uren
+if (document.getElementById("UurSlider") !== null) {
+    const UurSlider = document.getElementById("UurSlider");
+    const UurOutput = document.getElementById("UurOutput");
+    UurOutput.innerHTML = UurSlider.value;
+    UurSlider.oninput = function () {
+        UurOutput.innerHTML = this.value;
+    };
+}
 
-//Task filter slider Salaris
-const SalSlider = document.getElementById("SalSlider");
-const SalOutput = document.getElementById("SalOutput");
-SalOutput.innerHTML = SalSlider.value;
-SalSlider.oninput = function () {
-    SalOutput.innerHTML = this.value;
-};
+//TaskPage filter slider Salaris
+if (document.getElementById("SalSlider") !== null) {
+    const SalSlider = document.getElementById("SalSlider");
+    const SalOutput = document.getElementById("SalOutput");
+    SalOutput.innerHTML = SalSlider.value;
+    SalSlider.oninput = function () {
+        SalOutput.innerHTML = this.value;
+    };
+}
 
-(function () {
-    'use strict';
-    window.addEventListener('load', function () {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        const validation = Array.prototype.filter.call(forms, function (form) {
-            form.addEventListener('submit', function (event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
-        });
-    }, false);
-})();
-
+//Carousel select
 $(document).on('click', '.carousel-item', function () {
     $(this).toggleClass("selected");
 });
+
+//Load icon
+document.onreadystatechange = function () {
+    $("body").css("overflow", "hidden");
+    const state = document.readyState;
+    if (state === "interactive") {
+        document.getElementById("contents").style.visibility = "hidden";
+    } else if (state === "complete") {
+        setTimeout(function () {
+            $("body").css("overflow", "visible");
+            document.getElementById("interactive");
+            document.getElementById("load").style.visibility = "hidden";
+            document.getElementById("contents").style.visibility = "visible";
+        }, 100);
+    }
+};

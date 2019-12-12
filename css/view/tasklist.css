@@ -1,0 +1,142 @@
+/*TASKLIST*/
+
+.tasklist {
+    padding-top: 1rem;
+}
+
+@media (min-width: 576px) {
+    .tasklist {
+        max-width: 1400px;
+    }
+
+    .tasklist-title {
+        font-size: 1.6rem
+    }
+
+    .tasklist-head {
+        max-width: 700px;
+    }
+
+    .tasklist-head-text {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .tasklist-text {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .tasklist-card-text {
+        height: 47px;
+        -webkit-line-clamp: 3;
+    }
+
+    .tasklist-detail {
+        font-size: .8rem;
+        text-align: center;
+    }
+
+    .filter-row {
+        visibility: hidden;
+        margin: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .tasklist-title {
+        font-size: 1.2rem;
+    }
+
+    .tasklist-head-text {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .tasklist-text {
+        font-size: .8rem;
+        text-align: center;
+    }
+
+    .tasklist-card-text {
+        height: 14px;
+        -webkit-line-clamp: 1;
+    }
+
+    .tasklist-detail {
+        font-size: .7rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .filter-row {
+        visibility: visible;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+}
+
+.tasklist-content {
+    margin-top: -8px;
+}
+
+.tasklist-title {
+    margin-bottom: 0;
+}
+
+.tasklist-card {
+    margin: 0;
+}
+
+.tasklist-card-text {
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 0.875rem;
+    line-height: 1rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tasklist-card-row {
+    height: 100%;
+}
+
+.tasklist-img {
+    position: absolute;
+    height: 100%;
+    filter: blur(.05em);
+}
+
+.tasklist-footer {
+    padding: .5rem .5rem .5rem 1rem;
+}
+
+.tasklist-card-body {
+    padding: 1rem 1rem;
+}
+
+.tasklist-body-row {
+    padding: 0 .5rem;
+}
+
+.tasklist-btn {
+    padding: .1rem .3rem .1rem .3rem;
+    font-size: .8rem;
+    height: 100%;
+}
+
+.tasklist-text-blue {
+    color: #007bff;
+}
+
+.tasklist-filter-head {
+    font-size: 0.9rem;
+}
+
+.slider-text {
+    font-size: .7rem;
+}
