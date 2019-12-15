@@ -44,24 +44,14 @@ class RegisterPage
                 if (mysqli_num_rows($result) > 0) {
                     header("refresh:2; url=./index.php?content=register");
                     die('<div class="alert alert-danger" role="alert">
-        Dit e-mail adres is al in gebruik
-      </div>');
+                            Dit e-mail adres is al in gebruik
+                         </div>');
                 } else {
                     $password = 'geheim';
                     $password_hash = password_hash($password, PASSWORD_BCRYPT);
 
                     $db = new Database();
-                    $db->query("INSERT INTO `user` (`user_id`,
-                                    `email`,
-                                    `password`,
-                                    `userrole`)
-                            VALUES (NULL,
-                                    '$email',
-                                    'geheim',
-                                    'selfemployed')");
-
-                    $result = mysqli_query($conn, $sql);
-
+                    $db->query("INSERT INTO `user`(`user_id`, `email`, `password`, `userrole`) VALUES(NULL, $email, $password_hash, 2)");
                 }
             }
         }
