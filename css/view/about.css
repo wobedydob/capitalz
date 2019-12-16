@@ -1,6 +1,30 @@
-.about {
+/*about*/
+
+@media (min-width: 576px) {
+    .about {
+        max-width: 1000px;
+    }
+
+    .about-head {
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .about {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .about-head {
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
+.about-body {
+    padding: 20px;
     background-color: white;
-    padding-bottom: 80px;
-    width: 1500px;
-    height: 500px;
+    border-radius: 15px;
 }
