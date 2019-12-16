@@ -79,7 +79,7 @@ table thead {
     width: 100%;
     height: 100%;
     z-index: 200;
-    background: url('../img/gif/loading.gif') center no-repeat white;
+    background: url('../img/svg/load.svg') center no-repeat white;
     background-size: 200px;
 }
 

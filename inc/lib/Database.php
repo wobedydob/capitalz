@@ -17,7 +17,7 @@ class Database
     {
         $this->host = 'localhost';
         $this->dbName = 'capitalz_db';
-        $this->user = 'adminZ';
+        $this->user = 'CapitalZ_user';
         $this->pass = 'login';
 
         //dsn for mysql

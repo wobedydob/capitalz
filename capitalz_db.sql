@@ -40,18 +40,19 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `capitalz_db`.`user` ;
 
-CREATE TABLE IF NOT EXISTS `capitalz_db`.`user` (
-  `user_id` INT(7) NOT NULL AUTO_INCREMENT,
-  `email` VARBINARY(271) NOT NULL,
-  `password` VARCHAR(255) NOT NULL,
-  `userrole` INT(2) NOT NULL,
-  PRIMARY KEY (`user_id`),
-  INDEX `user.user_role - user_role.role_id_idx` (`userrole` ASC) VISIBLE,
-  CONSTRAINT `user.user_role - user_role.role_id`
-    FOREIGN KEY (`userrole`)
-    REFERENCES `capitalz_db`.`user_role` (`role_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+CREATE TABLE IF NOT EXISTS `capitalz_db`.`user`(
+                                                   `user_id`  INT(7)         NOT NULL AUTO_INCREMENT,
+                                                   `email`    VARBINARY(271) NOT NULL,
+                                                   `password` VARCHAR(255)   NOT NULL,
+                                                   `userrole` INT(2)         NOT NULL,
+                                                   PRIMARY KEY (`user_id`),
+                                                   INDEX `user.user_role - user_role.role_id_idx` (`userrole` ASC),
+                                                   CONSTRAINT `user.user_role - user_role.role_id`
+                                                       FOREIGN KEY (`userrole`)
+                                                           REFERENCES `capitalz_db`.`user_role` (`role_id`)
+                                                           ON DELETE NO ACTION
+                                                           ON UPDATE NO ACTION
+)
 ENGINE = InnoDB
 AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = latin1;
@@ -81,21 +82,23 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `capitalz_db`.`job` ;
 
-CREATE TABLE IF NOT EXISTS `capitalz_db`.`job` (
-  `job_id` INT(7) NOT NULL,
-  `title` VARCHAR(255) NOT NULL,
-  `info` VARCHAR(45) NOT NULL,
-  `company_id` INT(7) NOT NULL,
-  `location` VARCHAR(45) NOT NULL,
-  `hours` DATETIME NOT NULL,
-  `salary` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`job_id`),
-  INDEX `job.company_id_idx` (`company_id` ASC) VISIBLE,
-  CONSTRAINT `job.company_id`
-    FOREIGN KEY (`company_id`)
-    REFERENCES `capitalz_db`.`user_info` (`user_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+CREATE TABLE IF NOT EXISTS `capitalz_db`.`job`
+(
+    `job_id`     INT(7)       NOT NULL,
+    `title`      VARCHAR(255) NOT NULL,
+    `info`       VARCHAR(45)  NOT NULL,
+    `company_id` INT(7)       NOT NULL,
+    `location`   VARCHAR(45)  NOT NULL,
+    `hours`      DATETIME     NOT NULL,
+    `salary`     VARCHAR(45)  NOT NULL,
+    PRIMARY KEY (`job_id`),
+    INDEX `job.company_id_idx` (`company_id` ASC),
+    CONSTRAINT `job.company_id`
+        FOREIGN KEY (`company_id`)
+            REFERENCES `capitalz_db`.`user_info` (`user_id`)
+            ON DELETE NO ACTION
+            ON UPDATE NO ACTION
+)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = latin1;
 
@@ -105,15 +108,17 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `capitalz_db`.`review` ;
 
-CREATE TABLE IF NOT EXISTS `capitalz_db`.`review` (
-  `review_id` INT(7) NOT NULL AUTO_INCREMENT,
-  `user_id` INT(7) NOT NULL,
-  `user_role` INT(2) NOT NULL,
-  `username` VARCHAR(255) NOT NULL,
-  `reviewText` TEXT NOT NULL,
-  PRIMARY KEY (`review_id`),
-  INDEX `user_id - user_id` (`user_id` ASC) VISIBLE,
-  INDEX `review.user_role - user.user_role_idx` (`user_role` ASC) VISIBLE)
+CREATE TABLE IF NOT EXISTS `capitalz_db`.`review`
+(
+    `review_id`  INT(7)       NOT NULL AUTO_INCREMENT,
+    `user_id`    INT(7)       NOT NULL,
+    `user_role`  INT(2)       NOT NULL,
+    `username`   VARCHAR(255) NOT NULL,
+    `reviewText` TEXT         NOT NULL,
+    PRIMARY KEY (`review_id`),
+    INDEX `user_id - user_id` (`user_id` ASC),
+    INDEX `review.user_role - user.user_role_idx` (`user_role` ASC)
+)
 ENGINE = MyISAM
 DEFAULT CHARACTER SET = latin1;
 

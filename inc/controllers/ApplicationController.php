@@ -78,6 +78,18 @@ class ApplicationController extends ApplicationModel
         return $return;
     }
 
+    public static function svg_helper($name)
+    {
+        $file = 'img/svg/' . $name . '.svg';
+        if (file_exists($file)) {
+            $return = file_get_contents($file);
+        } else {
+            echo $file;
+            exit;
+        }
+        return $return;
+    }
+
     public static function sanitize($raw_data)
     {
         $data = htmlspecialchars($raw_data);
