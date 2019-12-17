@@ -1,5 +1,10 @@
 /*about*/
 
+.about {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
 @media (min-width: 576px) {
     .about {
         max-width: 1000px;
@@ -24,13 +29,43 @@
 }
 
 .about-body {
+    height: 700px;
     padding: 20px;
     background-color: white;
     border-radius: 15px;
 }
 
 .about-info {
+    height: 700px;
     padding: 20px;
     background-color: white;
     border-radius: 15px;
+}
+
+.about-img {
+    padding-bottom: 20px;
+}
+
+.about-text {
+    font-size: .9rem;
+}
+
+.about-contact {
+}
+
+.about-info-title {
+    font-weight: bold;
+}
+
+.about-info-head {
+    font-size: 1.3rem;
+}
+
+.about-info-text {
+    font-size: 1.0rem;
+    color: #95999c;
+}
+
+.about-text-head {
+    font-family: Raleway, sans-serif;
 }

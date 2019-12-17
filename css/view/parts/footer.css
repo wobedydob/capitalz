@@ -2,9 +2,15 @@
     position: relative;
     bottom: 0;
     background-color: white !important;
-    padding: .3em;
-    padding-top: .2em;
-    padding-bottom: 0 !important;
+    padding: .2em .4em 0;
+}
+
+.footer a {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.footer a:hover {
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .footer-copyright {
@@ -14,15 +20,11 @@
     bottom: 0;
 }
 
-.footer-copyright a {
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.footer-copyright a:hover {
-    color: rgba(0, 0, 0, 0.5);
-}
-
-.dark-mode-switch {
+.footer-switch {
     position: absolute;
     bottom: 6%;
+}
+
+.footer-links {
+    font-size: .8em;
 }
