@@ -7,12 +7,20 @@
 
 @media (min-width: 576px) {
     .about {
-        max-width: 1000px;
+        max-width: 1100px;
     }
 
     .about-head {
         font-size: 3rem;
         text-align: center;
+    }
+
+    .about-img-l {
+        padding-right: 8px !important;
+    }
+
+    .about-img-r {
+        padding-left: 8px !important;
     }
 }
 
@@ -26,23 +34,26 @@
         font-size: 2rem;
         text-align: center;
     }
+
+    .about-img-l {
+        padding-bottom: 16px !important;
+    }
 }
 
 .about-body {
-    height: 700px;
     padding: 20px;
     background-color: white;
     border-radius: 15px;
 }
 
 .about-info {
-    height: 700px;
     padding: 20px;
     background-color: white;
     border-radius: 15px;
 }
 
-.about-img {
+.about-img-info {
+    width: 100%;
     padding-bottom: 20px;
 }
 
@@ -58,7 +69,7 @@
 }
 
 .about-info-head {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .about-info-text {

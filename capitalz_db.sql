@@ -66,7 +66,6 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`user`
     AUTO_INCREMENT = 4
     DEFAULT CHARACTER SET = latin1;
 
-
 -- -----------------------------------------------------
 -- Table `capitalz_db`.`user_info`
 -- -----------------------------------------------------
@@ -78,15 +77,11 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`user_info`
     `key`     VARCHAR(45) NOT NULL,
     `value`   VARCHAR(45) NOT NULL,
     PRIMARY KEY (`user_id`),
-    CONSTRAINT `user.user_id - user_info.user_id`
-        FOREIGN KEY (`user_id`)
-            REFERENCES `capitalz_db`.`user` (`user_id`)
-            ON DELETE CASCADE
-            ON UPDATE CASCADE
-)
-    ENGINE = InnoDB
-    DEFAULT CHARACTER SET = latin1;
-
+    CONSTRAINT `user.user_id - user_info.user_id` FOREIGN KEY (`user_id`)
+        REFERENCES `capitalz_db`.`user` (`user_id`)
+        ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = INNODB
+  DEFAULT CHARACTER SET = LATIN1;
 
 -- -----------------------------------------------------
 -- Table `capitalz_db`.`job`
@@ -100,8 +95,10 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`job`
     `info`       VARCHAR(45)  NOT NULL,
     `company_id` INT(7)       NOT NULL,
     `location`   VARCHAR(45)  NOT NULL,
-    `hours`      DATETIME     NOT NULL,
+    `hours`      INT(3)       NOT NULL,
     `salary`     VARCHAR(45)  NOT NULL,
+    `date_start` DATE         NOT NULL,
+    `date_end`   DATE         NOT NULL,
     PRIMARY KEY (`job_id`),
     INDEX `job.company_id_idx` (`company_id` ASC),
     CONSTRAINT `job.company_id`
@@ -112,7 +109,6 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`job`
 )
     ENGINE = InnoDB
     DEFAULT CHARACTER SET = latin1;
-
 
 -- -----------------------------------------------------
 -- Table `capitalz_db`.`review`
@@ -132,7 +128,6 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`review`
 )
     ENGINE = MyISAM
     DEFAULT CHARACTER SET = latin1;
-
 
 SET SQL_MODE = @OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS = @OLD_FOREIGN_KEY_CHECKS;
