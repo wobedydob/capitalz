@@ -10,7 +10,7 @@ class LoginPage
 //            $this->login($email, $password);
 //        }
 //    }
-
+//
 //    private function login($email, $password)
 //    {
 //        $db = new Database();
@@ -18,9 +18,9 @@ class LoginPage
 //        $db->bind(':email', $email);
 //        $db->execute();
 //
-//        if ($password == $db->single()['password']){
+//        if ($password == $db->single()['password']) {
 //
 //        }
-//        // if (password_verify($password, $db->single()['password']))
+//        if (password_verify($password, $db->single()['password']));
 //    }
 }
