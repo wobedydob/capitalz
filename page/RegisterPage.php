@@ -49,13 +49,13 @@ class RegisterPage
                     $password = 'geheim';
                     $password_hash = password_hash($password, PASSWORD_BCRYPT);
                     $db = new Database();
-                    $db->query("INSERT INTO `user` (`user_id`, `email`, `password`, `userrole`) VALUES(NULL, :email, :password_hash, 2)");
+                    $db->query("INSERT INTO `user` (`email`, `password`, `userrole`) VALUES(:email, :password_hash, 2)");
                     $db->bind(':email', $email);
                     $db->bind(':password_hash', $password_hash);
                     $db->execute();
-                    $db->bind(':user_id', $user_id = $db->lastInsertId());
-                    $db->execute();
+                    $userId = $db->lastInsertId();
                     $db->query("INSERT INTO `user_info` (`user_id`, `key`, `value`) VALUES(:user_id, 'Btw-nummer', $btw_nummer)");
+                    $db->bind(':user_id', $userId);
                     $db->execute();
                     var_dump($db);
                 }
