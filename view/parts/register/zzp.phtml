@@ -2,7 +2,7 @@
 <div class="container register center">
     <h1 class="register-head">Registreren ZZP'er</h1>
     <hr>
-    <form class="register-zzp-form" action="" method="POST">
+    <form class="needs-validation register-zzp-form" action="" method="POST" novalidate>
         <!--Email row-->
         <div class="form-row">
             <div class="form-group col-12">
@@ -12,6 +12,7 @@
                         <div class="input-group-text"><i class="fas fa-at"></i></div>
                     </div>
                     <input type="email" class="form-control" id="email_reg_zzp" name="email" placeholder="E-mail" required autofocus>
+                    <div class="invalid-tooltip">Voer een geldig email in!</div>
                 </div>
                 <span class="register-detail">Voer een geldig email in, u krijgt een verificatie mail.</span>
             </div>
@@ -25,11 +26,12 @@
                         <div class="input-group-text"><i class="fas fa-key"></i></div>
                     </div>
                     <input type="password" class="form-control" id="wachtwoord_reg_zzp1" name="password" placeholder="Wachtwoord" minlength="8" required>
+                    <div class="invalid-tooltip">Voer een wachtwoord in met tenminste 8 karakters, 1 cijfer en 1 hoofdletter!</div>
                     <div class="input-group-append">
                         <div class="input-group-text"><i class="fas fa-fw fa-eye toggle-password"></i></div>
                     </div>
                 </div>
-                <span class="register-detail">Het wachtwoord moet minstens 8 karakters lang zijn en 1 hoofdletter bevatten.</span>
+                <span class="register-detail">Het wachtwoord moet minstens 8 karakters lang zijn, 1 cijfer en 1 hoofdletter bevatten.</span>
             </div>
             <div class="form-group col-12 col-md-6">
                 <label for="wachtwoord_reg_zzp2">Herhaal wachtwoord:</label><span class="required">*</span>
@@ -38,6 +40,7 @@
                         <div class="input-group-text"><i class="fas fa-key"></i></div>
                     </div>
                     <input type="password" class="form-control" id="wachtwoord_reg_zzp2" name="repeat_password" placeholder="Wachtwoord" minlength="8" required>
+                    <div class="invalid-tooltip">Herhaal het wachtwoord!</div>
                     <div class="input-group-append">
                         <div class="input-group-text"><i class="fas fa-fw fa-eye toggle-password"></i></div>
                     </div>
@@ -54,6 +57,7 @@
                         <div class="input-group-text"><i class="fas fa-address-book"></i></div>
                     </div>
                     <input type="text" class="form-control" id="btw_nummer" name="btw_nummer" placeholder="Bijvoorbeeld: NL-001234567-B34:" required>
+                    <div class="invalid-tooltip">Voer uw Btw-identificatienummer in!</div>
                 </div>
                 <span class="register-detail">Voer uw btw-identificatienummer in.</span>
             </div>
@@ -67,6 +71,7 @@
                         <div class="custom-control custom-checkbox mb-2">
                             <input type="checkbox" class="custom-control-input" id="akkoord_zzp" required>
                             <label class="custom-control-label" for="akkoord_zzp">Ik ga akkoord met de voorwaarden.</label>
+                            <div class="invalid-tooltip">Ga akkoord met de voorwaarden!</div>
                         </div>
                     </div>
                     <!--reCAPTCHA-->
