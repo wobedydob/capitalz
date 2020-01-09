@@ -49,8 +49,8 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`user` (
   `password` VARCHAR(255) NOT NULL,
   `userrole` INT(2) NOT NULL,
   PRIMARY KEY (`user_id`),
-  INDEX `user.user_role - user_role.role_id_idx` (`userrole` ASC) VISIBLE,
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
+  INDEX `user.user_role - user_role.role_id_idx` (`userrole` ASC) ,
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) ,
   CONSTRAINT `user.user_role - user_role.role_id`
     FOREIGN KEY (`userrole`)
     REFERENCES `capitalz_db`.`user_role` (`role_id`)
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`user_info` (
   `key` VARCHAR(45) NOT NULL,
   `value` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`user_id`),
-  UNIQUE INDEX `value_UNIQUE` (`value` ASC) VISIBLE,
+  UNIQUE INDEX `value_UNIQUE` (`value` ASC) ,
   CONSTRAINT `user.user_id - user_info.user_id`
     FOREIGN KEY (`user_id`)
     REFERENCES `capitalz_db`.`user` (`user_id`)
@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`job` (
     date_start DATE         NOT NULL,
     date_end   DATE         NOT NULL,
   PRIMARY KEY (`job_id`),
-  INDEX `job.company_id_idx` (`company_id` ASC) VISIBLE,
+  INDEX `job.company_id_idx` (`company_id` ASC) ,
   CONSTRAINT `job.company_id`
     FOREIGN KEY (`company_id`)
     REFERENCES `capitalz_db`.`user_info` (`user_id`)
@@ -115,8 +115,8 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`user_profile` (
   `nationality` VARCHAR(50) NOT NULL,
   `info_number` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`user_id`),
-  INDEX `user_profile.email - user.email_idx` (`email` ASC) VISIBLE,
-  INDEX `user_profile.info_number - user_info.value_idx` (`info_number` ASC) VISIBLE,
+  INDEX `user_profile.email - user.email_idx` (`email` ASC) ,
+  INDEX `user_profile.info_number - user_info.value_idx` (`info_number` ASC) ,
   CONSTRAINT `user_profile.user_id - user.user_id`
     FOREIGN KEY (`user_id`)
     REFERENCES `capitalz_db`.`user` (`user_id`)
