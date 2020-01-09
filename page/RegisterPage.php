@@ -46,7 +46,7 @@ class RegisterPage
                             Dit e-mail adres is al in gebruik
                          </div>');
                     } else {
-                        $password = 'geheim';
+//                        $password = 'geheim';
                         $password_hash = password_hash($password, PASSWORD_BCRYPT);
                         $db = new Database();
                         $db->query("INSERT INTO `user` (`email`, `password`, `userrole`) VALUES(:email, :password_hash, 2)");
@@ -58,6 +58,9 @@ class RegisterPage
                         $db->bind(':user_id', $userId);
                         $db->execute();
 //                    var_dump($db);
+                        echo '<div class="alert alert-success" role="alert">
+                        Je bent geregistreerd, je kan nu inloggen
+                              </div>';
                     }
                 } else {
                     echo 'De wachtwoorden komen niet overeen';
@@ -101,6 +104,9 @@ class RegisterPage
                         $db->bind(':user_id', $userId);
                         $db->execute();
 //                    var_dump($db);
+                        echo '<div class="alert alert-success" role="alert">
+                        Je bent geregistreerd, je kan nu inloggen
+                              </div>';
                     }
                 } else {
                     echo 'De wachtwoorden komen niet overeen';
