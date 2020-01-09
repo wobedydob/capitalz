@@ -115,8 +115,8 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`user_profile` (
   `nationality` VARCHAR(50) NOT NULL,
   `info_number` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`user_id`),
-  INDEX `user_profile.email - user.email_idx` (`email` ASC) ,
-  INDEX `user_profile.info_number - user_info.value_idx` (`info_number` ASC) ,
+  INDEX `user_profile.email - user.email` (`email` ASC) ,
+  INDEX `user_profile.info_number - user_info.value_id` (`info_number` ASC) ,
   CONSTRAINT `user_profile.user_id - user.user_id`
     FOREIGN KEY (`user_id`)
     REFERENCES `capitalz_db`.`user` (`user_id`)
