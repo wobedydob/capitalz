@@ -88,7 +88,7 @@ class RegisterPage
                     $db->execute();
 
                     if ($db->rowCount() > 0) {
-                        header("refresh:2; url=/login");
+                        header("refresh:2; url=/create");
                         die('<div class="alert alert-danger" role="alert">
                             Dit e-mail adres is al in gebruik
                          </div>');
