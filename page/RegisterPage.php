@@ -93,7 +93,7 @@ class RegisterPage
                             Dit e-mail adres is al in gebruik
                          </div>');
                     } else {
-                        $password = 'geheim';
+                        //$password = 'geheim';
                         $password_hash = password_hash($password, PASSWORD_BCRYPT);
                         $db = new Database();
                         $db->query("INSERT INTO `user` (`email`, `password`, `userrole`) VALUES(:email, :password_hash, 1)");

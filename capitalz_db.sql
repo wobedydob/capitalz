@@ -112,6 +112,7 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`user_profile` (
   `gender` ENUM('m', 'f', 'o') NOT NULL,
   `nationality` VARCHAR(50) NOT NULL,
   `info_number` VARCHAR(45) NULL,
+  `information` TEXT NOT NULL,
   PRIMARY KEY (`user_id`),
   INDEX `user_profile.user_id - user.user_id_idx` (`user_id` ASC, `email` ASC) ,
   INDEX `profile.info_number - user_info.value_idx` (`info_number` ASC) ,

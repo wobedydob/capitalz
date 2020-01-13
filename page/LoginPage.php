@@ -35,7 +35,7 @@ class LoginPage
             echo '<div class="alert alert-success" role="alert">
                 Je bent nu ingelogd, je word naar je profiel pagina gestuurd
                 </div>';
-            header("refresh:1; url=profile/zzp");
+            header("refresh:1; url=profile_edit/zzp");
         } else {
             echo '<div class="alert alert-danger" role="alert">
                 Email of wachtwoord zijn onjuist.
