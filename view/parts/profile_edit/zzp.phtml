@@ -1,37 +1,112 @@
-<form action="" method="POST">
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Naam</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name" name="name">
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Date of Birth</label>
-        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="je geboorte datum kech"
-               name="birthday">
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Geslacht</label>
-        <select class="form-control" id="exampleFormControlSelect1" name="gender">
-            <option value="m">Man</option>
-            <option value="f">Vrouw</option>
-            <option value="o">Overig</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Nationaliteit</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"
-               name="nationality">
-    </div>
-
-    <div class="form-row no-gutters">
-        <div class="form-group col-12">
-            <label class="create-title" for="about">Over:</label>
-            <textarea class="form-control" id="about" name="about" rows="5"></textarea>
+<div class="container profile_edit center">
+    <h1 class="profile_edit-head">Profiel ZZP'er</h1>
+    <hr>
+    <form class="needs-validation profile_edit-bedrijf-form" action="" method="POST" novalidate>
+        <!--Name row-->
+        <div class="form-row">
+            <div class="form-group col-12 col-sm-4">
+                <label for="firstname">Voornaam:</label><span class="required">*</span>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Voornaam" required>
+                    <div class="invalid-tooltip">Voer je voornaam in!</div>
+                </div>
+            </div>
+            <div class="form-group col-12 col-sm-3">
+                <label for="infix">Tussenvoegsel:</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="infix" name="infix" placeholder="Tussenvoegsel">
+                </div>
+            </div>
+            <div class="form-group col-12 col-sm-5">
+                <label for="lastname">Achternaam:</label><span class="required">*</span>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Achternaam" required>
+                    <div class="invalid-tooltip">Voer je achternaam in!</div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <!--Submit button-->
-    <div class="login-btn-row">
-        <button type="submit" class="btn btn-block btn-primary" name="profile_submit">Maak aan</button>
-    </div>
-</form>
-
+        <div class="form-row">
+            <div class="form-group col-12">
+                <label for="birthday">Geboortedatum:</label><span class="required">*</span>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
+                    </div>
+                    <input type="date" class="form-control" value="<?php echo date('Y-m-d', strtotime(' - 18 years')); ?>" id="birthday" max="" required>
+                </div>
+                <div class="invalid-tooltip">Voer een correcte geboortedatum in!</div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12 col-sm-6">
+                <label for="gender">Geslacht:</label><span class="required">*</span>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <select class="form-control" id="gender" name="gender" required>
+                        <option selected disabled>Geslacht:</option>
+                        <option value="m">Man</option>
+                        <option value="f">Vrouw</option>
+                        <option value="o">Overig</option>
+                    </select>
+                    <div class="invalid-tooltip">Selecteer je geslacht!</div>
+                </div>
+            </div>
+            <div class="form-group col-12 col-sm-6">
+                <label for="nationality">Nationaliteit:</label><span class="required">*</span>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-globe"></i></div>
+                    </div>
+                    <input type="text" class="form-control" id="nationality" name="nationality" placeholder="Nationaliteit" required>
+                    <div class="invalid-tooltip">Voer je nationaliteit in!</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row no-gutters">
+            <div class="form-group col-12">
+                <label for="about">Over jezelf:</label><span class="required">*</span>
+                <div class="input-group">
+                    <textarea class="form-control" id="about" name="about" rows="5" required></textarea>
+                    <div class="invalid-tooltip">Voer iets over jezelf in!</div>
+                </div>
+                <span class="profile_edit-detail">Een kort verhaaltje over wie je bent en wat je kunt.</span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12 col-md-8">
+                <label for="nationality">Cv:</label><span class="required">*</span>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-file"></i></div>
+                    </div>
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="cv" data-browse="Zoeken...">Upload je CV</label>
+                        <input type="file" class="custom-file-input" id="cv" name="cv" required>
+                        <div class="invalid-tooltip">Upload je cv!</div>
+                    </div>
+                </div>
+                <span class="profile_edit-detail">Upload je cv, bedrijven kunnen deze downloaden om te bepalen of je geschikt bent voor de aangemelde opdracht.</span>
+            </div>
+            <div class="form-group col-12 col-md-4">
+                <label for="pro-pic">Profiel foto:</label><span class="required">*</span>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-image"></i></div>
+                    </div>
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="pro-pic" data-browse="Zoeken...">Upload foto</label>
+                        <input type="file" class="custom-file-input" id="pro-pic" name="pro-pic" required>
+                        <div class="invalid-tooltip">Upload je profiel foto!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="hr-bottom">
+        <!--Register button-->
+        <div class="pro_edit-btn-row">
+            <button type="submit" class="btn pro_edit-btn btn-primary" name="pro_edit_submit">Maak profiel aan</button>
+        </div>
+    </form>
+</div>

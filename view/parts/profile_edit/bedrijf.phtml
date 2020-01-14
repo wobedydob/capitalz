@@ -1,1 +1,88 @@
-<?php
+<div class="container profile_edit center">
+    <h1 class="profile_edit-head">Profiel Bedrijf</h1>
+    <hr>
+    <form class="needs-validation profile_edit-bedrijf-form" action="" method="POST" novalidate>
+        <!--Name row-->
+        <div class="form-row">
+            <div class="form-group col-12 col-12">
+                <label for="firstname">Naam Bedrijf:</label><span class="required">*</span>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Naam bedrijf" required>
+                    <div class="invalid-tooltip">Voer je voornaam in!</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12 col-sm-6">
+                <label for="state">Provincie:</label><span class="required">*</span>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-compass"></i></div>
+                    </div>
+                    <select class="custom-select" id="state" name="state" required>
+                        <option selected disabled>Provincie:</option>
+                        <option value="1">Drenthe</option>
+                        <option value="2">Flevoland</option>
+                        <option value="3">Friesland</option>
+                        <option value="4">Gelderland</option>
+                        <option value="5">Groningen</option>
+                        <option value="6">Limburg</option>
+                        <option value="7">Noord-Brabant</option>
+                        <option value="8">Noord-Holland</option>
+                        <option value="9">Overrijsel</option>
+                        <option value="10">Utrecht</option>
+                        <option value="11">Zeeland</option>
+                        <option value="12">Zuid-Holland</option>
+                    </select>
+                    <div class="invalid-tooltip">Selecteer provincie!</div>
+                </div>
+            </div>
+            <div class="form-group col-12 col-sm-6">
+                <label for="city">Stad:</label><span class="required">*</span>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-building"></i></div>
+                    </div>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="Stad" required>
+                    <div class="invalid-tooltip">Voer de stad in!</div>
+                </div>
+            </div>
+        </div>
+        <div class="form-row no-gutters">
+            <div class="form-group col-12">
+                <label for="about">Over bedrijf:</label><span class="required">*</span>
+                <div class="input-group">
+                    <textarea class="form-control" id="about" name="about" rows="5" required></textarea>
+                    <div class="invalid-tooltip">Voer iets over jezelf in!</div>
+                </div>
+                <span class="profile_edit-detail">Een kort verhaal over uw bedrijf.</span>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12 col-md-8">
+                <label for="site">Website:</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="site" name="site" placeholder="Website (optioneel)">
+                </div>
+            </div>
+            <div class="form-group col-12 col-md-4">
+                <label for="pro-pic">Profiel foto:</label><span class="required">*</span>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-image"></i></div>
+                    </div>
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="pro-pic" data-browse="Zoeken...">Upload foto</label>
+                        <input type="file" class="custom-file-input" id="pro-pic" name="pro-pic" required>
+                        <div class="invalid-tooltip">Upload je profiel foto!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="hr-bottom">
+        <!--Register button-->
+        <div class="pro_edit-btn-row">
+            <button type="submit" class="btn pro_edit-btn btn-primary" name="pro_edit_submit">Maak profiel aan</button>
+        </div>
+    </form>
+</div>

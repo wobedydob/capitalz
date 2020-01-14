@@ -1,6 +1,22 @@
 //Particles
 particlesJS.load('particles-js', '../../particles.json');
 
+//Max datum van vandaag
+$(document).ready(function () {
+    let today = new Date();
+    let dd = today.getDate();
+    let mm = today.getMonth() + 1;
+    const yyyy = today.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("birthday").setAttribute("max", today);
+});
+
 //Btw_nummer input formatting
 $(document).ready(function () {
     const element = document.getElementById('btw_nummer');
@@ -74,6 +90,7 @@ document.onreadystatechange = function () {
     }
 };
 
+//Validation
 (function () {
     'use strict';
     window.addEventListener('load', function () {
@@ -90,17 +107,7 @@ document.onreadystatechange = function () {
     }, false);
 })();
 
-// $(document).on('keyup', 'input[id=aantal-uur]', function () {
-//     const _this = $(this);
-//     const min = parseInt(_this.attr('min')) || 1;
-//     const max = parseInt(_this.attr('max')) || 100;
-//     const val = parseInt(_this.val()) || (min - 1);
-//     if (val < min)
-//         _this.val(min);
-//     if (val > max)
-//         _this.val(max);
-// });
-
+//max number input
 $(document).on('keyup', 'input[id=aantal-uur]', function () {
     const _this = $(this);
     const min = parseInt(_this.attr('min')) || 1;
@@ -112,6 +119,7 @@ $(document).on('keyup', 'input[id=aantal-uur]', function () {
         _this.val(max);
 });
 
+//max number input
 $(document).on('keyup', 'input[id=sal-uur]', function () {
     const _this = $(this);
     const min = parseInt(_this.attr('min')) || 1;
