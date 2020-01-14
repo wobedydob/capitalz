@@ -77,9 +77,7 @@ document.onreadystatechange = function () {
 (function () {
     'use strict';
     window.addEventListener('load', function () {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
         const forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
         const validation = Array.prototype.filter.call(forms, function (form) {
             form.addEventListener('submit', function (event) {
                 if (form.checkValidity() === false) {
@@ -91,3 +89,36 @@ document.onreadystatechange = function () {
         });
     }, false);
 })();
+
+// $(document).on('keyup', 'input[id=aantal-uur]', function () {
+//     const _this = $(this);
+//     const min = parseInt(_this.attr('min')) || 1;
+//     const max = parseInt(_this.attr('max')) || 100;
+//     const val = parseInt(_this.val()) || (min - 1);
+//     if (val < min)
+//         _this.val(min);
+//     if (val > max)
+//         _this.val(max);
+// });
+
+$(document).on('keyup', 'input[id=aantal-uur]', function () {
+    const _this = $(this);
+    const min = parseInt(_this.attr('min')) || 1;
+    const max = parseInt(_this.attr('max')) || 100;
+    const val = parseInt(_this.val()) || (min - 1);
+    if (val < min)
+        _this.val(min);
+    if (val > max)
+        _this.val(max);
+});
+
+$(document).on('keyup', 'input[id=sal-uur]', function () {
+    const _this = $(this);
+    const min = parseInt(_this.attr('min')) || 1;
+    const max = parseInt(_this.attr('max')) || 100;
+    const val = parseInt(_this.val()) || (min - 1);
+    if (val < min)
+        _this.val(min);
+    if (val > max)
+        _this.val(max);
+});

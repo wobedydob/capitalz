@@ -2,6 +2,7 @@
 
 .create {
     padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 @media (min-width: 576px) {
@@ -107,4 +108,13 @@
 
 input[type="checkbox"][id^="image-check"] {
     display: none;
+}
+
+.create-btn {
+    width: 160px;
+}
+
+.create-btn-row {
+    text-align: center;
+    margin-bottom: .6rem;
 }

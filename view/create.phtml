@@ -1,7 +1,7 @@
 <div class="container create">
     <h1 class="create-head">Taak Aanmaken</h1>
     <hr>
-    <form class="create-form" method="post" action="">
+    <form class="create-form" action="" method="POST">
         <div class="form-row">
             <div class="form-group col-12 col-md-6">
                 <label class="create-title" for="titel">Titel:</label>
@@ -14,12 +14,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-tag"></i></div>
                     </div>
-                    <select class="custom-select" id="tag" required>
-                        <option selected disabled>Tag:</option>
-                        <option value="1">Webdevelop</option>
-                        <option value="2">Schoonmaker</option>
-                        <option value="3">Administratie</option>
-                    </select>
+                    <input type="text" class="form-control" id="tag" value="Webdev" maxlength="10">
                 </div>
             </div>
             <div class="form-group create-group col-6 col-md-3">
@@ -129,6 +124,11 @@
                     </a>
                 </div>
             </div>
+        </div>
+        <!--Done button-->
+        <hr class="hr-bottom">
+        <div class="create-btn-row">
+            <button type="submit" class="btn create-btn btn-primary" name="create_submit">Taak Uploaden</button>
         </div>
     </form>
 </div>
