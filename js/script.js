@@ -1,6 +1,15 @@
 //Particles
 particlesJS.load('particles-js', '../../particles.json');
 
+//Btw_nummer input formatting
+$(document).ready(function () {
+    const element = document.getElementById('btw_nummer');
+    const maskOptions = {
+        mask: 'NL-00000000-B00',
+    };
+    const mask = IMask(element, maskOptions);
+});
+
 //Navbar collapse icoon
 const hamburger = document.querySelector(".hamburger");
 hamburger.addEventListener("click", function () {

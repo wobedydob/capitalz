@@ -42,9 +42,7 @@ class RegisterPage
                 if ($repeat_password == $password) {
                     if ($db->rowCount() > 0) {
                         header("refresh:2; url=/login");
-                        die('<div class="alert alert-danger" role="alert">
-                            Dit e-mail adres is al in gebruik
-                         </div>');
+                        die('<div class="alert alert-danger" role="alert">Dit e-mail adres is al in gebruik</div>');
                     } else {
                         $password_hash = password_hash($password, PASSWORD_BCRYPT);
                         $db = new Database();
@@ -58,9 +56,7 @@ class RegisterPage
                         $db->bind(':btw_nummer', $btw_nummer);
                         $db->execute();
 //                    var_dump($db);
-                        echo '<div class="alert alert-success" role="alert">
-                                    Je bent geregistreerd, je kan nu inloggen
-                              </div>';
+                        echo '<div class="alert alert-success" role="alert">Je bent geregistreerd, je kan nu inloggen</div>';
                         header("refresh:1; url=../login");
                     }
                 } else {
@@ -89,9 +85,7 @@ class RegisterPage
 
                     if ($db->rowCount() > 0) {
                         header("refresh:2; url=/create");
-                        die('<div class="alert alert-danger" role="alert">
-                            Dit e-mail adres is al in gebruik
-                         </div>');
+                        die('<div class="alert alert-danger" role="alert">Dit e-mail adres is al in gebruik</div>');
                     } else {
                         //$password = 'geheim';
                         $password_hash = password_hash($password, PASSWORD_BCRYPT);
@@ -105,9 +99,7 @@ class RegisterPage
                         $db->bind(':user_id', $userId);
                         $db->execute();
 //                    var_dump($db);
-                        echo '<div class="alert alert-success" role="alert">
-                        Je bent geregistreerd, je kan nu inloggen
-                              </div>';
+                        echo '<div class="alert alert-success" role="alert">Je bent geregistreerd, je kan nu inloggen</div>';
                     }
                 } else {
                     echo 'De wachtwoorden komen niet overeen';

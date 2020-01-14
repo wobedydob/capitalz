@@ -2,9 +2,12 @@
 
 class LoginPage
 {
+    private $urlArr;
 
-    public function __construct()
+    public function __construct($urlArr)
     {
+        $this->urlArr = $urlArr;
+
         if (isset($_POST['email'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -23,7 +26,6 @@ class LoginPage
 //        var_dump($db->single()['password']);
 
         if (password_verify($password, $db->single()['password'])) {
-//            session_start();
             $db->query('SELECT * FROM user WHERE email = :email');
             $db->bind(':email', $email);
             $record = $db->resultset()[0];
@@ -32,15 +34,11 @@ class LoginPage
             $_SESSION["user_role"] = $record["userrole"];
             $_SESSION["email"] = $record["email"];
 //            var_dump(session_start());
-            echo '<div class="alert alert-success" role="alert">
-                Je bent nu ingelogd, je word naar je profiel pagina gestuurd
-                </div>';
-            header("refresh:1; url=profile_edit/zzp");
+            echo '<div class="alert alert-success" role="alert">Je bent nu ingelogd, je word naar je profiel pagina gestuurd</div>';
+            header("Refresh: 1; url=" . $this->urlArr['baseUrl'] . "profile_edit/zzp");
         } else {
-            echo '<div class="alert alert-danger" role="alert">
-                Email of wachtwoord zijn onjuist.
-                </div>';
-            header("refresh:1; url=login");
+            echo '<div class="alert alert-danger" role="alert">Email of wachtwoord zijn onjuist.</div>';
+            header("Refresh: 1; url=" . $this->urlArr['baseUrl'] . "login");
         }
     }
 }

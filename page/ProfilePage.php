@@ -24,7 +24,6 @@ class ProfilePage
     private function profile_zzp()
     {
         $this->zzpForm = ApplicationController::get_part_string('profile/zzp', array('baseUrl' => $this->urlArr['baseUrl']));
-
     }
 
     private function profile_bedrijf()

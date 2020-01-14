@@ -42,9 +42,7 @@ class Profile_EditPage
                 if ($db->rowCount() < 1) {
 
                     header("refresh:2; url=/profile_edit");
-                    die('<div class="alert alert-danger" role="alert">
-                            Dit e-mail adres is al in gebruik
-                         </div>');
+                    die('<div class="alert alert-danger" role="alert">Dit e-mail adres is al in gebruik</div>');
                 } else {
                     $db = new Database();
                     $db->query("INSERT INTO `user_profile` (`user_id`, `name`, `birthday`, `gender`, `nationality`) VALUES(:user_id, :user_name, :birthday, :gender, :nationality)");
@@ -55,9 +53,7 @@ class Profile_EditPage
                     $db->bind(':nationality', $nationality);
                     $db->execute();
 //                    var_dump($db);
-                    echo '<div class="alert alert-success" role="alert">
-                                    Je bent geregistreerd, je kan nu inloggen
-                              </div>';
+                    echo '<div class="alert alert-success" role="alert">Je bent geregistreerd, je kan nu inloggen</div>';
                     header("refresh:1; url=../login");
                 }
             }
