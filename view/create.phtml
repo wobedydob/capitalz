@@ -5,7 +5,9 @@
         <div class="form-row">
             <div class="form-group col-12 col-md-6">
                 <label class="create-title" for="titel">Titel:</label>
-                <input type="text" class="form-control" id="titel" placeholder="Taak titel:" required autofocus maxlength="20">
+                <input type="text" class="form-control" id="titel" name="title" placeholder="Taak titel:" required
+                       autofocus
+                       maxlength="20">
                 <span class="create-detail">Een korte maar duidelijke titel voor de opdracht.</span>
             </div>
             <div class="form-group create-group col-6 col-md-3">
@@ -14,7 +16,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-tag"></i></div>
                     </div>
-                    <input type="text" class="form-control" id="tag" value="Webdev" maxlength="10">
+                    <input type="text" class="form-control" id="tag" name="tag" value="Webdev" maxlength="10">
                 </div>
             </div>
             <div class="form-group create-group col-6 col-md-3">
@@ -30,7 +32,7 @@
         <div class="form-row no-gutters">
             <div class="form-group col-12">
                 <label class="create-title" for="desc">Beschrijving:</label>
-                <textarea class="form-control" id="desc" rows="5"></textarea>
+                <textarea class="form-control" id="desc" name="desc" rows="5"></textarea>
             </div>
         </div>
         <div class="form-row">
@@ -42,7 +44,8 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                             </div>
-                            <input type="date" class="form-control" value="<?php echo date('Y-m-d'); ?>" id="date-start">
+                            <input type="date" class="form-control" value="<?php echo date('Y-m-d'); ?>"
+                                   id="date-start" name="date_start">
                         </div>
                         <span class="create-detail">Begin datum van opdracht</span>
                     </div>
@@ -52,7 +55,9 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="far fa-calendar-check"></i></div>
                             </div>
-                            <input type="date" class="form-control" value="<?php echo date('Y-m-d', strtotime(' + 7 days')); ?>" id="date-end">
+                            <input type="date" class="form-control"
+                                   value="<?php echo date('Y-m-d', strtotime(' + 7 days')); ?>" id="date-end"
+                                   name="date_end">
                         </div>
                         <span class="create-detail">Eind datum van opdracht.</span>
                     </div>
@@ -64,7 +69,8 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="far fa-clock"></i></div>
                             </div>
-                            <input type="number" class="form-control" id="aantal-uur" max="500" value="0">
+                            <input type="number" class="form-control" id="aantal-uur" name="work_hours" max="500"
+                                   value="0">
                         </div>
                         <span class="create-detail">Maximaal 500 uur</span>
                     </div>
@@ -74,7 +80,8 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text">€</div>
                             </div>
-                            <input type="number" class="form-control" id="sal-uur" min="5" max="20" value="5">
+                            <input type="number" class="form-control" id="sal-uur" name="work_sal" min="5" max="20"
+                                   value="5">
                         </div>
                         <span class="create-detail">Tussen de €5 en €20 per uur.</span>
                     </div>

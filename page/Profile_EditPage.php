@@ -25,7 +25,7 @@ class Profile_EditPage
     {
         $this->zzpForm = ApplicationController::get_part_string('profile_edit/zzp', array('baseUrl' => $this->urlArr['baseUrl']));
         if (isset($_POST['profile_submit'])) {
-            $user_id = ApplicationController::sanitize($_SESSION["id"]);
+            $user_id = ApplicationController::sanitize($_SESSION['id']);
             $name = ApplicationController::sanitize($_POST['name']);
             $birthday = ApplicationController::sanitize($_POST['birthday']);
             $gender = ApplicationController::sanitize($_POST['gender']);
