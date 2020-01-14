@@ -36,8 +36,6 @@ VALUES (1, 'company');
 INSERT INTO user_role(role_id, title)
 VALUES (2, 'selfemployed');
 
-
-
 -- -----------------------------------------------------
 -- Table `capitalz_db`.`user`
 -- -----------------------------------------------------
@@ -59,7 +57,6 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`user`
     ENGINE = InnoDB
     AUTO_INCREMENT = 1
     DEFAULT CHARACTER SET = latin1;
-
 
 -- -----------------------------------------------------
 -- Table `capitalz_db`.`job`
@@ -86,7 +83,6 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`job`
     ENGINE = InnoDB
     DEFAULT CHARACTER SET = latin1;
 
-
 -- -----------------------------------------------------
 -- Table `capitalz_db`.`user_info`
 -- -----------------------------------------------------
@@ -106,7 +102,6 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`user_info`
     ENGINE = InnoDB
     DEFAULT CHARACTER SET = latin1;
 
-
 -- -----------------------------------------------------
 -- Table `capitalz_db`.`user_profile`
 -- -----------------------------------------------------
@@ -116,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`user_profile`
     `name`        VARCHAR(50)          NOT NULL,
     `email`       VARBINARY(271)       NOT NULL,
     `birthday`    DATE                 NOT NULL,
-    `gender`      ENUM ('m', 'f', 'o') NOT NULL,
+    `gender`      ENUM ('M', 'F', 'O') NOT NULL,
     `nationality` VARCHAR(50)          NOT NULL,
     `info_number` VARCHAR(45)          NULL,
     `information` TEXT                 NOT NULL,
@@ -135,8 +130,6 @@ CREATE TABLE IF NOT EXISTS `capitalz_db`.`user_profile`
             ON UPDATE CASCADE
 )
     ENGINE = InnoDB;
-
-
 
 SET SQL_MODE = @OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS = @OLD_FOREIGN_KEY_CHECKS;
