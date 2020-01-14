@@ -45,7 +45,7 @@ class Profile_EditPage
                     die('<div class="alert alert-danger" role="alert">Dit e-mail adres is al in gebruik</div>');
                 } else {
                     $db = new Database();
-                    $db->query("INSERT INTO `user_profile` (`user_id`, `name`, `birthday`, `gender`, `nationality`) VALUES(:user_id, :user_name, :birthday, :gender, :nationality)");
+                    $db->query("INSERT INTO `profile_se` (`user_id`, `firstname`, `infix`, `lastname`, `birthday`, `gender`, `nationality`, `about`, `btw_nummer`, `cv_file`) VALUES(:user_id, :user_name, :birthday, :gender, :nationality)");
                     $db->bind(':user_id', $user_id);
                     $db->bind(':user_name', $name);
                     $db->bind(':birthday', $birthday);

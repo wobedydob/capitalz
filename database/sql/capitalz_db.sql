@@ -1,139 +1,132 @@
--- MySQL Workbench Forward Engineering
+-- phpMyAdmin SQL Dump
+-- version 4.8.5
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Jan 14, 2020 at 07:06 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.3.5
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
-
--- -----------------------------------------------------
--- Schema capitalz_db
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema capitalz_db
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `capitalz_db` DEFAULT CHARACTER SET utf8 ;
-USE `capitalz_db` ;
-
--- -----------------------------------------------------
--- Table `capitalz_db`.`user_role`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `capitalz_db`.`user_role` (
-  `role_id` INT(7) NOT NULL AUTO_INCREMENT,
-  `role_title` VARCHAR(50) NOT NULL,
-  PRIMARY KEY (`role_id`))
-ENGINE = InnoDB;
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
 
 
--- -----------------------------------------------------
--- Table `capitalz_db`.`user`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `capitalz_db`.`user` (
-  `user_id` INT(7) NOT NULL AUTO_INCREMENT,
-  `email` VARBINARY(271) NOT NULL,
-  `password` VARCHAR(255) NOT NULL,
-  `number` VARCHAR(20) NOT NULL,
-  `user_role` INT(7) NOT NULL,
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `capitalz_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `job`
+--
+
+DROP TABLE IF EXISTS `job`;
+CREATE TABLE IF NOT EXISTS `job` (
+  `job_id` int(7) NOT NULL AUTO_INCREMENT,
+  `company_id` int(7) NOT NULL,
+  `title` varchar(75) NOT NULL,
+  `tag` varchar(100) NOT NULL,
+  `desc` text NOT NULL,
+  `date_start` date NOT NULL,
+  `date_end` date NOT NULL,
+  `work_hours` varchar(20) NOT NULL,
+  `work_sal` varchar(20) NOT NULL,
+  `company_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`job_id`,`company_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profile_co`
+--
+
+DROP TABLE IF EXISTS `profile_co`;
+CREATE TABLE IF NOT EXISTS `profile_co` (
+  `profile_id` int(7) NOT NULL,
+  `user_id` int(7) NOT NULL,
+  `company_name` varchar(255) NOT NULL,
+  `country_loc` varchar(45) NOT NULL,
+  `city_loc` varchar(45) NOT NULL,
+  `about` text NOT NULL,
+  `website` varbinary(271) NOT NULL,
+  `kvk_nummer` varchar(20) NOT NULL,
+  PRIMARY KEY (`profile_id`,`user_id`),
+  UNIQUE KEY `kvk_nummer_UNIQUE` (`kvk_nummer`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profile_se`
+--
+
+DROP TABLE IF EXISTS `profile_se`;
+CREATE TABLE IF NOT EXISTS `profile_se` (
+  `profile_id` int(7) NOT NULL AUTO_INCREMENT,
+  `user_id` int(7) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `infix` varchar(15) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `birthday` date NOT NULL,
+  `gender` enum('m','f','o') NOT NULL,
+  `nationality` varchar(50) NOT NULL,
+  `about` varchar(50) NOT NULL,
+  `btw_nummer` varchar(20) NOT NULL,
+  `cv_file` varbinary(271) DEFAULT NULL,
+  PRIMARY KEY (`profile_id`,`user_id`),
+  UNIQUE KEY `btw_nummer_UNIQUE` (`btw_nummer`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `user_id` int(7) NOT NULL AUTO_INCREMENT,
+  `email` varbinary(271) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `number` varchar(20) NOT NULL,
+  `user_role` int(7) NOT NULL,
   PRIMARY KEY (`user_id`),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) ,
-  UNIQUE INDEX `number_UNIQUE` (`number` ASC) ,
-  INDEX `user_role_idx` (`user_role` ASC) ,
-  CONSTRAINT `user_role`
-    FOREIGN KEY (`user_role`)
-    REFERENCES `capitalz_db`.`user_role` (`role_id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  UNIQUE KEY `number_UNIQUE` (`number`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
--- -----------------------------------------------------
--- Table `capitalz_db`.`profile_se`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `capitalz_db`.`profile_se` (
-  `profile_id` INT(7) NOT NULL AUTO_INCREMENT,
-  `user_id` INT(7) NOT NULL,
-  `firstname` VARCHAR(50) NOT NULL,
-  `infix` VARCHAR(15) NOT NULL,
-  `lastname` VARCHAR(50) NOT NULL,
-  `birthday` DATE NOT NULL,
-  `gender` ENUM('m', 'f', 'o') NOT NULL,
-  `nationality` VARCHAR(50) NOT NULL,
-  `about` VARCHAR(50) NOT NULL,
-  `btw_nummer` VARCHAR(20) NOT NULL,
-  `cv_file` VARBINARY(271) NOT NULL,
-  PRIMARY KEY (`profile_id`, `user_id`),
-  UNIQUE INDEX `btw_nummer_UNIQUE` (`btw_nummer` ASC) ,
-  INDEX `user_idx` (`user_id` ASC) ,
-  CONSTRAINT `user_id`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `capitalz_db`.`user` (`user_id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `number`
-    FOREIGN KEY (`btw_nummer`)
-    REFERENCES `capitalz_db`.`user` (`number`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
+--
+-- Table structure for table `user_role`
+--
 
+DROP TABLE IF EXISTS `user_role`;
+CREATE TABLE IF NOT EXISTS `user_role` (
+  `role_id` int(7) NOT NULL AUTO_INCREMENT,
+  `role_title` varchar(50) NOT NULL,
+  PRIMARY KEY (`role_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- -----------------------------------------------------
--- Table `capitalz_db`.`profile_co`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `capitalz_db`.`profile_co` (
-  `profile_id` INT(7) NOT NULL,
-  `user_id` INT(7) NOT NULL,
-  `company_name` VARCHAR(255) NOT NULL,
-  `country_loc` VARCHAR(45) NOT NULL,
-  `city_loc` VARCHAR(45) NOT NULL,
-  `about` TEXT NOT NULL,
-  `website` VARBINARY(271) NOT NULL,
-  `kvk_nummer` VARCHAR(20) NOT NULL,
-  PRIMARY KEY (`profile_id`, `user_id`),
-  INDEX `user_id_idx` (`user_id` ASC) ,
-  INDEX `number_idx` (`kvk_nummer` ASC) ,
-  CONSTRAINT `user_id`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `capitalz_db`.`user` (`user_id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `number`
-    FOREIGN KEY (`kvk_nummer`)
-    REFERENCES `capitalz_db`.`user` (`number`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
+--
+-- Dumping data for table `user_role`
+--
 
+INSERT INTO `user_role` (`role_id`, `role_title`) VALUES
+(0, 'admin'),
+(1, 'company'),
+(2, 'selfemployed');
+COMMIT;
 
--- -----------------------------------------------------
--- Table `capitalz_db`.`job`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `capitalz_db`.`job` (
-  `job_id` INT(7) NOT NULL AUTO_INCREMENT,
-  `company_id` INT(7) NOT NULL,
-  `title` VARCHAR(75) NOT NULL,
-  `tag` VARCHAR(100) NOT NULL,
-  `desc` TEXT NOT NULL,
-  `date_start` DATE NOT NULL,
-  `date_end` DATE NOT NULL,
-  `work_hours` VARCHAR(20) NOT NULL,
-  `work_sal` VARCHAR(20) NOT NULL,
-  `company_name` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`job_id`, `company_id`),
-  INDEX `user_id_idx` (`company_id` ASC) ,
-  INDEX `company_name_idx` (`company_name` ASC) ,
-  CONSTRAINT `user_id`
-    FOREIGN KEY (`company_id`)
-    REFERENCES `capitalz_db`.`user` (`user_id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  CONSTRAINT `company_name`
-    FOREIGN KEY (`company_name`)
-    REFERENCES `capitalz_db`.`profile_co` (`company_name`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
-ENGINE = InnoDB;
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

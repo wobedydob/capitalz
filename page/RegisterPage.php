@@ -46,15 +46,16 @@ class RegisterPage
                     } else {
                         $password_hash = password_hash($password, PASSWORD_BCRYPT);
                         $db = new Database();
-                        $db->query("INSERT INTO `user` (`email`, `password`, `userrole`) VALUES(:email, :password_hash, 2)");
+                        $db->query("INSERT INTO `user` (`email`, `password`, `number`, `user_role`) VALUES(:email, :password_hash, :btw_nummer, 2)");
                         $db->bind(':email', $email);
                         $db->bind(':password_hash', $password_hash);
-                        $db->execute();
-                        $userId = $db->lastInsertId();
-                        $db->query("INSERT INTO `user_info` (`user_id`, `key`, `value`) VALUES(:user_id, 'btw-nummer', :btw_nummer)");
-                        $db->bind(':user_id', $userId);
                         $db->bind(':btw_nummer', $btw_nummer);
                         $db->execute();
+//                        $userId = $db->lastInsertId();
+//                        $db->query("INSERT INTO `user_info` (`user_id`, `key`, `value`) VALUES(:user_id, 'btw-nummer', :btw_nummer)");
+//                        $db->bind(':user_id', $userId);
+//                        $db->bind(':btw_nummer', $btw_nummer);
+//                        $db->execute();
 //                    var_dump($db);
                         echo '<div class="alert alert-success" role="alert">Je bent geregistreerd, je kan nu inloggen</div>';
                         header("refresh:1; url=../login");
@@ -90,14 +91,15 @@ class RegisterPage
                         //$password = 'geheim';
                         $password_hash = password_hash($password, PASSWORD_BCRYPT);
                         $db = new Database();
-                        $db->query("INSERT INTO `user` (`email`, `password`, `userrole`) VALUES(:email, :password_hash, 1)");
+                        $db->query("INSERT INTO `user` (`email`, `password`, `number`, `user_role`) VALUES(:email, :password_hash, :kvk_nummer, 1)");
                         $db->bind(':email', $email);
                         $db->bind(':password_hash', $password_hash);
+                        $db->bind(':kvk_nummer', $kvk_nummer);
                         $db->execute();
-                        $userId = $db->lastInsertId();
-                        $db->query("INSERT INTO `user_info` (`user_id`, `key`, `value`) VALUES(:user_id, 'kvk-nummer', $kvk_nummer)");
-                        $db->bind(':user_id', $userId);
-                        $db->execute();
+//                        $userId = $db->lastInsertId();
+//                        $db->query("INSERT INTO `user_info` (`user_id`, `key`, `value`) VALUES(:user_id, 'kvk-nummer', $kvk_nummer)");
+//                        $db->bind(':user_id', $userId);
+//                        $db->execute();
 //                    var_dump($db);
                         echo '<div class="alert alert-success" role="alert">Je bent geregistreerd, je kan nu inloggen</div>';
                     }
