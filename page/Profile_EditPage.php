@@ -24,33 +24,51 @@ class Profile_EditPage
     private function profile_edit_zzp()
     {
         $this->zzpForm = ApplicationController::get_part_string('profile_edit/zzp', array('baseUrl' => $this->urlArr['baseUrl']));
-        if (isset($_POST['profile_submit'])) {
+        if (isset($_POST['pro_edit_submit'])) {
             $user_id = ApplicationController::sanitize($_SESSION['id']);
-            $name = ApplicationController::sanitize($_POST['name']);
+            $firstname = ApplicationController::sanitize($_POST['firstname']);
+            $infix = ApplicationController::sanitize($_POST['infix']);
+            $lastname = ApplicationController::sanitize($_POST['lastname']);
             $birthday = ApplicationController::sanitize($_POST['birthday']);
             $gender = ApplicationController::sanitize($_POST['gender']);
             $nationality = ApplicationController::sanitize($_POST['nationality']);
+            $desc = ApplicationController::sanitize($_POST['desc']);
+            $cv_file = ApplicationController::sanitize($_POST['cv']);
+            $pro_pic = ApplicationController::sanitize($_POST['pro-pic']);
+            $btw_nummer = ApplicationController::sanitize($_SESSION['number']);
+
+            var_dump($_POST);
 
             if (isset($user_id)) {
                 $db = new Database();
-                $db->query("SELECT * from `user` WHERE `user_id` = :user_id");
+                $db->query("SELECT `number` from `user` WHERE `user_id` = :user_id");
                 $db->bind(':user_id', $user_id);
 //                var_dump('SELECT * from `user` WHERE `email` = :email');
 //                var_dump($user_id);
                 $db->execute();
 //                var_dump($db->rowCount() < 1);
+//                var_dump($db);
+
                 if ($db->rowCount() < 1) {
 
                     header("refresh:2; url=/profile_edit");
                     die('<div class="alert alert-danger" role="alert">Dit e-mail adres is al in gebruik</div>');
                 } else {
                     $db = new Database();
-                    $db->query("INSERT INTO `profile_se` (`user_id`, `firstname`, `infix`, `lastname`, `birthday`, `gender`, `nationality`, `about`, `btw_nummer`, `cv_file`) VALUES(:user_id, :user_name, :birthday, :gender, :nationality)");
+//                    $db->query("INSERT INTO `profile_se` (`user_id`, `firstname`, `infix`, `lastname`, `birthday`, `gender`, `nationality`, `about`, `btw_nummer`, `cv_file`, `pro_img`) VALUES(:user_id, :firstname, :infix, :lastname, :birthday, :gender, :nationality, :cv_file, :pro_img)");
+                    $db->query("INSERT INTO `profile_se` (`user_id`, `firstname`, `infix`, `lastname`, `birthday`, `gender`, `nationality`, `about`, `btw_nummer`, `cv_file`, `pro_img`)
+                                       VALUES (:user_name, :firstname, :infix, :lastname, :birthday, :gender, :nationality, :about, :btw_nummer, NULL, NULL);");
                     $db->bind(':user_id', $user_id);
-                    $db->bind(':user_name', $name);
+                    $db->bind(':firstname', $firstname);
+                    $db->bind(':infix', $infix);
+                    $db->bind(':lastname', $lastname);
                     $db->bind(':birthday', $birthday);
                     $db->bind(':gender', $gender);
                     $db->bind(':nationality', $nationality);
+                    $db->bind(':about', $desc);
+                    $db->bind(':btw_nummer', $btw_nummer);
+                    $db->bind(':cv_file', $cv_file);
+                    $db->bind(':pro_img', $pro_pic);
                     $db->execute();
 //                    var_dump($db);
                     echo '<div class="alert alert-success" role="alert">Je bent geregistreerd, je kan nu inloggen</div>';

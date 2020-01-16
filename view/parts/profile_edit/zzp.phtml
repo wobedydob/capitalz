@@ -7,7 +7,8 @@
             <div class="form-group col-12 col-sm-4">
                 <label for="firstname">Voornaam:</label><span class="required">*</span>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Voornaam" required>
+                    <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Voornaam"
+                           required>
                     <div class="invalid-tooltip">Voer je voornaam in!</div>
                 </div>
             </div>
@@ -20,7 +21,8 @@
             <div class="form-group col-12 col-sm-5">
                 <label for="lastname">Achternaam:</label><span class="required">*</span>
                 <div class="input-group">
-                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Achternaam" required>
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Achternaam"
+                           required>
                     <div class="invalid-tooltip">Voer je achternaam in!</div>
                 </div>
             </div>
@@ -32,7 +34,8 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                     </div>
-                    <input type="date" class="form-control" value="<?php echo date('Y-m-d', strtotime(' - 18 years')); ?>" id="birthday" max="" required>
+                    <input type="date" class="form-control"
+                           value="<?php echo date('Y-m-d', strtotime(' - 18 years')); ?>" id="birthday" max="" required>
                 </div>
                 <div class="invalid-tooltip">Voer een correcte geboortedatum in!</div>
             </div>
@@ -59,7 +62,8 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-globe"></i></div>
                     </div>
-                    <input type="text" class="form-control" id="nationality" name="nationality" placeholder="Nationaliteit" required>
+                    <input type="text" class="form-control" id="nationality" name="nationality"
+                           placeholder="Nationaliteit" required>
                     <div class="invalid-tooltip">Voer je nationaliteit in!</div>
                 </div>
             </div>
@@ -83,7 +87,7 @@
                     </div>
                     <div class="custom-file">
                         <label class="custom-file-label" for="cv" data-browse="Zoeken...">Upload je CV</label>
-                        <input type="file" class="custom-file-input" id="cv" name="cv" required>
+                        <input type="file" class="custom-file-input" id="cv" name="cv">
                         <div class="invalid-tooltip">Upload je cv!</div>
                     </div>
                 </div>
@@ -97,7 +101,7 @@
                     </div>
                     <div class="custom-file">
                         <label class="custom-file-label" for="pro-pic" data-browse="Zoeken...">Upload foto</label>
-                        <input type="file" class="custom-file-input" id="pro-pic" name="pro-pic" required>
+                        <input type="file" class="custom-file-input" id="pro-pic" name="pro-pic">
                         <div class="invalid-tooltip">Upload je profiel foto!</div>
                     </div>
                 </div>

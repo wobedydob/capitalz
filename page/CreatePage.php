@@ -46,6 +46,7 @@ class CreatePage
                     echo '<div class="alert alert-success" role="alert">Gelukt!</div>';
                     header("refresh:1; url=../home");
                 } else {
+                    print 'Mistake';
                 }
             }
         }
