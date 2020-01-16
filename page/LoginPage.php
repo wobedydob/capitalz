@@ -4,6 +4,8 @@ class LoginPage
 {
     private $urlArr;
 
+    public $formMessage;
+
     public function __construct($urlArr)
     {
         $this->urlArr = $urlArr;
@@ -31,15 +33,29 @@ class LoginPage
             $record = $db->resultset()[0];
 //            var_dump($db->resultset());
             $_SESSION["id"] = $record["user_id"];
-            $_SESSION["user_role"] = $record["user_role"];
+            $_SESSION["user_role"] = (int)$record["user_role"];
             $_SESSION["email"] = $record["email"];
 //            $_SESSION["number"] = $record["number"];
 //            var_dump(session_start());
-            echo '<div class="alert alert-success" role="alert">Je bent nu ingelogd, je word naar je profiel pagina gestuurd</div>';
-            header("Refresh: 1; url=" . $this->urlArr['baseUrl'] . "profile_edit/zzp");
+
+            if ($_SESSION["user_role"] === 0) {
+                $this->formMessage = '<div class="alert alert-warning" role="alert">Inlog geslaagd! Welkom administrator.</div>';
+                $url = "home";
+            } elseif ($_SESSION["user_role"] === 1) {
+                $this->formMessage = '<div class="alert alert-success" role="alert">Inlog geslaagd! Welkom eigenaar bedrijf!</div>';
+                $url = "profile_edit/bedrijf";
+            } elseif ($_SESSION["user_role"] === 2) {
+                $this->formMessage = '<div class="alert alert-success" role="alert">Inlog geslaagd! Welkom ZZP\'er!</div>';
+                $url = "profile_edit/zzp";
+            } else {
+                $this->formMessage = '<div class="alert alert-danger" role="alert"><strong>!! ERR: USER_ROLE NOT DEFINED !!</strong></div>';
+                unset($_SESSION["user_role"]);
+                $url = "home";
+            }
         } else {
-            echo '<div class="alert alert-danger" role="alert">Email of wachtwoord zijn onjuist.</div>';
-            header("Refresh: 1; url=" . $this->urlArr['baseUrl'] . "login");
+            echo '<div class="alert alert-danger" role="alert">Email of wachtwoord is onjuist.</div>';
+            $url = "login";
         }
+        header("Refresh: 1; url=" . $this->urlArr['baseUrl'] . $url);
     }
 }

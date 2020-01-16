@@ -2,6 +2,9 @@
 <div class="container login center">
     <h1 class="login-head ">Login</h1>
     <hr>
+    <?php if (!empty($this->pageObj->formMessage)) : ?>
+        <?= $this->pageObj->formMessage ?>
+    <?php endif; ?>
     <form class="needs-validation login-form" action="" method="POST" novalidate>
         <!--Email row-->
         <div class="form-row">
