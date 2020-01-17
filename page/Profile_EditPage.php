@@ -32,12 +32,14 @@ class Profile_EditPage
             $birthday = ApplicationController::sanitize($_POST['birthday']);
             $gender = ApplicationController::sanitize($_POST['gender']);
             $nationality = ApplicationController::sanitize($_POST['nationality']);
-            $desc = ApplicationController::sanitize($_POST['desc']);
+            $about = ApplicationController::sanitize($_POST['about']);
             $cv_file = ApplicationController::sanitize($_POST['cv']);
             $pro_pic = ApplicationController::sanitize($_POST['pro-pic']);
-            $btw_nummer = ApplicationController::sanitize($_SESSION['number']);
+            $btw_number = ApplicationController::sanitize($_SESSION['number']);
+
 
             var_dump($_POST);
+            var_dump($_SESSION);
 
             if (isset($user_id)) {
                 $db = new Database();
@@ -55,9 +57,7 @@ class Profile_EditPage
                     die('<div class="alert alert-danger" role="alert">Dit e-mail adres is al in gebruik</div>');
                 } else {
                     $db = new Database();
-//                    $db->query("INSERT INTO `profile_se` (`user_id`, `firstname`, `infix`, `lastname`, `birthday`, `gender`, `nationality`, `about`, `btw_nummer`, `cv_file`, `pro_img`) VALUES(:user_id, :firstname, :infix, :lastname, :birthday, :gender, :nationality, :cv_file, :pro_img)");
-                    $db->query("INSERT INTO `profile_se` (`user_id`, `firstname`, `infix`, `lastname`, `birthday`, `gender`, `nationality`, `about`, `btw_nummer`, `cv_file`, `pro_img`)
-                                       VALUES (:user_name, :firstname, :infix, :lastname, :birthday, :gender, :nationality, :about, :btw_nummer, NULL, NULL);");
+                    $db->query("INSERT INTO `profile_se` (`user_id`, `firstname`, `infix`, `lastname`, `birthday`, `gender`, `nationality`, `about`, `btw_nummer`, `cv_file`, `pro_img`) VALUES (:user_id, :firstname, :infix, :lastname, :birthday, :gender, :nationality, :btw_nummer, :cv_file, :pro_img");
                     $db->bind(':user_id', $user_id);
                     $db->bind(':firstname', $firstname);
                     $db->bind(':infix', $infix);
@@ -65,18 +65,20 @@ class Profile_EditPage
                     $db->bind(':birthday', $birthday);
                     $db->bind(':gender', $gender);
                     $db->bind(':nationality', $nationality);
-                    $db->bind(':about', $desc);
-                    $db->bind(':btw_nummer', $btw_nummer);
+                    $db->bind(':about', $about);
+                    $db->bind(':btw_nummer', $btw_number);
                     $db->bind(':cv_file', $cv_file);
                     $db->bind(':pro_img', $pro_pic);
+                    var_dump($db);
                     $db->execute();
-//                    var_dump($db);
                     echo '<div class="alert alert-success" role="alert">Je bent geregistreerd, je kan nu inloggen</div>';
                     header("refresh:1; url=../login");
                 }
             }
         }
     }
+
+
 
 
 //        if (isset($_POST['profile_submit'])) {

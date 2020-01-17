@@ -32,10 +32,15 @@ class LoginPage
             $db->bind(':email', $email);
             $record = $db->resultset()[0];
 //            var_dump($db->resultset());
-            $_SESSION["id"] = $record["user_id"];
-            $_SESSION["user_role"] = (int)$record["user_role"];
-            $_SESSION["email"] = $record["email"];
-//            $_SESSION["number"] = $record["number"];
+            $_SESSION['id'] = $record['user_id'];
+            $_SESSION['email'] = $record['email'];
+            $_SESSION['number'] = $record['number'];
+            $_SESSION['user_role'] = (int)$record['user_role'];
+
+            var_dump($_SESSION);
+//            exit;
+
+
 //            var_dump(session_start());
 
             if ($_SESSION["user_role"] === 0) {
