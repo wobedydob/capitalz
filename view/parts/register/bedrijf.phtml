@@ -2,6 +2,9 @@
 <div class="container register center">
     <h1 class="register-head">Registreren Bedrijf</h1>
     <hr>
+    <?php if (!empty($vars['formMessage'])) : ?>
+        <?= $vars['formMessage'] ?>
+    <?php endif; ?>
     <form class="needs-validation register-bedrijf-form" action="" method="POST" novalidate>
         <!--Email row-->
         <div class="form-row">
