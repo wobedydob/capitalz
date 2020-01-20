@@ -10,26 +10,28 @@
         </span>
     </button>
     <div class="collapse navbar-collapse" id="nav-collapse">
-        <ul class="navbar-nav ml-auto">
-
+        <ul class="nav navbar-nav ml-auto">
             <?php
-
             if (isset($_SESSION["user_role"])) {
                 switch ($_SESSION["user_role"]) {
                     case '0':
-                        echo '<li class="nav-item"><a class="nav-link" href="http://localhost/phpmyadmin/db_structure.php?server=1&db=capitalz_db" target="_blank"><i class="fas fa-database"></i> <span class="mobile">Database</span></a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="http://localhost/phpmyadmin/db_structure.php?server=1&db=capitalz_db" target="_blank"><i class="fas fa-database"></i> Database</a></li>';
+                        echo '<li class="nav-item dropdown"><a class="profile-link nav-link" href="" id="dropdown" role="button" data-toggle="dropdown">';
+                        echo '<img class="profile-img-link" src=" ' . $this->urlArr['baseUrl'] . 'img/profile/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . ' " alt="pf link"></a><div class="dropdown-menu">';
+                        echo '<a class="dropdown-item" href=" ' . $this->urlArr['baseUrl'] . ' ">Beheer Opdrachten</a>';
+                        echo '<a class="dropdown-item" href=" ' . $this->urlArr['baseUrl'] . ' ">Beheer Gebruikers</a></div></li>';
                         break;
                     case '1':
                         echo '<li class="nav-item"><a class="nav-btn nav-link" href=" ' . $this->urlArr['baseUrl'] . 'create">';
                         echo '<button class="btn btn-primary"><i class="fas fa-plus"></i> Maak Opdracht</button></a></li>';
-                        echo '<li class="nav-item dropdown"><a class="profile-link nav-link" href="" id="navbarDropdown" role="button" data-toggle="dropdown">';
+                        echo '<li class="nav-item dropdown"><a class="profile-link nav-link" href="" id="dropdown" role="button" data-toggle="dropdown">';
                         echo '<img class="profile-img-link" src=" ' . $this->urlArr['baseUrl'] . 'img/profile/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . ' " alt="pf link"></a><div class="dropdown-menu">';
                         echo '<a class="dropdown-item" href=" ' . $this->urlArr['baseUrl'] . 'profile/bedrijf ">Profiel</a>';
                         echo '<div class="dropdown-divider"></div><a class="dropdown-item" href=" ' . $this->urlArr['baseUrl'] . ' ">Gemaakte Opdrachten</a></div></li>';
                         break;
                     case '2':
                         echo '<li class="nav-item"><a class="nav-link" href=" ' . $this->urlArr['baseUrl'] . 'task_zzp"><i class="fas fa-receipt"></i> Mijn Opdrachten</a></li>';
-                        echo '<li class="nav-item dropdown"><a class="profile-link nav-link" href="" id="navbarDropdown" role="button" data-toggle="dropdown">';
+                        echo '<li class="nav-item dropdown"><a class="profile-link nav-link" href="" id="dropdown" role="button" data-toggle="dropdown">';
                         echo '<img class="profile-img-link" src=" ' . $this->urlArr['baseUrl'] . 'img/profile/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . ' " alt="pf link"></a><div class="dropdown-menu">';
                         echo '<a class="dropdown-item" href=" ' . $this->urlArr['baseUrl'] . 'profile/zzp ">Profiel</a>';
                         echo '<div class="dropdown-divider"></div><a class="dropdown-item" href=" ' . $this->urlArr['baseUrl'] . ' ">Mijn Opdracten</a></div></li>';
@@ -44,7 +46,6 @@
                 echo '<li class="nav-item"><a class="nav-btn nav-link" href="' . $this->urlArr['baseUrl'] . 'register/zzp"><button class="btn btn-primary"><i class="fas fa-user-plus"></i> Registreer</button></a></li>';
             }
             ?>
-
         </ul>
     </div>
 </nav>

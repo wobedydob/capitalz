@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    //Particles
+    // Particles
     if ($('#particles-js').length > 0) {
         particlesJS.load('particles-js', '../../particles.json');
     }
 
-    //Max datum van vandaag
+    // Max datum van vandaag
     if ($('#birthday').length > 0) {
         let today = new Date();
         let dd = today.getDate();
@@ -20,7 +20,7 @@ $(document).ready(function () {
         $("#birthday").attr("max", today);
     }
 
-    //Btw_nummer input formatting
+    // Btw_nummer input formatting
     if ($('#btw_nummer').length > 0) {
         const element = document.getElementById('btw_nummer');
         const maskOptions = {
@@ -28,32 +28,34 @@ $(document).ready(function () {
         };
         const mask = IMask(element, maskOptions);
     }
-
-    //Validation
-    if ($('needs-validation').length > 0) {
-        'use strict';
-        window.addEventListener('load', function () {
-            let forms = document.getElementsByClassName('needs-validation');
-            let validation = Array.prototype.filter.call(forms, function (form) {
-                form.addEventListener('submit', function (event) {
-                    if (form.checkValidity() === false) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                    }
-                    form.classList.add('was-validated');
-                }, false);
-            });
-        }, false);
-    }
 });
 
-//Navbar collapse icoon
+// Validation
+(function () {
+    'use strict';
+    window.addEventListener('load', function () {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function (form) {
+            form.addEventListener('submit', function (event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+
+// Navbar collapse icoon
 const hamburger = document.querySelector(".hamburger");
 hamburger.addEventListener("click", function () {
     hamburger.classList.toggle("is-active");
 });
 
-//Wachtwoord eye icon toggle
+// Wachtwoord eye icon toggle
 $(document).on('click', '.toggle-password', function () {
     $(this).toggleClass("fa-eye fa-eye-slash");
     const passIconLog = $("#wachtwoord_login");
@@ -70,7 +72,7 @@ $(document).on('click', '.toggle-password', function () {
     passIconRegBedrijf2.attr('type') === 'password' ? passIconRegBedrijf2.attr('type', 'text') : passIconRegBedrijf2.attr('type', 'password');
 });
 
-//TaskPage filter slider aantal Uren
+// TaskPage filter slider aantal Uren
 if (document.getElementById("UurSlider") !== null) {
     const UurSlider = document.getElementById("UurSlider");
     const UurOutput = document.getElementById("UurOutput");
@@ -80,7 +82,7 @@ if (document.getElementById("UurSlider") !== null) {
     };
 }
 
-//TaskPage filter slider Salaris
+// TaskPage filter slider Salaris
 if (document.getElementById("SalSlider") !== null) {
     const SalSlider = document.getElementById("SalSlider");
     const SalOutput = document.getElementById("SalOutput");
@@ -90,12 +92,12 @@ if (document.getElementById("SalSlider") !== null) {
     };
 }
 
-//Carousel select
+// Carousel select
 $(document).on('click', '.carousel-item', function () {
     $(this).toggleClass("selected");
 });
 
-//Load icon
+// Load icon
 document.onreadystatechange = function () {
     $("body").css("overflow", "hidden");
     const state = document.readyState;
@@ -111,7 +113,7 @@ document.onreadystatechange = function () {
     }
 };
 
-//max number input
+// max number input
 $(document).on('keyup', 'input[id=work-hours]', function () {
     const _this = $(this);
     const min = parseInt(_this.attr('min')) || 1;
@@ -123,7 +125,7 @@ $(document).on('keyup', 'input[id=work-hours]', function () {
         _this.val(max);
 });
 
-//max number input
+// max number input
 $(document).on('keyup', 'input[id=work-sal]', function () {
     const _this = $(this);
     const min = parseInt(_this.attr('min')) || 1;
@@ -135,7 +137,7 @@ $(document).on('keyup', 'input[id=work-sal]', function () {
         _this.val(max);
 });
 
-//Ajax search
+// Ajax input
 $('input#search').keyup(function () {
     let input = $(this).val(),
         callback = (function (data) {
@@ -145,6 +147,7 @@ $('input#search').keyup(function () {
     cz_ajax('search', {input: input}, callback);
 });
 
+// Ajax search
 function cz_ajax(func, values, callback) {
     const baseUrl = 'http://www.capitalz.net/ajax/';
     console.log(values);

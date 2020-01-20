@@ -40,5 +40,4 @@ class UserController extends UserModel
             return $table . '.png';
         }
     }
-
 }
