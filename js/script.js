@@ -1,29 +1,50 @@
-//Particles
-particlesJS.load('particles-js', '../../particles.json');
-
-//Max datum van vandaag
 $(document).ready(function () {
-    let today = new Date();
-    let dd = today.getDate();
-    let mm = today.getMonth() + 1;
-    const yyyy = today.getFullYear();
-    if (dd < 10) {
-        dd = '0' + dd
+    //Particles
+    if ($('#particles-js').length > 0) {
+        particlesJS.load('particles-js', '../../particles.json');
     }
-    if (mm < 10) {
-        mm = '0' + mm
-    }
-    today = yyyy + '-' + mm + '-' + dd;
-    document.getElementById("birthday").setAttribute("max", today);
-});
 
-//Btw_nummer input formatting
-$(document).ready(function () {
-    const element = document.getElementById('btw_nummer');
-    const maskOptions = {
-        mask: 'NL-00000000-B00',
-    };
-    const mask = IMask(element, maskOptions);
+    //Max datum van vandaag
+    if ($('#birthday').length > 0) {
+        let today = new Date();
+        let dd = today.getDate();
+        let mm = today.getMonth() + 1;
+        const yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+        today = yyyy + '-' + mm + '-' + dd;
+        $("#birthday").attr("max", today);
+    }
+
+    //Btw_nummer input formatting
+    if ($('#btw_nummer').length > 0) {
+        const element = document.getElementById('btw_nummer');
+        const maskOptions = {
+            mask: 'NL-00000000-B00',
+        };
+        const mask = IMask(element, maskOptions);
+    }
+
+    //Validation
+    if ($('needs-validation').length > 0) {
+        'use strict';
+        window.addEventListener('load', function () {
+            let forms = document.getElementsByClassName('needs-validation');
+            let validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    }
 });
 
 //Navbar collapse icoon
@@ -90,43 +111,52 @@ document.onreadystatechange = function () {
     }
 };
 
-//Validation
-(function () {
-    'use strict';
-    window.addEventListener('load', function () {
-        const forms = document.getElementsByClassName('needs-validation');
-        const validation = Array.prototype.filter.call(forms, function (form) {
-            form.addEventListener('submit', function (event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-            }, false);
+//max number input
+$(document).on('keyup', 'input[id=work-hours]', function () {
+    const _this = $(this);
+    const min = parseInt(_this.attr('min')) || 1;
+    const max = parseInt(_this.attr('max')) || 100;
+    const val = parseInt(_this.val()) || (min - 1);
+    if (val < min)
+        _this.val(min);
+    if (val > max)
+        _this.val(max);
+});
+
+//max number input
+$(document).on('keyup', 'input[id=work-sal]', function () {
+    const _this = $(this);
+    const min = parseInt(_this.attr('min')) || 1;
+    const max = parseInt(_this.attr('max')) || 100;
+    const val = parseInt(_this.val()) || (min - 1);
+    if (val < min)
+        _this.val(min);
+    if (val > max)
+        _this.val(max);
+});
+
+//Ajax search
+$('input#search').keyup(function () {
+    let input = $(this).val(),
+        callback = (function (data) {
+            $('overview').html(data);
         });
-    }, false);
-})();
-
-//max number input
-$(document).on('keyup', 'input[id=aantal-uur]', function () {
-    const _this = $(this);
-    const min = parseInt(_this.attr('min')) || 1;
-    const max = parseInt(_this.attr('max')) || 100;
-    const val = parseInt(_this.val()) || (min - 1);
-    if (val < min)
-        _this.val(min);
-    if (val > max)
-        _this.val(max);
+    //console.log(input);
+    cz_ajax('search', {input: input}, callback);
 });
 
-//max number input
-$(document).on('keyup', 'input[id=sal-uur]', function () {
-    const _this = $(this);
-    const min = parseInt(_this.attr('min')) || 1;
-    const max = parseInt(_this.attr('max')) || 100;
-    const val = parseInt(_this.val()) || (min - 1);
-    if (val < min)
-        _this.val(min);
-    if (val > max)
-        _this.val(max);
-});
+function cz_ajax(func, values, callback) {
+    const baseUrl = 'http://www.capitalz.net/ajax/';
+    console.log(values);
+    $.ajax({
+        method: "POST",
+        url: baseUrl + func,
+        data: values
+    }).done(function (data) {
+        if (data.length > 0) {
+            callback(data);
+        } else {
+            alert('Er is iets fout gegaan, probeer het opnieuw.');
+        }
+    });
+}

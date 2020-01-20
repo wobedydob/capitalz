@@ -5,6 +5,10 @@ class LoginPage
     private $urlArr;
 
     public $formMessage;
+    public $pro_img;
+    public $pro_default_ad = '../../img/profile_admin.png';
+    public $pro_default_co = '../../img/profile_company.png';
+    public $pro_default_se = '../../img/profile_zzp.png';
 
     public function __construct($urlArr)
     {
@@ -24,24 +28,14 @@ class LoginPage
         $db->bind(':email', $email);
         $db->execute();
 
-//        var_dump($password);
-//        var_dump($db->single()['password']);
-
         if (password_verify($password, $db->single()['password'])) {
             $db->query('SELECT * FROM user WHERE email = :email');
             $db->bind(':email', $email);
             $record = $db->resultset()[0];
-//            var_dump($db->resultset());
             $_SESSION['id'] = $record['user_id'];
             $_SESSION['email'] = $record['email'];
             $_SESSION['number'] = $record['number'];
             $_SESSION['user_role'] = (int)$record['user_role'];
-
-//            var_dump($_SESSION);
-//            exit;
-
-
-//            var_dump(session_start());
 
             if ($_SESSION["user_role"] === 0) {
                 $this->formMessage = '<div class="alert alert-warning" role="alert">Inlog geslaagd! Welkom administrator.</div>';
@@ -61,6 +55,7 @@ class LoginPage
             echo '<div class="alert alert-danger" role="alert">Email of wachtwoord is onjuist.</div>';
             $url = "login";
         }
+
         header("Refresh: 1; url=" . $this->urlArr['baseUrl'] . $url);
     }
 }

@@ -46,6 +46,8 @@ class ApplicationController extends ApplicationModel
         $objName = ucfirst(strtolower($page)) . 'Page';
         $this->pageObj = new $objName($this->urlArr);
 
+        if ($page == 'ajax') exit;
+
         $this->get_part('header');
 
         require 'view/' . $page . '.phtml';

@@ -20,4 +20,25 @@ class UserController extends UserModel
 
     }
 
+    public static function get_profile_picture($user_id, $user_role)
+    {
+        if ($user_role == 1) {
+            $table = 'profile_co';
+        } elseif ($user_role == 2) {
+            $table = 'profile_se';
+        } else {
+            return 'profile_ad.png';
+        }
+
+        $db = new Database();
+        $db->query('SELECT pro_img FROM ' . $table . ' WHERE user_id = :user_id');
+        $db->bind(':user_id', $user_id);
+
+        if ($db->execute() && $db->single()) {
+            return $db->single()['pro_img'];
+        } else {
+            return $table . '.png';
+        }
+    }
+
 }

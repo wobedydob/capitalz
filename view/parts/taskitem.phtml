@@ -1,0 +1,64 @@
+<div class="tasklist-card h-100 card mb-3">
+    <div class="row no-gutters tasklist-card-row">
+        <div class="col-md-4">
+            <img class="tasklist-img card-img" src="<?= $task_img ?>" alt="task img">
+        </div>
+        <div class="col-md-8">
+            <div class="card-header">
+                <div class="row no-gutters">
+                    <div class="col-6">
+                        <h2 class="tasklist-title"><?= $task_title ?></h2>
+                    </div>
+                    <div class="col-6">
+                        <div class="row no-gutters">
+                            <div class="col-6">
+                                <h6 class="card-text text-right"><b>Bedrijf:</b></h6>
+                            </div>
+                            <div class="col-6">
+                                <h6 class="card-text tasklist-text-blue text-right"><?= $task_company ?></h6>
+                            </div>
+                        </div>
+                        <div class="row no-gutters">
+                            <div class="col-6">
+                                <h6 class="card-text text-right"><b>KvK-Nr:</b></h6>
+                            </div>
+                            <div class="col-6">
+                                <h6 class="card-text tasklist-text-blue text-right"><?= $task_kvk ?></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tasklist-card-body card-body">
+                <p class="tasklist-card-text card-text"><?= $task_info ?></p>
+            </div>
+            <div class="tasklist-footer card-footer">
+                <div class="row no-gutters">
+                    <div class="col-6 col-sm-5">
+                        <div class="row no-gutters">
+                            <div class="col-6 col-sm-4">
+                                <h6 class="card-text"><b>Aantal uur:</b></h6>
+                            </div>
+                            <div class="col-6 col-sm-8">
+                                <h6 class="card-text text-center mb-2"><?= $task_hours ?></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-5">
+                        <div class="row no-gutters">
+                            <div class="col-6 col-sm-4">
+                                <h6 class="card-text"><b>Uur salaris:</b></h6>
+                            </div>
+                            <div class="col-6 col-sm-8">
+                                <h6 class="card-text text-center mb-2"><?= $task_sal ?></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-2">
+                        <button type="button" class="btn btn-block btn-primary tasklist-btn">Meld aan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

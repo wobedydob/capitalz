@@ -23,8 +23,8 @@ class CreatePage
             $work_sal = ApplicationController::sanitize($_POST['work_sal']);
 //            $company_name = ApplicationController::sanitize($_SESSION['company_name']);
 
-//            var_dump($_POST);
-//            var_dump($_SESSION);
+            var_dump($_POST);
+            var_dump($_SESSION);
 
             if (isset($user_id)) {
                 $db = new Database();
