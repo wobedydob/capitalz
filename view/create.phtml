@@ -1,6 +1,9 @@
 <div class="container create">
     <h1 class="create-head">Taak Aanmaken</h1>
     <hr>
+    <?php if (!empty($this->pageObj->formMessage)) : ?>
+        <?= $this->pageObj->formMessage ?>
+    <?php endif; ?>
     <form class="create-form" action="" method="POST">
         <div class="form-row">
             <div class="form-group col-12 col-md-6">
@@ -25,7 +28,8 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="far fa-building"></i></div>
                     </div>
-                    <input type="text" class="form-control" id="bedrijf" value="Bakker Bart" readonly>
+                    <input type="text" class="form-control" id="bedrijf" value="<?php echo 'COMPANY NAME' ?>"
+                           readonly>
                 </div>
             </div>
         </div>

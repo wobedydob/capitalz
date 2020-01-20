@@ -54,11 +54,11 @@ CREATE TABLE IF NOT EXISTS `job`
 DROP TABLE IF EXISTS `profile_co`;
 CREATE TABLE IF NOT EXISTS `profile_co`
 (
-    `profile_id`   int(7)         NOT NULL,
+    `profile_id`   int(7)         NOT NULL AUTO_INCREMENT,
     `user_id`      int(7)         NOT NULL,
     `company_name` varchar(255)   NOT NULL,
-    `country_loc`  varchar(45)    NOT NULL,
-    `city_loc`     varchar(45)    NOT NULL,
+    `state`  varchar(45)    NOT NULL,
+    `city`     varchar(45)    NOT NULL,
     `about`        text           NOT NULL,
     `website`      varbinary(271) NOT NULL,
     `kvk_nummer`   varchar(20)    NOT NULL,
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `profile_se`
     `birthday`    date               NOT NULL,
     `gender`      enum ('m','f','o') NOT NULL,
     `nationality` varchar(50)        NOT NULL,
-    `about`       varchar(50)        NOT NULL,
+    `about`       text               NOT NULL,
     `btw_nummer`  varchar(20)        NOT NULL,
     `cv_file`     varbinary(271) DEFAULT NULL,
     `pro_img`     blob               NOT NULL,

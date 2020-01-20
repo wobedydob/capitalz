@@ -31,7 +31,7 @@ class RegisterPage
             $email = ApplicationController::sanitize($_POST['email']);
             $password = ApplicationController::sanitize($_POST['password']);
             $repeat_password = ApplicationController::sanitize($_POST['repeat_password']);
-            $btw_nummer = ApplicationController::sanitize($_POST['btw_nummer']);
+            $btw_nummer = ApplicationController::sanitize($_POST['number']);
 //            var_dump($_POST);
             if (isset($email)) {
                 $db = new Database();
@@ -74,7 +74,7 @@ class RegisterPage
             $email = ApplicationController::sanitize($_POST['email']);
             $password = ApplicationController::sanitize($_POST['password']);
             $repeat_password = ApplicationController::sanitize($_POST['repeat_password']);
-            $kvk_nummer = ApplicationController::sanitize($_POST['kvk_nummer']);
+            $kvk_nummer = ApplicationController::sanitize($_POST['number']);
             if (isset($email)) {
                 $db = new Database();
                 $db->query("SELECT * from `user` WHERE `email` = :email");

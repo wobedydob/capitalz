@@ -37,7 +37,7 @@ class LoginPage
             $_SESSION['number'] = $record['number'];
             $_SESSION['user_role'] = (int)$record['user_role'];
 
-            var_dump($_SESSION);
+//            var_dump($_SESSION);
 //            exit;
 
 

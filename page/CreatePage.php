@@ -2,6 +2,9 @@
 
 class CreatePage
 {
+
+    public $formMessage;
+
     public function __construct()
     {
         $this->create();
@@ -18,21 +21,28 @@ class CreatePage
             $date_end = ApplicationController::sanitize($_POST['date_end']);
             $work_hours = ApplicationController::sanitize($_POST['work_hours']);
             $work_sal = ApplicationController::sanitize($_POST['work_sal']);
-//            $company_name = ApplicationController::sanitize($_POST['company_name']);
+//            $company_name = ApplicationController::sanitize($_SESSION['company_name']);
+
+//            var_dump($_POST);
+//            var_dump($_SESSION);
 
             if (isset($user_id)) {
                 $db = new Database();
-                $db->query("SELECT * from `user` WHERE `user_id` = :user_id");
+                $db->query("SELECT * from `user` WHERE `user_id` = :user_id AND user_role = :user_role");
                 $db->bind(':user_id', $user_id);
+                $db->bind(':user_role', 1);
 //                var_dump('SELECT * from `user` WHERE `email` = :email');
 //                var_dump($db);
 //                var_dump($user_id);
                 $db->execute();
 
-                if ($db->rowCount() > 1) {
+                if ($db->rowCount() < 1) {
+                    header("refresh:2; url=/home");
+                    die('<div class="alert alert-danger" role="alert">Deze opdracht heeft u al aangemaakt</div>');
+                } else {
                     $db = new Database();
                     $db->query('INSERT INTO `job` (`company_id`, `title`, `tag`, `desc`, `date_start`, `date_end`, `work_hours`, `work_sal`, `company_name`)
-                               VALUES (:company_id, :title, :descr, :date_start, :date_end, :work_hours, :work_sal, NULL)');
+                               VALUES (:company_id, :title, :tag, :descr, :date_start, :date_end, :work_hours, :work_sal, :company_name)');
                     $db->bind(':company_id', $user_id);
                     $db->bind(':title', $title);
                     $db->bind(':tag', $tag);
@@ -41,12 +51,11 @@ class CreatePage
                     $db->bind(':date_end', $date_end);
                     $db->bind(':work_hours', $work_hours);
                     $db->bind(':work_sal', $work_sal);
+                    $db->bind(':company_name', NULL);
 //                    var_dump($db);
                     $db->execute();
-                    echo '<div class="alert alert-success" role="alert">Gelukt!</div>';
+                    $this->formMessage = '<div class="alert alert-success" role="alert">Opdracht aangemaakt</div>';
                     header("refresh:1; url=../home");
-                } else {
-                    print 'Mistake';
                 }
             }
         }
