@@ -38,4 +38,9 @@ class AjaxPage
         //
     }
 
+    private function success_message()
+    {
+
+    }
+
 }

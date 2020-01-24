@@ -1,4 +1,4 @@
-/*PROFILE*/
+/*profile*/
 
 .profile {
     padding-top: 1rem;
@@ -87,4 +87,5 @@
     background: none !important;
     height: 500px;
     width: 100%;
+    border: 0;
 }

@@ -1,11 +1,11 @@
 <div class="container profile_edit center">
     <h1 class="profile_edit-head">Profiel Bedrijf</h1>
     <hr>
-    <form class="needs-validation profile_edit-bedrijf-form" action="" method="POST" novalidate>
+    <form class="needs-validation profile_edit-bedrijf-form" action="" method="POST" enctype="multipart/form-data" novalidate>
         <!--Name row-->
         <div class="form-row">
             <div class="form-group col-12 col-12">
-                <label for="firstname">Naam Bedrijf:</label><span class="required">*</span>
+                <label for="company_name">Naam Bedrijf:</label><span class="required">*</span>
                 <div class="input-group">
                     <input type="text" class="form-control" id="company_name" name="company_name"
                            placeholder="Naam bedrijf" required>
@@ -13,6 +13,7 @@
                 </div>
             </div>
         </div>
+        <!--Location row-->
         <div class="form-row">
             <div class="form-group col-12 col-sm-6">
                 <label for="state">Provincie:</label><span class="required">*</span>
@@ -49,6 +50,7 @@
                 </div>
             </div>
         </div>
+        <!--About row-->
         <div class="form-row no-gutters">
             <div class="form-group col-12">
                 <label for="about">Over bedrijf:</label><span class="required">*</span>
@@ -59,6 +61,7 @@
                 <span class="profile_edit-detail">Een kort verhaal over uw bedrijf.</span>
             </div>
         </div>
+        <!--Extra row-->
         <div class="form-row">
             <div class="form-group col-12 col-md-8">
                 <label for="site">Website:</label>

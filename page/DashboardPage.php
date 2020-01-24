@@ -2,10 +2,11 @@
 
 class DashboardPage
 {
-    private $urlArr;
     public $zzpForm;
     public $bedrijfForm;
     public $adminForm;
+
+    private $urlArr;
 
     public function __construct($urlArr)
     {

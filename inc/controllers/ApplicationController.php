@@ -2,7 +2,6 @@
 
 class ApplicationController extends ApplicationModel
 {
-
     public $pageObj;
 
     public function __construct()

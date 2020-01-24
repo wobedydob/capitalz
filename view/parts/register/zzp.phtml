@@ -9,13 +9,13 @@
         <!--Email row-->
         <div class="form-row">
             <div class="form-group col-12">
-                <label for="email_reg_zzp">E-mail:</label><span class="required">*</span>
+                <label for="email_zzp">E-mail:</label><span class="required">*</span>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-at"></i></div>
                     </div>
-                    <input type="email" class="form-control" id="email_reg_zzp" name="email" placeholder="E-mail"
-                           required autofocus>
+                    <input type="email" class="form-control" id="email_zzp" name="email"
+                           placeholder="E-mail" required autofocus>
                     <div class="invalid-tooltip">Voer een geldig email in!</div>
                 </div>
                 <span class="register-detail">Voer een geldig email in, u krijgt een verificatie mail.</span>
@@ -24,15 +24,14 @@
         <!--Wachtwoord row-->
         <div class="form-row">
             <div class="form-group col-12 col-md-6">
-                <label for="wachtwoord_reg_zzp1">Wachtwoord:</label><span class="required">*</span>
+                <label for="password_zzp">Wachtwoord:</label><span class="required">*</span>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-key"></i></div>
                     </div>
-                    <input type="password" class="form-control" id="wachtwoord_reg_zzp1" name="password"
+                    <input type="password" class="form-control" id="password_zzp" name="password"
                            placeholder="Wachtwoord" minlength="8" required>
-                    <div class="invalid-tooltip">Voer een wachtwoord in met tenminste 8 karakters, 1 cijfer en 1
-                        hoofdletter!
+                    <div class="invalid-tooltip">Voer een wachtwoord in met tenminste 8 karakters, 1 cijfer en 1 hoofdletter!
                     </div>
                     <div class="input-group-append">
                         <div class="input-group-text"><i class="fas fa-fw fa-eye toggle-password"></i></div>
@@ -41,12 +40,12 @@
                 <span class="register-detail">Het wachtwoord moet minstens 8 karakters lang zijn, 1 cijfer en 1 hoofdletter bevatten.</span>
             </div>
             <div class="form-group col-12 col-md-6">
-                <label for="wachtwoord_reg_zzp2">Herhaal wachtwoord:</label><span class="required">*</span>
+                <label for="password_zzp_check">Herhaal wachtwoord:</label><span class="required">*</span>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-key"></i></div>
                     </div>
-                    <input type="password" class="form-control" id="wachtwoord_reg_zzp2" name="repeat_password"
+                    <input type="password" class="form-control" id="password_zzp_check" name="repeat_password"
                            placeholder="Wachtwoord" minlength="8" required>
                     <div class="invalid-tooltip">Herhaal het wachtwoord!</div>
                     <div class="input-group-append">
@@ -79,8 +78,7 @@
                     <div class="terms col-12 col-sm-6">
                         <div class="custom-control custom-checkbox mb-2">
                             <input type="checkbox" class="custom-control-input" id="akkoord_zzp" required>
-                            <label class="custom-control-label" for="akkoord_zzp">Ik ga akkoord met de
-                                voorwaarden.</label>
+                            <label class="custom-control-label" for="akkoord_zzp">Ik ga akkoord met de voorwaarden.</label>
                             <div class="invalid-tooltip">Ga akkoord met de voorwaarden!</div>
                         </div>
                     </div>
@@ -97,7 +95,6 @@
             <button type="submit" class="btn reg-btn btn-primary" name="reg_submit">Registreer</button>
         </div>
         <!--Detail text-->
-        <h6 class="reg-bedr">Of bent u eigenaar van een bedrijf? Klik dan <a
-                    href="<?= $vars['baseUrl'] ?>register/bedrijf">hier</a>.</h6>
+        <h6 class="reg-bedr">Of bent u eigenaar van een bedrijf? Klik dan <a href="<?= $vars['baseUrl'] ?>register/bedrijf">hier</a>.</h6>
     </form>
 </div>

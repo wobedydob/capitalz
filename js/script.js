@@ -4,18 +4,14 @@ $(document).ready(function () {
         particlesJS.load('particles-js', '../../particles.json');
     }
 
-    // Max datum van vandaag
+    // Birthday input min 18
     if ($('#birthday').length > 0) {
         let today = new Date();
         let dd = today.getDate();
         let mm = today.getMonth() + 1;
-        const yyyy = today.getFullYear();
-        if (dd < 10) {
-            dd = '0' + dd
-        }
-        if (mm < 10) {
-            mm = '0' + mm
-        }
+        let yyyy = today.getFullYear() - 18;
+        if (dd < 10) dd = '0' + dd;
+        if (mm < 10) mm = '0' + mm;
         today = yyyy + '-' + mm + '-' + dd;
         $("#birthday").attr("max", today);
     }
@@ -26,7 +22,7 @@ $(document).ready(function () {
         const maskOptions = {
             mask: 'NL-00000000-B00',
         };
-        const mask = IMask(element, maskOptions);
+        IMask(element, maskOptions);
     }
 });
 
@@ -34,10 +30,8 @@ $(document).ready(function () {
 (function () {
     'use strict';
     window.addEventListener('load', function () {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
-        var validation = Array.prototype.filter.call(forms, function (form) {
+        const forms = document.getElementsByClassName('needs-validation');
+        Array.prototype.filter.call(forms, function (form) {
             form.addEventListener('submit', function (event) {
                 if (form.checkValidity() === false) {
                     event.preventDefault();
@@ -58,18 +52,18 @@ hamburger.addEventListener("click", function () {
 // Wachtwoord eye icon toggle
 $(document).on('click', '.toggle-password', function () {
     $(this).toggleClass("fa-eye fa-eye-slash");
-    const passIconLog = $("#wachtwoord_login");
+    const passIconLog = $("#password_login");
     passIconLog.attr('type') === 'password' ? passIconLog.attr('type', 'text') : passIconLog.attr('type', 'password');
 
-    const passIconRegZzp1 = $("#wachtwoord_reg_zzp1");
-    passIconRegZzp1.attr('type') === 'password' ? passIconRegZzp1.attr('type', 'text') : passIconRegZzp1.attr('type', 'password');
-    const passIconRegZzp2 = $("#wachtwoord_reg_zzp2");
-    passIconRegZzp2.attr('type') === 'password' ? passIconRegZzp2.attr('type', 'text') : passIconRegZzp2.attr('type', 'password');
+    const passIconZzp = $("#password_zzp");
+    passIconZzp.attr('type') === 'password' ? passIconZzp.attr('type', 'text') : passIconZzp.attr('type', 'password');
+    const passIconZzpChk = $("#password_zzp_check");
+    passIconZzpChk.attr('type') === 'password' ? passIconZzpChk.attr('type', 'text') : passIconZzpChk.attr('type', 'password');
 
-    const passIconRegBedrijf1 = $("#wachtwoord_reg_bedrijf1");
-    passIconRegBedrijf1.attr('type') === 'password' ? passIconRegBedrijf1.attr('type', 'text') : passIconRegBedrijf1.attr('type', 'password');
-    const passIconRegBedrijf2 = $("#wachtwoord_reg_bedrijf2");
-    passIconRegBedrijf2.attr('type') === 'password' ? passIconRegBedrijf2.attr('type', 'text') : passIconRegBedrijf2.attr('type', 'password');
+    const passIconBedr = $("#password_bedrijf");
+    passIconBedr.attr('type') === 'password' ? passIconBedr.attr('type', 'text') : passIconBedr.attr('type', 'password');
+    const passIconBedrChk = $("#password_bedrijf_check");
+    passIconBedrChk.attr('type') === 'password' ? passIconBedrChk.attr('type', 'text') : passIconBedrChk.attr('type', 'password');
 });
 
 // TaskPage filter slider aantal Uren
@@ -113,28 +107,13 @@ document.onreadystatechange = function () {
     }
 };
 
-// max number input
-$(document).on('keyup', 'input[id=work-hours]', function () {
-    const _this = $(this);
-    const min = parseInt(_this.attr('min')) || 1;
-    const max = parseInt(_this.attr('max')) || 100;
-    const val = parseInt(_this.val()) || (min - 1);
-    if (val < min)
-        _this.val(min);
-    if (val > max)
-        _this.val(max);
-});
-
-// max number input
-$(document).on('keyup', 'input[id=work-sal]', function () {
-    const _this = $(this);
-    const min = parseInt(_this.attr('min')) || 1;
-    const max = parseInt(_this.attr('max')) || 100;
-    const val = parseInt(_this.val()) || (min - 1);
-    if (val < min)
-        _this.val(min);
-    if (val > max)
-        _this.val(max);
+// Max number input in number fields
+$('input[type=number]').keyup(function () {
+    const min = parseInt($(this).attr('min')) || 1;
+    const max = parseInt($(this).attr('max')) || 100;
+    const val = parseInt($(this).val()) || (min - 1);
+    if (val < min) $(this).val(min);
+    if (val > max) $(this).val(max);
 });
 
 // Ajax input

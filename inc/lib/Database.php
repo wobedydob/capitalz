@@ -61,21 +61,20 @@ class Database
         $this->stmt->bindValue($param, $value, $type);
     }
 
-    public function execute()
-    {
-        return $this->stmt->execute();
-
-        $this->qError = $this->dbh->errorInfo();
-        if (!is_null($this->qError[2])) {
-            echo $this->qError[2];
-        }
-        echo 'done with query';
-    }
-
     public function resultset()
     {
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function execute()
+    {
+        return $this->stmt->execute();
+//        $this->qError = $this->dbh->errorInfo();
+//        if (!is_null($this->qError[2])) {
+//            echo $this->qError[2];
+//        }
+//        echo 'done with query';
     }
 
     public function single()
@@ -123,5 +122,3 @@ class Database
     }
 
 }
-
-?>

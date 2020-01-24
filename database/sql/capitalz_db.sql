@@ -12,7 +12,6 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT = @@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS = @@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION = @@COLLATION_CONNECTION */;
@@ -57,12 +56,12 @@ CREATE TABLE IF NOT EXISTS `profile_co`
     `profile_id`   int(7)         NOT NULL AUTO_INCREMENT,
     `user_id`      int(7)         NOT NULL,
     `company_name` varchar(255)   NOT NULL,
-    `state`  varchar(45)    NOT NULL,
-    `city`     varchar(45)    NOT NULL,
+    `state`        varchar(45)    NOT NULL,
+    `city`         varchar(45)    NOT NULL,
     `about`        text           NOT NULL,
     `website`      varbinary(271) NOT NULL,
     `kvk_nummer`   varchar(20)    NOT NULL,
-    `pro_img`      blob           NOT NULL,
+    `pro_img`      varchar(255)   NOT NULL,
     PRIMARY KEY (`profile_id`, `user_id`),
     UNIQUE KEY `kvk_nummer_UNIQUE` (`kvk_nummer`)
 ) ENGINE = InnoDB
@@ -87,8 +86,8 @@ CREATE TABLE IF NOT EXISTS `profile_se`
     `nationality` varchar(50)        NOT NULL,
     `about`       text               NOT NULL,
     `btw_nummer`  varchar(20)        NOT NULL,
-    `cv_file`     varbinary(271) DEFAULT NULL,
-    `pro_img`     blob               NOT NULL,
+    `cv_file`     varchar(255) DEFAULT NULL,
+    `pro_img`     varchar(255)       NOT NULL,
     PRIMARY KEY (`profile_id`, `user_id`),
     UNIQUE KEY `btw_nummer_UNIQUE` (`btw_nummer`)
 ) ENGINE = InnoDB

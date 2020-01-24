@@ -3,7 +3,7 @@
     <hr>
     <div class="row profile-head">
         <div class="col-12 col-sm-4 pf-row">
-            <img class="pro-pic" src="../../../img/profile.png" alt="pf">
+            <img class="pro-pic" src="<?= $vars['baseUrl'] . 'img/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) ?>" alt="pf">
         </div>
         <div class="col-12 col-sm-8 pro-head-body">
             <div class="row no-gutters">
@@ -11,7 +11,7 @@
                     <h5>Naam:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text">Bakker Bart</h5>
+                    <h5 class="pro-head-text"><?= $company_name ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -19,7 +19,7 @@
                     <h5>Email:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text">info@bakkerbart.nl</h5>
+                    <h5 class="pro-head-text"><?= $email ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -27,7 +27,15 @@
                     <h5>Land:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text">Nederland</h5>
+                    <h5 class="pro-head-text"><?= $state ?></h5>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-6">
+                    <h5>Stad:</h5>
+                </div>
+                <div class="col-6">
+                    <h5 class="pro-head-text"><?= $city ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -35,7 +43,7 @@
                     <h5>KvK-Nr:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text">98356234</h5>
+                    <h5 class="pro-head-text"><?= $kvk_number ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -43,7 +51,7 @@
                     <h5>Website:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text">www.bakkerbart.nl</h5>
+                    <h5 class="pro-head-text"><?= $website ?></h5>
                 </div>
             </div>
         </div>
@@ -51,10 +59,10 @@
     <hr>
     <div class="profile-body">
         <h4>Over:</h4>
-        <p>Bakker Bart is een nederlandse bakkerij keten met 50 winkels door het hele land.</p>
+        <p><?= $about ?></p>
         <h4>Locatie:</h4>
         <div class="profile-loctation">
-            <iframe width="500" height="500" id="profile-map" src="https://maps.google.com/maps?q=bakker%20bart%20utrecht&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            <iframe width="500" height="500" id="profile-map" src="https://maps.google.com/maps?q=bakker%20bart%20utrecht&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
     </div>
 </div>

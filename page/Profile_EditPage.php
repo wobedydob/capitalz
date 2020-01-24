@@ -2,9 +2,10 @@
 
 class Profile_EditPage
 {
-    private $urlArr;
     public $zzpForm;
     public $bedrijfForm;
+
+    private $urlArr;
 
     public function __construct($urlArr)
     {
@@ -18,7 +19,6 @@ class Profile_EditPage
         } else {
             header("Refresh: 2; url=" . $urlArr['baseUrl'] . "home");
         }
-
     }
 
     private function profile_edit_zzp()
@@ -37,9 +37,20 @@ class Profile_EditPage
             $pro_pic = ApplicationController::sanitize($_POST['pro-pic']);
             $btw_number = ApplicationController::sanitize($_SESSION['number']);
 
-
-//            var_dump($_POST);
-//            var_dump($_SESSION);
+            if ($_FILES['pro-pic']['name'] != "") {
+                $target_dir = "img/profile/";
+                $file = $_FILES['pro-pic']['name'];
+                $path = pathinfo($file);
+                $filename = $path['filename'];
+                $ext = $path['extension'];
+                $temp_name = $_FILES['pro-pic']['tmp_name'];
+                $path_filename_ext = $target_dir . $filename . "." . $ext;
+                if (file_exists($path_filename_ext)) {
+                    echo 'File already exists.';
+                } else {
+                    move_uploaded_file($temp_name, $path_filename_ext);
+                }
+            }
 
             if (isset($user_id)) {
                 $db = new Database();
@@ -52,7 +63,6 @@ class Profile_EditPage
 //                var_dump($db);
 
                 if ($db->rowCount() < 1) {
-
                     header("refresh:2; url=/home");
                     die('<div class="alert alert-danger" role="alert">Dit profiel is al aangemaakt</div>');
                 } else {
@@ -78,7 +88,8 @@ class Profile_EditPage
         }
     }
 
-    private function profile_edit_bedrijf()
+    private
+    function profile_edit_bedrijf()
     {
         $this->bedrijfForm = ApplicationController::get_part_string('profile_edit/bedrijf', array('baseUrl' => $this->urlArr['baseUrl']));
         if (isset($_POST['pro_edit_submit'])) {

@@ -2,9 +2,9 @@
 
 class LoginPage
 {
-    private $urlArr;
-
     public $formMessage;
+
+    private $urlArr;
 
     public function __construct($urlArr)
     {

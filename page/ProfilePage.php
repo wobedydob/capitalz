@@ -2,9 +2,10 @@
 
 class ProfilePage
 {
-    private $urlArr;
     public $zzpForm;
     public $bedrijfForm;
+
+    private $urlArr;
 
     public function __construct($urlArr)
     {

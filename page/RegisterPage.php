@@ -4,11 +4,11 @@ include('autoloader.php');
 
 class RegisterPage
 {
-    private $urlArr;
     public $zzpForm;
     public $bedrijfForm;
-
     public $formMessage;
+
+    private $urlArr;
 
     public function __construct($urlArr)
     {
@@ -32,7 +32,10 @@ class RegisterPage
             $password = ApplicationController::sanitize($_POST['password']);
             $repeat_password = ApplicationController::sanitize($_POST['repeat_password']);
             $btw_nummer = ApplicationController::sanitize($_POST['number']);
-//            var_dump($_POST);
+//            $password_check = UserController::password_check($_POST['password']);
+//            if ($password_check) {
+//
+//            }
             if (isset($email)) {
                 $db = new Database();
                 $db->query("SELECT * from `user` WHERE `email` = :email");
@@ -41,22 +44,38 @@ class RegisterPage
 //                var_dump($email);
                 $db->execute();
 
-                if ($repeat_password == $password) {
-                    if ($db->rowCount() > 0) {
-                        $this->formMessage = '<div class="alert alert-danger" role="alert">Dit e-mail adres is al in gebruik</div>';
+                if (!empty($email)) {
+                    if (!empty($password)) {
+                        if (!empty($repeat_password)) {
+                            if (strlen($password) >= 8) {
+                                if ($repeat_password == $password) {
+                                    if ($db->rowCount() > 0) {
+                                        $this->formMessage = '<div class="alert alert-danger" role="alert">Dit e-mail adres is al in gebruik</div>';
+                                    } else {
+                                        $password_hash = password_hash($password, PASSWORD_BCRYPT);
+                                        $db = new Database();
+                                        $db->query("INSERT INTO `user` (`email`, `password`, `number`, `user_role`) VALUES(:email, :password_hash, :btw_nummer, 2)");
+                                        $db->bind(':email', $email);
+                                        $db->bind(':password_hash', $password_hash);
+                                        $db->bind(':btw_nummer', $btw_nummer);
+                                        $db->execute();
+                                        $this->formMessage = '<div class="alert alert-success" role="alert">Je bent geregistreerd, je kan nu inloggen</div>';
+                                        header("refresh:1; url=" . $this->urlArr['baseUrl'] . "login");
+                                    }
+                                } else {
+                                    $this->formMessage = '<div class="alert alert-danger" role="alert">De wachtwoorden komen niet overeen</div>';
+                                }
+                            } else {
+                                $this->formMessage = '<div class="alert alert-danger" role="alert">Het wachtwoord moet minstens 8 karakters lang zijn</div>';
+                            }
+                        } else {
+                            $this->formMessage = '<div class="alert alert-danger" role="alert">Herhaal je wachtwoord!</div>';
+                        }
                     } else {
-                        $password_hash = password_hash($password, PASSWORD_BCRYPT);
-                        $db = new Database();
-                        $db->query("INSERT INTO `user` (`email`, `password`, `number`, `user_role`) VALUES(:email, :password_hash, :btw_nummer, 2)");
-                        $db->bind(':email', $email);
-                        $db->bind(':password_hash', $password_hash);
-                        $db->bind(':btw_nummer', $btw_nummer);
-                        $db->execute();
-                        $this->formMessage = '<div class="alert alert-success" role="alert">Je bent geregistreerd, je kan nu inloggen</div>';
-                        header("refresh:1; url=" . $this->urlArr['baseUrl'] . "login");
+                        $this->formMessage = '<div class="alert alert-danger" role="alert">Voer een wachtwoord in!</div>';
                     }
                 } else {
-                    $this->formMessage = '<div class="alert alert-danger" role="alert">De wachtwoorden komen niet overeen</div>';
+                    $this->formMessage = '<div class="alert alert-danger" role="alert">Voer een email in!</div>';
                 }
             }
         }

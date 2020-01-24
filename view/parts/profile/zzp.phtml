@@ -3,7 +3,7 @@
     <hr>
     <div class="row profile-head">
         <div class="col-12 col-sm-4 pf-row">
-            <img class="pro-pic" src="../../../img/profile.png" alt="pf">
+            <img class="pro-pic" src="<?= $vars['baseUrl'] . 'img/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) ?>" alt="pf">
         </div>
         <div class="col-12 col-sm-8 pro-head-body">
             <div class="row no-gutters">
@@ -11,7 +11,7 @@
                     <h5>Naam:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text">Henk van Kaas</h5>
+                    <h5 class="pro-head-text"><?= $firstname + $infix + $lastname ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -19,7 +19,7 @@
                     <h5>Email:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text">henk@mail.nl</h5>
+                    <h5 class="pro-head-text"><?= $email ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -27,7 +27,7 @@
                     <h5>Geboortedatum:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text">9-11-2001</h5>
+                    <h5 class="pro-head-text"><?= $birthday ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -35,7 +35,7 @@
                     <h5>Geslacht:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text">Man</h5>
+                    <h5 class="pro-head-text"><?= $gender ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -43,7 +43,7 @@
                     <h5>Nationaliteit:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text">Nederlands</h5>
+                    <h5 class="pro-head-text"><?= $nationality ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -51,7 +51,7 @@
                     <h5>Btw-Nr:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text">NL-36124585-B21</h5>
+                    <h5 class="pro-head-text"><?= $btw_number ?></h5>
                 </div>
             </div>
         </div>
@@ -59,52 +59,8 @@
     <hr>
     <div class="profile-body">
         <h4>Over:</h4>
-        <p>Mijn naam is Henk en ben 18 jaar, ik ben goed in webdevolpment en om precies te zijn back-end. Heb 2 jaar
-            ervaring met PHP en 1 jaar met JS.</p>
-        <h4>Diploma's:</h4>
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Opleiding</th>
-                <th scope="col">School</th>
-                <th scope="col">Status</th>
-            </tr>
-            </thead>
-            <tbody class="table-bordered">
-            <tr>
-                <td>HAVO</td>
-                <td>SchoolSchool</td>
-                <td class="table-success"><i class="fas fa-check"></i> Behaald</td>
-            </tr>
-            <tr>
-                <td>HBO</td>
-                <td>HogeSchoolSchool</td>
-                <td class="table-warning"><i class="far fa-clock"></i> Bezig</td>
-            </tr>
-            </tbody>
-        </table>
-        <h4>Werkervaring:</h4>
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">Bedrijf</th>
-                <th scope="col">Functie</th>
-                <th scope="col">Tijd</th>
-            </tr>
-            </thead>
-            <tbody class="table-bordered">
-            <tr>
-                <td>BerdrijfWerk</td>
-                <td>Werk</td>
-                <td>2014 - 2018</td>
-            </tr>
-            <tr>
-                <td>WerkBedrijf</td>
-                <td>Dingen</td>
-                <td>2018 - Huidig</td>
-            </tr>
-            </tbody>
-        </table>
+        <p><?= $about ?></p>
+        <h4>CV:</h4>
     </div>
 </div>
 

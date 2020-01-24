@@ -1,3 +1,5 @@
+/*navbar*/
+
 .navbar {
     background-color: white;
 }
@@ -33,4 +35,25 @@
     height: 40px;
     width: 40px;
     border-radius: 50%;
+}
+
+.pro-drop {
+    transform: translateX(-50%);
+    margin-left: 50%;
+    background-color: white;
+    border: 0;
+    border-radius: 0;
+    top: 56px;
+    width: 250px;
+}
+
+.pro-img-drop {
+    display: flex;
+    width: 100%;
+    padding: 0 40px;
+    border-radius: 50%;
+}
+
+.pro-name-drop {
+    text-align: center;
 }
