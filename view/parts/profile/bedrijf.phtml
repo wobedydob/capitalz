@@ -11,7 +11,14 @@
                     <h5>Naam:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?= $company_name ?></h5>
+                    <h5 class="pro-head-text"><?php
+                        $user_id = ApplicationController::sanitize($_SESSION['id']);
+                        $db = new Database();
+                        $db->query('SELECT company_name FROM profile_co WHERE user_id = :user_id');
+                        $db->bind(':user_id', $user_id);
+                        $company_name = $db->single()['company_name'];
+                        echo $company_name;
+                        ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -19,15 +26,29 @@
                     <h5>Email:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?= $email ?></h5>
+                    <h5 class="pro-head-text"><?php
+                        $user_id = ApplicationController::sanitize($_SESSION['id']);
+                        $db = new Database();
+                        $db->query('SELECT email FROM user WHERE user_id = :user_id');
+                        $db->bind(':user_id', $user_id);
+                        $email = $db->single()['email'];
+                        echo $email;
+                        ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
                 <div class="col-6">
-                    <h5>Land:</h5>
+                    <h5>Provincie:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?= $state ?></h5>
+                    <h5 class="pro-head-text"><?php
+                        $user_id = ApplicationController::sanitize($_SESSION['id']);
+                        $db = new Database();
+                        $db->query('SELECT state FROM profile_co WHERE user_id = :user_id');
+                        $db->bind(':user_id', $user_id);
+                        $state = $db->single()['state'];
+                        echo $state;
+                        ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -35,7 +56,14 @@
                     <h5>Stad:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?= $city ?></h5>
+                    <h5 class="pro-head-text"><?php
+                        $user_id = ApplicationController::sanitize($_SESSION['id']);
+                        $db = new Database();
+                        $db->query('SELECT city FROM profile_co WHERE user_id = :user_id');
+                        $db->bind(':user_id', $user_id);
+                        $city = $db->single()['city'];
+                        echo $city;
+                        ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -43,7 +71,14 @@
                     <h5>KvK-Nr:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?= $kvk_number ?></h5>
+                    <h5 class="pro-head-text"><?php
+                        $user_id = ApplicationController::sanitize($_SESSION['id']);
+                        $db = new Database();
+                        $db->query('SELECT `number` FROM `user` WHERE user_id = :user_id');
+                        $db->bind(':user_id', $user_id);
+                        $number = $db->single()['number'];
+                        echo $number;
+                        ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -51,7 +86,14 @@
                     <h5>Website:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?= $website ?></h5>
+                    <h5 class="pro-head-text"><?php
+                        $user_id = ApplicationController::sanitize($_SESSION['id']);
+                        $db = new Database();
+                        $db->query('SELECT website FROM profile_co WHERE user_id = :user_id');
+                        $db->bind(':user_id', $user_id);
+                        $website = $db->single()['website'];
+                        echo $website;
+                        ?></h5>
                 </div>
             </div>
         </div>
@@ -59,11 +101,27 @@
     <hr>
     <div class="profile-body">
         <h4>Over:</h4>
-        <p><?= $about ?></p>
+        <p><?php
+            $user_id = ApplicationController::sanitize($_SESSION['id']);
+            $db = new Database();
+            $db->query('SELECT about FROM profile_co WHERE user_id = :user_id');
+            $db->bind(':user_id', $user_id);
+            $about = $db->single()['about'];
+            echo $about;
+            ?></p>
         <h4>Locatie:</h4>
         <div class="profile-loctation">
-            <iframe width="500" height="500" id="profile-map" src="https://maps.google.com/maps?q=bakker%20bart%20utrecht&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+            <iframe width="500" height="500" id="profile-map" src="https://maps.google.com/maps?q=<?php echo $city ?>&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
     </div>
 </div>
 
+<?php
+$user_id = ApplicationController::sanitize($_SESSION['id']);
+$db = new Database();
+$db->query('SELECT company_name, city FROM profile_co WHERE user_id = :user_id');
+$db->bind(':user_id', $user_id);
+$company_name = $db->single()['company_name'];
+$city = $db->single()['city'];
+
+?>

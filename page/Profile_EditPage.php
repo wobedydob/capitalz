@@ -35,7 +35,7 @@ class Profile_EditPage
             $about = ApplicationController::sanitize($_POST['about']);
             $cv_file = ApplicationController::sanitize($_POST['cv']);
             $pro_pic = ApplicationController::sanitize($_POST['pro-pic']);
-            $btw_number = ApplicationController::sanitize($_SESSION['number']);
+//            $btw_number = ApplicationController::sanitize($_SESSION['number']);
 
             if ($_FILES['pro-pic']['name'] != "") {
                 $target_dir = "img/profile/";
@@ -67,7 +67,7 @@ class Profile_EditPage
                     die('<div class="alert alert-danger" role="alert">Dit profiel is al aangemaakt</div>');
                 } else {
                     $db = new Database();
-                    $db->query('INSERT INTO `profile_se` (`user_id`, `firstname`, `infix`, `lastname`, `birthday`, `gender`, `nationality`, `about`, `btw_nummer`, `cv_file`, `pro_img`) VALUES (:user_id, :firstname, :infix, :lastname, :birthday, :gender, :nationality, :about, :btw_nummer, :cv_file, :pro_img);');
+                    $db->query('INSERT INTO `profile_se` (`user_id`, `firstname`, `infix`, `lastname`, `birthday`, `gender`, `nationality`, `about`, `cv_file`, `pro_img`) VALUES (:user_id, :firstname, :infix, :lastname, :birthday, :gender, :nationality, :about, :cv_file, :pro_img);');
                     $db->bind(':user_id', $user_id);
                     $db->bind(':firstname', $firstname);
                     $db->bind(':infix', $infix);
@@ -76,7 +76,7 @@ class Profile_EditPage
                     $db->bind(':gender', $gender);
                     $db->bind(':nationality', $nationality);
                     $db->bind(':about', $about);
-                    $db->bind(':btw_nummer', $btw_number);
+//                    $db->bind(':btw_nummer', $btw_number);
                     $db->bind(':cv_file', $cv_file);
                     $db->bind(':pro_img', $pro_pic);
 //                    var_dump($db);
@@ -88,8 +88,7 @@ class Profile_EditPage
         }
     }
 
-    private
-    function profile_edit_bedrijf()
+    private function profile_edit_bedrijf()
     {
         $this->bedrijfForm = ApplicationController::get_part_string('profile_edit/bedrijf', array('baseUrl' => $this->urlArr['baseUrl']));
         if (isset($_POST['pro_edit_submit'])) {
@@ -100,7 +99,7 @@ class Profile_EditPage
             $about = ApplicationController::sanitize($_POST['about']);
             $site = ApplicationController::sanitize($_POST['site']);
             $pro_pic = ApplicationController::sanitize($_POST['pro-pic']);
-            $kvk_nummer = ApplicationController::sanitize($_SESSION['number']);
+//            $kvk_nummer = ApplicationController::sanitize($_SESSION['number']);
 
 
 //            var_dump($_POST);
@@ -117,14 +116,14 @@ class Profile_EditPage
                     die('<div class="alert alert-danger" role="alert">Dit profiel is al aangemaakt</div>');
                 } else {
                     $db = new Database();
-                    $db->query('INSERT INTO `profile_co` (`user_id`, `company_name`, `state`, `city`, `about`, `website`, `kvk_nummer`, `pro_img`) VALUES (:user_id, :company_name, :state, :city, :about, :site, :kvk_nummer, :pro_img)');
+                    $db->query('INSERT INTO `profile_co` (`user_id`, `company_name`, `state`, `city`, `about`, `website`, `pro_img`) VALUES (:user_id, :company_name, :state, :city, :about, :site, :pro_img)');
                     $db->bind(':user_id', $user_id);
                     $db->bind(':company_name', $company_name);
                     $db->bind(':state', $state);
                     $db->bind(':city', $city);
                     $db->bind(':about', $about);
                     $db->bind(':site', $site);
-                    $db->bind(':kvk_nummer', $kvk_nummer);
+//                    $db->bind(':kvk_nummer', $kvk_nummer);
                     $db->bind(':pro_img', $pro_pic);
                     $db->execute();
 

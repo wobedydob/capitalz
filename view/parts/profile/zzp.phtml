@@ -11,7 +11,18 @@
                     <h5>Naam:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?= $firstname + $infix + $lastname ?></h5>
+                    <h5 class="pro-head-text"><?php
+                        $user_id = ApplicationController::sanitize($_SESSION['id']);
+                        $db = new Database();
+                        $db->query('SELECT firstname, infix, lastname FROM profile_se WHERE user_id = :user_id');
+                        $db->bind(':user_id', $user_id);
+                        $firstname = $db->single()['firstname'];
+                        $infix = $db->single()['infix'];
+                        $lastname = $db->single()['lastname'];
+
+                        $fullname = $firstname . ' ' . $infix . ' ' . $lastname;
+                        echo $fullname;
+                        ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -19,7 +30,14 @@
                     <h5>Email:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?= $email ?></h5>
+                    <h5 class="pro-head-text"><?php
+                        $user_id = ApplicationController::sanitize($_SESSION['id']);
+                        $db = new Database();
+                        $db->query('SELECT email FROM `user` WHERE user_id = :user_id');
+                        $db->bind(':user_id', $user_id);
+                        $email = $db->single()['email'];
+                        echo $email;
+                        ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -27,7 +45,14 @@
                     <h5>Geboortedatum:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?= $birthday ?></h5>
+                    <h5 class="pro-head-text"><?php
+                        $user_id = ApplicationController::sanitize($_SESSION['id']);
+                        $db = new Database();
+                        $db->query('SELECT birthday FROM profile_se WHERE user_id = :user_id');
+                        $db->bind(':user_id', $user_id);
+                        $birthday = $db->single()['birthday'];
+                        echo $birthday;
+                        ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -35,7 +60,14 @@
                     <h5>Geslacht:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?= $gender ?></h5>
+                    <h5 class="pro-head-text"><?php
+                        $user_id = ApplicationController::sanitize($_SESSION['id']);
+                        $db = new Database();
+                        $db->query('SELECT gender FROM profile_se WHERE user_id = :user_id');
+                        $db->bind(':user_id', $user_id);
+                        $gender = $db->single()['gender'];
+                        echo $gender;
+                        ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -43,7 +75,14 @@
                     <h5>Nationaliteit:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?= $nationality ?></h5>
+                    <h5 class="pro-head-text"><?php
+                        $user_id = ApplicationController::sanitize($_SESSION['id']);
+                        $db = new Database();
+                        $db->query('SELECT nationality FROM profile_se WHERE user_id = :user_id');
+                        $db->bind(':user_id', $user_id);
+                        $nationality = $db->single()['nationality'];
+                        echo $nationality;
+                        ?></h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -51,7 +90,14 @@
                     <h5>Btw-Nr:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?= $btw_number ?></h5>
+                    <h5 class="pro-head-text"><?php
+                        $user_id = ApplicationController::sanitize($_SESSION['id']);
+                        $db = new Database();
+                        $db->query('SELECT number FROM `user` WHERE user_id = :user_id');
+                        $db->bind(':user_id', $user_id);
+                        $number = $db->single()['number'];
+                        echo $number;
+                        ?></h5>
                 </div>
             </div>
         </div>
@@ -59,7 +105,14 @@
     <hr>
     <div class="profile-body">
         <h4>Over:</h4>
-        <p><?= $about ?></p>
+        <p><?php
+            $user_id = ApplicationController::sanitize($_SESSION['id']);
+            $db = new Database();
+            $db->query('SELECT about FROM `profile_se` WHERE user_id = :user_id');
+            $db->bind(':user_id', $user_id);
+            $about = $db->single()['about'];
+            echo $about;
+            ?></p>
         <h4>CV:</h4>
     </div>
 </div>

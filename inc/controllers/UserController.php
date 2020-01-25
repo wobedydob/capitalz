@@ -2,6 +2,8 @@
 
 class UserController extends UserModel
 {
+    public $pageObj;
+
     public function __construct(int $userId = 0, string $email = '', string $password = '')
     {
         if (!empty($userId)) $this->set_userId($userId);

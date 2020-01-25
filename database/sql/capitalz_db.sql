@@ -39,7 +39,6 @@ CREATE TABLE IF NOT EXISTS `job`
     `date_end`     date         NOT NULL,
     `work_hours`   varchar(20)  NOT NULL,
     `work_sal`     varchar(20)  NOT NULL,
-    `company_name` varchar(255) DEFAULT NULL,
     PRIMARY KEY (`job_id`, `company_id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
@@ -60,10 +59,8 @@ CREATE TABLE IF NOT EXISTS `profile_co`
     `city`         varchar(45)    NOT NULL,
     `about`        text           NOT NULL,
     `website`      varbinary(271) NOT NULL,
-    `kvk_nummer`   varchar(20)    NOT NULL,
     `pro_img`      varchar(255)   NOT NULL,
-    PRIMARY KEY (`profile_id`, `user_id`),
-    UNIQUE KEY `kvk_nummer_UNIQUE` (`kvk_nummer`)
+    PRIMARY KEY (`profile_id`, `user_id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
@@ -85,11 +82,9 @@ CREATE TABLE IF NOT EXISTS `profile_se`
     `gender`      enum ('m','f','o') NOT NULL,
     `nationality` varchar(50)        NOT NULL,
     `about`       text               NOT NULL,
-    `btw_nummer`  varchar(20)        NOT NULL,
     `cv_file`     varchar(255) DEFAULT NULL,
     `pro_img`     varchar(255)       NOT NULL,
-    PRIMARY KEY (`profile_id`, `user_id`),
-    UNIQUE KEY `btw_nummer_UNIQUE` (`btw_nummer`)
+    PRIMARY KEY (`profile_id`, `user_id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
@@ -114,9 +109,9 @@ CREATE TABLE IF NOT EXISTS `user`
   DEFAULT CHARSET = utf8;
 
 INSERT INTO `user` (`user_id`, `email`, `password`, `number`, `user_role`)
-VALUES (1, 'admin@mail.nl', '$2a$07$1tinr2hhyuBdTDC3ZyARSepsXiDZNGABuyz1dPDCqzGJK.mHz/u5u', 'NL-12345678-B90', 0),
-       (2, 'bedrijf@mail.nl', '$2a$07$SuDcoE3k72g9Azgjz9i2GeM0fGPJHdtfTZFxSid0EV/2tNzxbmoIe', 'NL-21436587-B09', 1),
-       (3, 'zzp@mail.nl', '$2a$07$LVj3fDfTw7KelOjZgdbbdukF1vhT3IJpXlFLPRUY2FBuKtLHn6CJ.', 'NL-09876543-B21', 2);
+VALUES (1, 'admin@mail.nl', '$2a$07$1tinr2hhyuBdTDC3ZyARSepsXiDZNGABuyz1dPDCqzGJK.mHz/u5u', NULL, 0),
+       (2, 'bedrijf@mail.nl', '$2a$07$SuDcoE3k72g9Azgjz9i2GeM0fGPJHdtfTZFxSid0EV/2tNzxbmoIe', '12345678', 1),
+       (3, 'zzp@mail.nl', '$2a$07$LVj3fDfTw7KelOjZgdbbdukF1vhT3IJpXlFLPRUY2FBuKtLHn6CJ.', 'NL-12345678-B90', 2);
 -- --------------------------------------------------------
 
 --

@@ -32,8 +32,9 @@ class LoginPage
                     $record = $db->resultset()[0];
                     $_SESSION['id'] = $record['user_id'];
                     $_SESSION['email'] = $record['email'];
-                    $_SESSION['number'] = $record['number'];
+//                    $_SESSION['number'] = $record['number'];
                     $_SESSION['user_role'] = (int)$record['user_role'];
+
 
                     if ($_SESSION["user_role"] === 0) {
                         $this->formMessage = '<div class="alert alert-warning" role="alert">Inlog geslaagd! Welkom administrator.</div>';
