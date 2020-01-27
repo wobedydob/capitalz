@@ -4,10 +4,20 @@ class CreatePage
 {
 
     public $formMessage;
+    public $company_name;
 
     public function __construct()
     {
         $this->create();
+        $this->getCompany_name();
+    }
+
+    public function getCompany_name()
+    {
+        $db = new Database();
+        $db->query('SELECT company_name FROM profile_co WHERE user_id = :user_id');
+        $db->bind(':user_id', ApplicationController::sanitize($_SESSION['id']));
+        $this->company_name = $db->single()['company_name'];
     }
 
     public function create()
@@ -21,19 +31,16 @@ class CreatePage
             $date_end = ApplicationController::sanitize($_POST['date_end']);
             $work_hours = ApplicationController::sanitize($_POST['work_hours']);
             $work_sal = ApplicationController::sanitize($_POST['work_sal']);
-//            $company_name = ApplicationController::sanitize($_SESSION['company_name']);
-
-            var_dump($_POST);
-            var_dump($_SESSION);
 
             if (isset($user_id)) {
                 $db = new Database();
-                $db->query("SELECT * from `user` WHERE `user_id` = :user_id AND user_role = :user_role");
-                $db->bind(':user_id', $user_id);
-                $db->bind(':user_role', 1);
-//                var_dump('SELECT * from `user` WHERE `email` = :email');
-//                var_dump($db);
-//                var_dump($user_id);
+                $db->query('SELECT 
+	                            `user`.*, 
+                                `profile`.company_name 
+                            FROM `user` 
+                            LEFT JOIN profile_co AS `profile` USING(user_id)
+                            WHERE `user`.`user_id` = :userId;');
+                $db->bind(':userId', ApplicationController::sanitize($_SESSION['id']));
                 $db->execute();
 
                 if ($db->rowCount() < 1) {

@@ -29,15 +29,7 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="far fa-building"></i></div>
                     </div>
-                    <input type="text" class="form-control" id="bedrijf" value="<?php
-                    $user_id = ApplicationController::sanitize($_SESSION['id']);
-                    $db = new Database();
-                    $db->query('SELECT company_name FROM `profile_co` WHERE user_id = :user_id');
-                    $db->bind(':user_id', $user_id);
-                    $company_name = $db->single()['company_name'];
-                    echo $company_name;
-                    ?>"
-                           readonly>
+                    <input type="text" class="form-control" id="bedrijf" value="<?= $this->pageObj->company_name ?>" readonly>
                 </div>
             </div>
         </div>
