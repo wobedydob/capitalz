@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `profile_co`
     `address`      varchar(100)   NOT NULL,
     `postal`       varchar(6)     NOT NULL,
     `about`        text           NOT NULL,
-    `website`      varbinary(271) NOT NULL,
+    `website`      varchar(255) NOT NULL,
     `pro_img`      varchar(255) DEFAULT NULL,
     PRIMARY KEY (`profile_id`, `user_id`)
 ) ENGINE = InnoDB
