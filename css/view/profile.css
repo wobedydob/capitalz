@@ -88,6 +88,10 @@
     margin-bottom: .6rem;
 }
 
+.address-text {
+    line-height: 1.5rem;
+}
+
 .profile-loctation {
     position: relative;
     text-align: right;

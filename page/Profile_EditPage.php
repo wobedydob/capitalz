@@ -96,6 +96,8 @@ class Profile_EditPage
             $company_name = ApplicationController::sanitize($_POST['company_name']);
             $state = ApplicationController::sanitize($_POST['state']);
             $city = ApplicationController::sanitize($_POST['city']);
+            $address = ApplicationController::sanitize($_POST['address']);
+            $postal = ApplicationController::sanitize($_POST['postal']);
             $about = ApplicationController::sanitize($_POST['about']);
             $site = ApplicationController::sanitize($_POST['site']);
             $pro_pic = ApplicationController::sanitize($_POST['pro-pic']);
@@ -116,11 +118,13 @@ class Profile_EditPage
                     die('<div class="alert alert-danger" role="alert">Dit profiel is al aangemaakt</div>');
                 } else {
                     $db = new Database();
-                    $db->query('INSERT INTO `profile_co` (`user_id`, `company_name`, `state`, `city`, `about`, `website`, `pro_img`) VALUES (:user_id, :company_name, :state, :city, :about, :site, :pro_img)');
+                    $db->query('INSERT INTO `profile_co` (`user_id`, `company_name`, `state`, `city`,`address`,`postal`, `about`, `website`, `pro_img`) VALUES (:user_id, :company_name, :state, :city,:address,:postal, :about, :site, :pro_img)');
                     $db->bind(':user_id', $user_id);
                     $db->bind(':company_name', $company_name);
                     $db->bind(':state', $state);
                     $db->bind(':city', $city);
+                    $db->bind(':address', $address);
+                    $db->bind(':postal', $postal);
                     $db->bind(':about', $about);
                     $db->bind(':site', $site);
 //                    $db->bind(':kvk_nummer', $kvk_nummer);

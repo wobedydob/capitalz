@@ -24,6 +24,18 @@ $(document).ready(function () {
         };
         IMask(element, maskOptions);
     }
+
+    // Address input formatting
+    if ($('#postal').length > 0) {
+        const element = document.getElementById('postal');
+        const maskOptions = {
+            mask: '0000aa',
+            prepare: function (str) {
+                return str.toUpperCase();
+            },
+        };
+        IMask(element, maskOptions);
+    }
 });
 
 // Validation
@@ -109,7 +121,7 @@ document.onreadystatechange = function () {
 
 // Max number input in number fields
 $('input[type=number]').keyup(function () {
-    const min = parseInt($(this).attr('min')) || 1;
+    const min = parseInt($(this).attr('min'));
     const max = parseInt($(this).attr('max')) || 100;
     const val = parseInt($(this).val()) || (min - 1);
     if (val < min) $(this).val(min);

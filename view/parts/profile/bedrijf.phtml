@@ -3,7 +3,7 @@
     <hr>
     <div class="row profile-head">
         <div class="col-12 col-sm-4 pf-row">
-            <img class="pro-pic" src="" alt="pf">
+            <img class="pro-pic" src="<?= $vars['baseUrl'] . 'img/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) ?>" alt="pf">
         </div>
         <div class="col-12 col-sm-8 pro-head-body">
             <div class="row no-gutters">
@@ -38,11 +38,14 @@
             </div>
             <div class="row no-gutters">
                 <div class="col-6">
-                    <h5>Stad:</h5>
+                    <h5>Adres:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text">
-                        <?= $vars['userInfo']['city'] ?>
+                    <h5 class="address-text pro-head-text">
+                        <?=
+                        $vars['userInfo']['address'] . '<br>' .
+                        $vars['userInfo']['postal'] . ' ' . $vars['userInfo']['city']
+                        ?>
                     </h5>
                 </div>
             </div>

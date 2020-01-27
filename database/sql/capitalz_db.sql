@@ -30,15 +30,15 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `job`;
 CREATE TABLE IF NOT EXISTS `job`
 (
-    `job_id`       int(7)       NOT NULL AUTO_INCREMENT,
-    `company_id`   int(7)       NOT NULL,
-    `title`        varchar(75)  NOT NULL,
-    `tag`          varchar(100) NOT NULL,
-    `desc`         text         NOT NULL,
-    `date_start`   date         NOT NULL,
-    `date_end`     date         NOT NULL,
-    `work_hours`   varchar(20)  NOT NULL,
-    `work_sal`     varchar(20)  NOT NULL,
+    `job_id`     int(7)       NOT NULL AUTO_INCREMENT,
+    `company_id` int(7)       NOT NULL,
+    `title`      varchar(75)  NOT NULL,
+    `tag`        varchar(100) NOT NULL,
+    `desc`       text         NOT NULL,
+    `date_start` date         NOT NULL,
+    `date_end`   date         NOT NULL,
+    `work_hours` varchar(20)  NOT NULL,
+    `work_sal`   varchar(20)  NOT NULL,
     PRIMARY KEY (`job_id`, `company_id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
@@ -57,9 +57,11 @@ CREATE TABLE IF NOT EXISTS `profile_co`
     `company_name` varchar(255)   NOT NULL,
     `state`        varchar(45)    NOT NULL,
     `city`         varchar(45)    NOT NULL,
+    `address`      varchar(100)   NOT NULL,
+    `postal`       varchar(6)     NOT NULL,
     `about`        text           NOT NULL,
     `website`      varbinary(271) NOT NULL,
-    `pro_img`      varchar(255)   NOT NULL,
+    `pro_img`      varchar(255) DEFAULT NULL,
     PRIMARY KEY (`profile_id`, `user_id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
@@ -83,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `profile_se`
     `nationality` varchar(50)        NOT NULL,
     `about`       text               NOT NULL,
     `cv_file`     varchar(255) DEFAULT NULL,
-    `pro_img`     varchar(255)       NOT NULL,
+    `pro_img`     varchar(255) DEFAULT NULL,
     PRIMARY KEY (`profile_id`, `user_id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;

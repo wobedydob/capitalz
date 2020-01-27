@@ -45,8 +45,34 @@
                     <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-building"></i></div>
                     </div>
-                    <input type="text" class="form-control" id="city" name="city" placeholder="Stad" required>
+                    <input type="text" class="form-control" id="city" name="city"
+                           placeholder="Stad" required>
                     <div class="invalid-tooltip">Voer de stad in!</div>
+                </div>
+            </div>
+        </div>
+        <!--Address row-->
+        <div class="form-row no-gutters">
+            <div class="form-group col-7">
+                <label for="address">Adres:</label><span class="required">*</span>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-road"></i></div>
+                    </div>
+                    <input type="text" class="form-control" id="address" name="address"
+                           placeholder="Adres" required>
+                    <div class="invalid-tooltip">Voer je adres in!</div>
+                </div>
+            </div>
+            <div class="form-group col-5">
+                <label for="postal">Postcode:</label><span class="required">*</span>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-map-marked-alt"></i></div>
+                    </div>
+                    <input type="text" class="form-control" id="postal" name="postal" minlength="6"
+                           placeholder="Postcode" required>
+                    <div class="invalid-tooltip">Voer je postcode in!</div>
                 </div>
             </div>
         </div>
