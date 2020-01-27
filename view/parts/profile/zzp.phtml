@@ -115,5 +115,23 @@
             ?></p>
         <h4>CV:</h4>
     </div>
+    <!--Edit button-->
+    <hr>
+    <?php
+    if (isset($_SESSION["user_role"])) {
+        switch ($_SESSION["user_role"]) {
+            case '2':
+                echo '
+                    <div class="profile-btn-row">
+                        <a href=" ' . $vars['baseUrl'] . 'profile_edit/zzp">
+                            <button class="btn profile-btn btn-primary">Profiel Bewerken</button>
+                        </a>
+                    </div>
+                ';
+                break;
+            default:
+                break;
+        }
+    }
+    ?>
 </div>
-

@@ -56,4 +56,6 @@
 
 .pro-name-drop {
     text-align: center;
+    margin-bottom: 0;
+    margin-top: 8px;
 }

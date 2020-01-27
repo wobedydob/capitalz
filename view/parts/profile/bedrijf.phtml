@@ -114,6 +114,25 @@
             <iframe width="500" height="500" id="profile-map" src="https://maps.google.com/maps?q=<?php echo $city ?>&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
     </div>
+    <!--Edit button-->
+    <hr>
+    <?php
+    if (isset($_SESSION["user_role"])) {
+        switch ($_SESSION["user_role"]) {
+            case '1':
+                echo '
+                    <div class="profile-btn-row">
+                        <a href=" ' . $vars['baseUrl'] . 'profile_edit/bedrijf">
+                            <button class="btn profile-btn btn-primary">Profiel Bewerken</button>
+                        </a>
+                    </div>
+                ';
+                break;
+            default:
+                break;
+        }
+    }
+    ?>
 </div>
 
 <?php
@@ -123,5 +142,4 @@ $db->query('SELECT company_name, city FROM profile_co WHERE user_id = :user_id')
 $db->bind(':user_id', $user_id);
 $company_name = $db->single()['company_name'];
 $city = $db->single()['city'];
-
 ?>
