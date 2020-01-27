@@ -1,6 +1,7 @@
 <?php
 
-class TaskPage
+
+class Task_zzpPage
 {
     public $taskList;
 
@@ -22,11 +23,12 @@ class TaskPage
         foreach ($result as $value) {
             $taskStr .= '<div class="card" style="width: 18rem;">';
             $taskStr .= '<h4 class="card-title">' . $value['title'] . '</h4> ';
-            $taskStr .= '<p class="card-title">' . $value['tag'] . '</p> ';
-            $taskStr .= '<p class="card-title" style="font-size: 13px;">' . $value['desc'] . '</p> ';
+            $taskStr .= '<p class="card-title">' . $value['desc'] . '</p> ';
+            $taskStr .= '<p class="card-title" style="font-size: 13px;">' . $value['tag'] . '</p> ';
             $taskStr .= '</div>';
         }
         //$tableStr .= '</table>';
         $this->taskList = $taskStr;
     }
 }
+

@@ -41,8 +41,8 @@ class CreatePage
                     die('<div class="alert alert-danger" role="alert">Deze opdracht heeft u al aangemaakt</div>');
                 } else {
                     $db = new Database();
-                    $db->query('INSERT INTO `job` (`company_id`, `title`, `tag`, `desc`, `date_start`, `date_end`, `work_hours`, `work_sal`, `company_name`)
-                               VALUES (:company_id, :title, :tag, :descr, :date_start, :date_end, :work_hours, :work_sal, :company_name)');
+                    $db->query('INSERT INTO `job` (`company_id`, `title`, `tag`, `desc`, `date_start`, `date_end`, `work_hours`, `work_sal`)
+                               VALUES (:company_id, :title, :tag, :descr, :date_start, :date_end, :work_hours, :work_sal)');
                     $db->bind(':company_id', $user_id);
                     $db->bind(':title', $title);
                     $db->bind(':tag', $tag);
@@ -51,7 +51,6 @@ class CreatePage
                     $db->bind(':date_end', $date_end);
                     $db->bind(':work_hours', $work_hours);
                     $db->bind(':work_sal', $work_sal);
-                    $db->bind(':company_name', NULL);
 //                    var_dump($db);
                     $db->execute();
                     $this->formMessage = '<div class="alert alert-success" role="alert">Opdracht aangemaakt</div>';

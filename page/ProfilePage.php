@@ -34,7 +34,7 @@ class ProfilePage
 //            $db->query('SELECT * FROM `user` WHERE user_id = :user_id');
 //            $db->bind(':user_id', $user_id);
 //
-//            if ($db->rowCount() > 1) {
+//            if  ($db->rowCount() > 1) {
 ////                header("refresh:2; url=/home");
 //                die('<div class="alert alert-danger" role="alert">Dit profiel bestaat niet</div>');
 //            } else {
