@@ -3,7 +3,7 @@
     <hr>
     <div class="row profile-head">
         <div class="col-12 col-sm-4 pf-row">
-            <img class="pro-pic" src="<?= $vars['baseUrl'] . 'img/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) ?>" alt="pf">
+            <img class="pro-pic" src="" alt="pf">
         </div>
         <div class="col-12 col-sm-8 pro-head-body">
             <div class="row no-gutters">
@@ -11,14 +11,9 @@
                     <h5>Naam:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?php
-                        $user_id = ApplicationController::sanitize($_SESSION['id']);
-                        $db = new Database();
-                        $db->query('SELECT company_name FROM profile_co WHERE user_id = :user_id');
-                        $db->bind(':user_id', $user_id);
-                        $company_name = $db->single()['company_name'];
-                        echo $company_name;
-                        ?></h5>
+                    <h5 class="pro-head-text">
+                        <?= $vars['userInfo']['company_name'] ?>
+                    </h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -26,14 +21,9 @@
                     <h5>Email:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?php
-                        $user_id = ApplicationController::sanitize($_SESSION['id']);
-                        $db = new Database();
-                        $db->query('SELECT email FROM user WHERE user_id = :user_id');
-                        $db->bind(':user_id', $user_id);
-                        $email = $db->single()['email'];
-                        echo $email;
-                        ?></h5>
+                    <h5 class="pro-head-text">
+                        <?= $vars['userInfo']['email'] ?>
+                    </h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -41,14 +31,9 @@
                     <h5>Provincie:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?php
-                        $user_id = ApplicationController::sanitize($_SESSION['id']);
-                        $db = new Database();
-                        $db->query('SELECT state FROM profile_co WHERE user_id = :user_id');
-                        $db->bind(':user_id', $user_id);
-                        $state = $db->single()['state'];
-                        echo $state;
-                        ?></h5>
+                    <h5 class="pro-head-text">
+                        <?= $vars['userInfo']['state'] ?>
+                    </h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -56,14 +41,9 @@
                     <h5>Stad:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?php
-                        $user_id = ApplicationController::sanitize($_SESSION['id']);
-                        $db = new Database();
-                        $db->query('SELECT city FROM profile_co WHERE user_id = :user_id');
-                        $db->bind(':user_id', $user_id);
-                        $city = $db->single()['city'];
-                        echo $city;
-                        ?></h5>
+                    <h5 class="pro-head-text">
+                        <?= $vars['userInfo']['city'] ?>
+                    </h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -71,14 +51,9 @@
                     <h5>KvK-Nr:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?php
-                        $user_id = ApplicationController::sanitize($_SESSION['id']);
-                        $db = new Database();
-                        $db->query('SELECT `number` FROM `user` WHERE user_id = :user_id');
-                        $db->bind(':user_id', $user_id);
-                        $number = $db->single()['number'];
-                        echo $number;
-                        ?></h5>
+                    <h5 class="pro-head-text">
+                        <?= $vars['userInfo']['number'] ?>
+                    </h5>
                 </div>
             </div>
             <div class="row no-gutters">
@@ -86,14 +61,9 @@
                     <h5>Website:</h5>
                 </div>
                 <div class="col-6">
-                    <h5 class="pro-head-text"><?php
-                        $user_id = ApplicationController::sanitize($_SESSION['id']);
-                        $db = new Database();
-                        $db->query('SELECT website FROM profile_co WHERE user_id = :user_id');
-                        $db->bind(':user_id', $user_id);
-                        $website = $db->single()['website'];
-                        echo $website;
-                        ?></h5>
+                    <h5 class="pro-head-text">
+                        <?= $vars['userInfo']['website'] ?>
+                    </h5>
                 </div>
             </div>
         </div>
@@ -101,17 +71,12 @@
     <hr>
     <div class="profile-body">
         <h4>Over:</h4>
-        <p><?php
-            $user_id = ApplicationController::sanitize($_SESSION['id']);
-            $db = new Database();
-            $db->query('SELECT about FROM profile_co WHERE user_id = :user_id');
-            $db->bind(':user_id', $user_id);
-            $about = $db->single()['about'];
-            echo $about;
-            ?></p>
+        <p>
+            <?= $vars['userInfo']['about'] ?>
+        </p>
         <h4>Locatie:</h4>
         <div class="profile-loctation">
-            <iframe width="500" height="500" id="profile-map" src="https://maps.google.com/maps?q=<?php echo $city ?>&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+            <iframe width="500" height="500" id="profile-map" src="https://maps.google.com/maps?q=<?= $vars['userInfo']['city'] ?>&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
     </div>
     <!--Edit button-->
@@ -134,12 +99,3 @@
     }
     ?>
 </div>
-
-<?php
-$user_id = ApplicationController::sanitize($_SESSION['id']);
-$db = new Database();
-$db->query('SELECT company_name, city FROM profile_co WHERE user_id = :user_id');
-$db->bind(':user_id', $user_id);
-$company_name = $db->single()['company_name'];
-$city = $db->single()['city'];
-?>
