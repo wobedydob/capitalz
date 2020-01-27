@@ -1,6 +1,9 @@
 <div class="container profile_edit center">
     <h1 class="profile_edit-head">Bewerk Profiel Bedrijf</h1>
     <hr>
+    <?php if (!empty($vars['formMessage'])) : ?>
+        <?= $vars['formMessage'] ?>
+    <?php endif; ?>
     <form class="needs-validation profile_edit-bedrijf-form" action="" method="POST" enctype="multipart/form-data" novalidate>
         <!--Name row-->
         <div class="form-row">
@@ -22,7 +25,7 @@
                         <div class="input-group-text"><i class="fas fa-compass"></i></div>
                     </div>
                     <select class="custom-select" id="state" name="state" required>
-                        <option selected disabled>Provincie:</option>
+                        <option value="<?= null ?>" selected disabled>Provincie:</option>
                         <option value="Drenthe">Drenthe</option>
                         <option value="Flevoland">Flevoland</option>
                         <option value="Friesland">Friesland</option>

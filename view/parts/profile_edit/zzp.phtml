@@ -1,6 +1,9 @@
 <div class="container profile_edit center">
     <h1 class="profile_edit-head">Bewerk Profiel ZZP'er</h1>
     <hr>
+    <?php if (!empty($vars['formMessage'])) : ?>
+        <?= $vars['formMessage'] ?>
+    <?php endif; ?>
     <form class="needs-validation profile_edit-bedrijf-form" action="" method="POST" enctype="multipart/form-data" novalidate>
         <!--Name row-->
         <div class="form-row">
@@ -49,7 +52,7 @@
                         <div class="input-group-text"><i class="fas fa-user"></i></div>
                     </div>
                     <select class="form-control" id="gender" name="gender" required>
-                        <option selected disabled>Geslacht:</option>
+                        <option value="<?= null ?>" selected disabled>Geslacht:</option>
                         <option value="m">Man</option>
                         <option value="f">Vrouw</option>
                         <option value="o">Overig</option>

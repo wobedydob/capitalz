@@ -1,11 +1,6 @@
-<?= $this->pageObj->profileForm; ?>
-<?php if (isset($this->pageObj->zzpForm)) : ?>
+<?php if (isset($this->pageObj->profileForm)) : ?>
     <div class="zzp-form">
-        <?= $this->pageObj->zzpForm ?>
-    </div>
-<?php elseif (isset($this->pageObj->bedrijfForm)) : ?>
-    <div class="bedrijf-form">
-        <?= $this->pageObj->bedrijfForm ?>
+        <?= $this->pageObj->profileForm ?>
     </div>
 <?php else : ?>
     <?php

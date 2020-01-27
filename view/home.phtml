@@ -3,16 +3,16 @@
     <h1 class="home-head">Welkom bij CapitalZ!</h1>
     <h5 class="home-text">Dé site voor bedrijven en ZZP'ers!</h5>
     <hr>
-    <form class="home-form" method="post" action="<?= $this->urlArr['baseUrl'] ?>tasklist">
+    <form class="needs-validation home-form" method="post" action="<?= $this->urlArr['baseUrl'] ?>tasklist" novalidate>
         <div class="form-row">
             <!--Wat invoer-->
             <div class="col-8 col-sm-7">
-                <input type="text" class="form-control mb-2" id="search" placeholder="Zoek opdrachten:" autofocus>
+                <input type="text" class="form-control mb-2" id="search" placeholder="Zoek opdrachten:" autofocus required>
             </div>
             <!--Plaats invoer-->
             <div class="col-4 col-sm-3">
-                <select class="custom-select mb-2" id="locatie">
-                    <option selected disabled>Waar:</option>
+                <select class="custom-select mb-2" id="locatie" required>
+                    <option value="<?= null ?>" selected disabled>Waar:</option>
                     <option value="1">Drenthe</option>
                     <option value="2">Flevoland</option>
                     <option value="3">Friesland</option>

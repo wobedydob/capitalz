@@ -4,6 +4,7 @@ class Profile_EditPage
 {
     public $zzpForm;
     public $bedrijfForm;
+    public $formMessage;
 
     private $urlArr;
 
@@ -11,7 +12,6 @@ class Profile_EditPage
     {
         $this->urlArr = $urlArr;
 
-        // Selecting the first value in the pageVars array
         if ($urlArr['pageVars'][0] == 'zzp') {
             $this->profile_edit_zzp();
         } else if ($urlArr['pageVars'][0] == 'bedrijf') {
@@ -33,11 +33,12 @@ class Profile_EditPage
             $gender = ApplicationController::sanitize($_POST['gender']);
             $nationality = ApplicationController::sanitize($_POST['nationality']);
             $about = ApplicationController::sanitize($_POST['about']);
-            $cv_file = ApplicationController::sanitize($_POST['cv']);
-            $pro_pic = ApplicationController::sanitize($_POST['pro-pic']);
-//            $btw_number = ApplicationController::sanitize($_SESSION['number']);
-
-            if ($_FILES['pro-pic']['name'] != "") {
+            if (!empty($_FILES['cv']['name'])) {
+                $cv_file = ApplicationController::sanitize($_FILES['cv']['name']);
+            } else {
+                $cv_file = null;
+            }
+            if (!empty($_FILES['pro-pic']['name'])) {
                 $target_dir = "img/profile/";
                 $file = $_FILES['pro-pic']['name'];
                 $path = pathinfo($file);
@@ -46,25 +47,23 @@ class Profile_EditPage
                 $temp_name = $_FILES['pro-pic']['tmp_name'];
                 $path_filename_ext = $target_dir . $filename . "." . $ext;
                 if (file_exists($path_filename_ext)) {
-                    echo 'File already exists.';
+                    $this->formMessage = '<div class="alert alert-danger" role="alert">Deze profiel foto bestaat al!</div>';
                 } else {
                     move_uploaded_file($temp_name, $path_filename_ext);
+                    $pro_pic = ApplicationController::sanitize($_FILES['pro-pic']['name']);
                 }
             }
+//            $btw_number = ApplicationController::sanitize($_SESSION['number']);
 
             if (isset($user_id)) {
                 $db = new Database();
                 $db->query("SELECT `number` from `user` WHERE `user_id` = :user_id");
                 $db->bind(':user_id', $user_id);
-//                var_dump('SELECT * from `user` WHERE `email` = :email');
-//                var_dump($user_id);
                 $db->execute();
-//                var_dump($db->rowCount() < 1);
-//                var_dump($db);
 
                 if ($db->rowCount() < 1) {
-                    header("refresh:2; url=/home");
-                    die('<div class="alert alert-danger" role="alert">Dit profiel is al aangemaakt</div>');
+                    $this->formMessage = '<div class="alert alert-danger" role="alert">Dit profiel bestaat al!</div>';
+                    header("Refresh: 1; url=" . $this->urlArr['baseUrl'] . "home");
                 } else {
                     $db = new Database();
                     $db->query('INSERT INTO `profile_se` (`user_id`, `firstname`, `infix`, `lastname`, `birthday`, `gender`, `nationality`, `about`, `cv_file`, `pro_img`) VALUES (:user_id, :firstname, :infix, :lastname, :birthday, :gender, :nationality, :about, :cv_file, :pro_img);');
@@ -79,10 +78,9 @@ class Profile_EditPage
 //                    $db->bind(':btw_nummer', $btw_number);
                     $db->bind(':cv_file', $cv_file);
                     $db->bind(':pro_img', $pro_pic);
-//                    var_dump($db);
                     $db->execute();
-                    echo '<div class="alert alert-success" role="alert">Je hebt je profiel geupdate!</div>';
-                    header("refresh:1; url=../home");
+                    $this->formMessage = '<div class="alert alert-danger" role="alert">Je profiel is geupdate!</div>';
+                    header("Refresh: 1; url=" . $this->urlArr['baseUrl'] . "home");
                 }
             }
         }
@@ -100,12 +98,22 @@ class Profile_EditPage
             $postal = ApplicationController::sanitize($_POST['postal']);
             $about = ApplicationController::sanitize($_POST['about']);
             $site = ApplicationController::sanitize($_POST['site']);
-            $pro_pic = ApplicationController::sanitize($_POST['pro-pic']);
+            if (!empty($_FILES['pro-pic']['name'])) {
+                $target_dir = "img/profile/";
+                $file = $_FILES['pro-pic']['name'];
+                $path = pathinfo($file);
+                $filename = $path['filename'];
+                $ext = $path['extension'];
+                $temp_name = $_FILES['pro-pic']['tmp_name'];
+                $path_filename_ext = $target_dir . $filename . "." . $ext;
+                if (file_exists($path_filename_ext)) {
+                    $this->formMessage = '<div class="alert alert-danger" role="alert">Deze profiel foto bestaat al!</div>';
+                } else {
+                    move_uploaded_file($temp_name, $path_filename_ext);
+                    $pro_pic = ApplicationController::sanitize($_FILES['pro-pic']['name']);
+                }
+            }
 //            $kvk_nummer = ApplicationController::sanitize($_SESSION['number']);
-
-
-//            var_dump($_POST);
-//            var_dump($_SESSION);
 
             if (isset($user_id)) {
                 $db = new Database();
@@ -114,8 +122,8 @@ class Profile_EditPage
                 $db->execute();
 
                 if ($db->rowCount() < 1) {
-                    header("refresh:2; url=/home");
-                    die('<div class="alert alert-danger" role="alert">Dit profiel is al aangemaakt</div>');
+                    $this->formMessage = '<div class="alert alert-danger" role="alert">Dit profiel bestaat al!</div>';
+                    header("Refresh: 1; url=" . $this->urlArr['baseUrl'] . "home");
                 } else {
                     $db = new Database();
                     $db->query('INSERT INTO `profile_co` (`user_id`, `company_name`, `state`, `city`,`address`,`postal`, `about`, `website`, `pro_img`) VALUES (:user_id, :company_name, :state, :city,:address,:postal, :about, :site, :pro_img)');
@@ -130,9 +138,8 @@ class Profile_EditPage
 //                    $db->bind(':kvk_nummer', $kvk_nummer);
                     $db->bind(':pro_img', $pro_pic);
                     $db->execute();
-
-                    echo '<div class="alert alert-success" role="alert">Je hebt je profiel geupdate!</div>';
-                    header("refresh:1; url=../home");
+                    $this->formMessage = '<div class="alert alert-danger" role="alert">Je profiel is geupdate!</div>';
+                    header("Refresh: 1; url=" . $this->urlArr['baseUrl'] . "home");
                 }
             }
         }
