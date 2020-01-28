@@ -1,4 +1,4 @@
-<div class="container create">
+<div class="container create" xmlns="http://www.w3.org/1999/html">
     <h1 class="create-head">Taak Aanmaken</h1>
     <hr>
     <?php if (!empty($this->pageObj->formMessage)) : ?>
@@ -104,8 +104,13 @@
                         <li data-target="#image_select" data-slide-to="5"></li>
                     </ol>
                     <div class="carousel-inner">
+                        <div class="custom-control custom-radio none">
+                            <input type="radio" class="custom-control-input" id="carousel-select" name="carousel1">
+                        </div>
                         <div class="carousel-item active">
-                            <img src="../img/task-img/administration.jpg" class="d-block w-100" alt="img1">
+                            <label class="custom-control-label" for="carousel-select">
+                                <img src="../img/task-img/administration.jpg" class="d-block w-100" alt="img1">
+                            </label>
                         </div>
                         <div class="carousel-item">
                             <img src="../img/task-img/cleaner.jpg" class="d-block w-100" alt="img2">

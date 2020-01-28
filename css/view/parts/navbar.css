@@ -38,6 +38,7 @@
 }
 
 .pro-drop {
+    display: none;
     transform: translateX(-50%);
     margin-left: 50%;
     background-color: white;
@@ -47,9 +48,28 @@
     width: 250px;
 }
 
+.dropdown:hover .pro-drop {
+    display: block;
+}
+
+.pro-drop:hover {
+    display: block;
+}
+
+.dropdown-menu:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    height: 18px;
+    top: -18px;
+    left: 0;
+    right: 0;
+}
+
 .pro-img-drop {
     display: flex;
     width: 100%;
+    height: 170px;
     padding: 0 40px;
     border-radius: 50%;
 }

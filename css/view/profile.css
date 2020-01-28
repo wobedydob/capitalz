@@ -5,6 +5,10 @@
     padding-bottom: 1rem;
 }
 
+.pro-pic {
+    height: 100%;
+}
+
 @media (min-width: 576px) {
     .profile {
         max-width: 720px;
@@ -53,6 +57,7 @@
 }
 
 .profile-head {
+    min-height: 240px;
     background-color: white;
     border-radius: 15px;
 }

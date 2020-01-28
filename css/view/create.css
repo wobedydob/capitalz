@@ -106,10 +106,6 @@
     background: url("../../img/svg/chevron.svg");
 }
 
-input[type="checkbox"][id^="image-check"] {
-    display: none;
-}
-
 .create-btn {
     width: 160px;
 }
@@ -117,4 +113,12 @@ input[type="checkbox"][id^="image-check"] {
 .create-btn-row {
     text-align: center;
     margin-bottom: .6rem;
+}
+
+#carousel-select:checked ~ .carousel-inner {
+    border: solid 1px #1c7430;
+}
+
+#carousel-select:checked ~ .carousel-check {
+    visibility: visible
 }

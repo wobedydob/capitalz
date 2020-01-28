@@ -71,10 +71,11 @@
     <hr>
     <div class="profile-body">
         <h4>Over:</h4>
-        <p>
-            <?= $vars['userInfo']['about'] ?>
-        </p>
+        <p><?= $vars['userInfo']['about'] ?></p>
         <h4>CV:</h4>
+        <a href="<?= $vars['baseUrl'] . 'documents/' . UserController::get_profile_cv($_SESSION['id']) ?>" target="_blank">
+            <button type="button" class="btn btn-secondary">Download CV</button>
+        </a>
     </div>
     <!--Edit button-->
     <hr>

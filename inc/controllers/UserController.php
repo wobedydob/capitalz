@@ -41,12 +41,10 @@ class UserController extends UserModel
         $db->bind(':user_id', $user_id);
 
         if ($db->execute() && $db->single()['cv_file']) {
-            $cv = 'cv/' . $db->single()['cv_file'];
+            return 'cv/' . $db->single()['cv_file'];
         } else {
-            $cv = 'default_profile/' . $table;
+            return 'Deze user heeft geen CV geupload';
         }
-
-        return $cv;
     }
 
     public static function get_profile_name($user_id, $user_role)

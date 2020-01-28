@@ -23,7 +23,7 @@ class Profile_EditPage
 
     private function profile_edit_zzp()
     {
-        $this->zzpForm = ApplicationController::get_part_string('profile_edit/zzp', array('baseUrl' => $this->urlArr['baseUrl']));
+        $this->zzpForm = ApplicationController::get_part_string('profile_edit/zzp', array('baseUrl' => $this->urlArr['baseUrl'], 'formMessage' => $this->formMessage));
         if (isset($_POST['pro_edit_submit'])) {
             $user_id = ApplicationController::sanitize($_SESSION['id']);
             $firstname = ApplicationController::sanitize($_POST['firstname']);
@@ -34,7 +34,19 @@ class Profile_EditPage
             $nationality = ApplicationController::sanitize($_POST['nationality']);
             $about = ApplicationController::sanitize($_POST['about']);
             if (!empty($_FILES['cv']['name'])) {
-                $cv_file = ApplicationController::sanitize($_FILES['cv']['name']);
+                $target_dir = "documents/cv/";
+                $file = $_FILES['cv']['name'];
+                $path = pathinfo($file);
+                $filename = $path['filename'];
+                $ext = $path['extension'];
+                $temp_name = $_FILES['cv']['tmp_name'];
+                $path_filename_ext = $target_dir . $filename . "." . $ext;
+                if (file_exists($path_filename_ext)) {
+                    $this->formMessage = '<div class="alert alert-danger" role="alert">Dit cv is al geupload!</div>';
+                } else {
+                    move_uploaded_file($temp_name, $path_filename_ext);
+                    $cv_file = ApplicationController::sanitize($_FILES['cv']['name']);
+                }
             } else {
                 $cv_file = null;
             }
@@ -52,6 +64,8 @@ class Profile_EditPage
                     move_uploaded_file($temp_name, $path_filename_ext);
                     $pro_pic = ApplicationController::sanitize($_FILES['pro-pic']['name']);
                 }
+            } else {
+                $pro_pic = null;
             }
 //            $btw_number = ApplicationController::sanitize($_SESSION['number']);
 
@@ -88,7 +102,7 @@ class Profile_EditPage
 
     private function profile_edit_bedrijf()
     {
-        $this->bedrijfForm = ApplicationController::get_part_string('profile_edit/bedrijf', array('baseUrl' => $this->urlArr['baseUrl']));
+        $this->bedrijfForm = ApplicationController::get_part_string('profile_edit/bedrijf', array('baseUrl' => $this->urlArr['baseUrl'], 'formMessage' => $this->formMessage));
         if (isset($_POST['pro_edit_submit'])) {
             $user_id = ApplicationController::sanitize($_SESSION['id']);
             $company_name = ApplicationController::sanitize($_POST['company_name']);

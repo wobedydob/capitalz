@@ -89,3 +89,8 @@ table thead {
     color: black;
     margin-top: 63vh;
 }
+
+.none {
+    display: none;
+    pointer-events: none;
+}
