@@ -32,16 +32,12 @@ class RegisterPage
             $password = ApplicationController::sanitize($_POST['password']);
             $repeat_password = ApplicationController::sanitize($_POST['repeat_password']);
             $btw_nummer = ApplicationController::sanitize($_POST['number']);
-//            $password_check = UserController::password_check($_POST['password']);
-//            if ($password_check) {
-//
-//            }
+
+
             if (isset($email)) {
                 $db = new Database();
                 $db->query("SELECT * from `user` WHERE `email` = :email");
                 $db->bind(':email', $email);
-//                var_dump('SELECT * from `user` WHERE `email` = :email');
-//                var_dump($email);
                 $db->execute();
 
                 if (!empty($email)) {
@@ -98,8 +94,6 @@ class RegisterPage
                 $db = new Database();
                 $db->query("SELECT * from `user` WHERE `email` = :email");
                 $db->bind(':email', $email);
-//                var_dump('SELECT * from `user` WHERE `email` = :email');
-//                var_dump($email);
                 $db->execute();
 
                 if ($repeat_password == $password) {

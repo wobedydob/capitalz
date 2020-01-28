@@ -67,7 +67,6 @@ class Profile_EditPage
             } else {
                 $pro_pic = null;
             }
-//            $btw_number = ApplicationController::sanitize($_SESSION['number']);
 
             if (isset($user_id)) {
                 $db = new Database();
@@ -127,7 +126,6 @@ class Profile_EditPage
                     $pro_pic = ApplicationController::sanitize($_FILES['pro-pic']['name']);
                 }
             }
-//            $kvk_nummer = ApplicationController::sanitize($_SESSION['number']);
 
             if (isset($user_id)) {
                 $db = new Database();

@@ -32,7 +32,6 @@ class LoginPage
                     $record = $db->resultset()[0];
                     $_SESSION['id'] = $record['user_id'];
                     $_SESSION['email'] = $record['email'];
-//                    $_SESSION['number'] = $record['number'];
                     $_SESSION['user_role'] = (int)$record['user_role'];
 
 
