@@ -38,6 +38,11 @@ $(document).ready(function () {
     }
 });
 
+// Input file label
+// document.getElementById('cv').onchange = function () {
+//     alert('Selected file: ' + this.value);
+// };
+
 // Validation
 (function () {
     'use strict';

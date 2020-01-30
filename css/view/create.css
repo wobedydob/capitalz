@@ -65,6 +65,10 @@
     padding: 0;
 }
 
+.carousel-inner {
+    border-radius: 10px;
+}
+
 .carousel-item label {
     margin: 0;
     padding: 0;
@@ -115,10 +119,17 @@
     margin-bottom: .6rem;
 }
 
-#carousel-select:checked ~ .carousel-inner {
-    border: solid 1px #1c7430;
+.carousel-select {
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    border: solid #28a745;
+    border-radius: 10px;
+    visibility: hidden;
 }
 
-#carousel-select:checked ~ .carousel-check {
-    visibility: visible
+.carousel-item.active.selected ~ .carousel-select,
+.carousel-item.active.selected ~ .carousel-check {
+    visibility: visible;
 }

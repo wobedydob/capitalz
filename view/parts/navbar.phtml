@@ -99,10 +99,14 @@
                     </li>
                 ';
                 echo '
-                    <li class="nav-item">
-                        <a class="nav-btn nav-link" href="' . $this->urlArr['baseUrl'] . 'register/zzp">
+                    <li class="nav-item dropdown">
+                        <a class="profile-link nav-link" href="" id="dropdown" role="button" data-toggle="dropdown">
                             <button class="btn btn-primary"><i class="fas fa-user-plus"></i> Registreer</button>
                         </a>
+                        <div class="dropdown-menu pro-drop-register">
+                            <a class="dropdown-item reg-drop" href=" ' . $this->urlArr['baseUrl'] . 'register/zzp "><i class="fas fa-user-tie"></i> ZZP\'er</a>
+                            <a class="dropdown-item reg-drop" href=" ' . $this->urlArr['baseUrl'] . 'register/bedrijf "><button class="btn btn-primary btn-drop"><i class="far fa-building"></i> Bedrijf</button></a>
+                        </div>
                     </li>
                 ';
             }

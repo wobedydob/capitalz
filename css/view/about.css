@@ -2,7 +2,6 @@
 
 .about {
     padding-top: 1rem;
-    padding-bottom: 1rem;
 }
 
 @media (min-width: 576px) {
@@ -40,16 +39,12 @@
     }
 }
 
-.about-body {
-    padding: 20px;
-    background-color: white;
-    border-radius: 15px;
-}
-
+.about-body,
 .about-info {
     padding: 20px;
     background-color: white;
     border-radius: 15px;
+    margin-bottom: 1rem;
 }
 
 .about-img-info {

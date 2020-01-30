@@ -1,0 +1,29 @@
+/*contact*/
+
+.contact {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+@media (min-width: 576px) {
+    .contact {
+        max-width: 1100px;
+    }
+
+    .contact-head {
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .contact {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .contact-head {
+        font-size: 2rem;
+        text-align: center;
+    }
+}
