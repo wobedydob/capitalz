@@ -24,4 +24,4 @@ Na de hand krijgen beide de zzp'er en het bedrijf de optie om een recentie te sc
 - Sander van de Coolwijk    -   Verantwoordelijke
 ```
 # <br><br><br>
-###### *© 2019 Copyright: CapitalZ.net*
+###### *© 2019-2020 Copyright: CapitalZ.net*
