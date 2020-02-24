@@ -1,6 +1,55 @@
-<div class="container contact">
-    <h1 class="contact-head ">Contact</h1>
+<div class="container contact on-top">
+    <h1 class="page-head ">Contact</h1>
     <hr>
-    <div class="row contact-row">
-    </div>
+    <form class="needs-validation contact-form" action="" method="POST" novalidate>
+        <!--Details row-->
+        <div class="form-group">
+            <h6 class="contact-text text-center">
+                Om contact op te nemen met een medewerker van CapitalZ kunt u het onderstaande contact formulier invullen.
+                Eventueel kunt u ook zelf een mail sturen naar ons: <a href="mailto:info@CapitalZ.nl" class="mail" target="_blank">info@CapitalZ.nl</a>
+            </h6>
+        </div>
+        <!--Name row-->
+        <div class="form-row">
+            <div class="form-group col-12">
+                <label for="name">Naam:</label><span class="required">*</span>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-user"></i></div>
+                    </div>
+                    <input type="email" class="form-control" id="name" name="name"
+                           placeholder="Naam" required autofocus>
+                    <div class="invalid-tooltip">Voer uw naam in!</div>
+                </div>
+                <span class="contact-detail">Voer uw naam in die bij het bericht komt te staan.</span>
+            </div>
+        </div>
+        <!--Message row-->
+        <div class="form-row">
+            <div class="form-group col-12">
+                <label for="message">Bericht: (Maximaal 500 karakters)</label><span class="required">*</span>
+                <div class="input-group">
+                    <textarea class="form-control" id="message" name="message" rows="5" maxlength="500" required></textarea>
+                    <div class="invalid-tooltip">Voer uw bericht in!</div>
+                </div>
+                <span class="contact-detail">
+                    Vul hier uw bericht in. Een medewerker zal zo snel mogelijk proberen deze te beantwoorden.
+                    Dit duurt meestal 1 tot 2 dagen.
+                </span>
+            </div>
+        </div>
+        <!--Akkoord row-->
+        <div class="form-group">
+            <div class="custom-control custom-checkbox mb-2">
+                <input type="checkbox" class="custom-control-input" id="akkoord_bedrijf" required>
+                <label class="custom-control-label" for="akkoord_bedrijf">Ik ga akkoord met de voorwaarden.</label>
+                <div class="invalid-tooltip">Ga akkoord met de voorwaarden!</div>
+            </div>
+        </div>
+        <!--Verzend button-->
+        <hr class="hr-bottom">
+        <div class="form-btn">
+            <button type="submit" class="btn contact-btn btn-primary" name="contact_submit">Verzend</button>
+        </div>
+    </form>
 </div>

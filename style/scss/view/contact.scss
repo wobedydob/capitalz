@@ -1,0 +1,40 @@
+/* CONTACT */
+
+@media (min-width: 576px) {
+  .contact-detail {
+    font-size: .8rem;
+  }
+
+  .contact-text,
+  .contact-item {
+    font-size: .9rem;
+  }
+
+  .contact-btn {
+    width: 250px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .contact-head {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .contact form label {
+    font-size: .8rem;
+  }
+
+  .contact-detail {
+    font-size: .7rem;
+  }
+
+  .contact-text,
+  .contact-item {
+    font-size: .8rem;
+  }
+
+  .contact-btn {
+    width: 150px;
+  }
+}

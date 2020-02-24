@@ -1,9 +1,6 @@
 <?php
-
 spl_autoload_register(function ($className) {
-
     $filename = 'inc';
-
     if (strpos($className, 'Controller') !== false) {
         $filename .= '/controllers/';
     } elseif (strpos($className, 'Model') !== false) {
@@ -13,9 +10,11 @@ spl_autoload_register(function ($className) {
     } else {
         $filename .= '/lib/';
     }
-
     $filename .= $className . '.php';
-
-    require_once $filename;
-
+    if (file_exists($filename)) {
+        require_once $filename;
+    } else {
+        require_once 'view/parts/404.phtml';
+        header("Refresh: 1; url=" . ApplicationController::getInstance()->url('home') . "");
+    }
 });

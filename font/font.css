@@ -1,10 +1,12 @@
+/*Own Fonts*/
 @font-face {
     font-family: 'Gotham Book';
     font-style: normal;
     font-weight: normal;
-    src: url('GothamBook.woff') format('woff');
+    src: local('GothamBook'), url('GothamBook.woff') format('woff');
 }
 
+/*Google Fonts*/
 @font-face {
     font-family: 'Montserrat';
     font-style: normal;

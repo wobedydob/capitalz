@@ -1,66 +1,71 @@
-<div class="container profile">
-    <h1 class="profile-head-text">Profiel Zzp'er</h1>
+<div class="container profile pos-rel">
+    <h1 class="page-head">Profiel Zzp'er</h1>
     <hr>
     <div class="row profile-head">
         <div class="col-12 col-sm-4 pf-row">
-            <img class="pro-pic" src="<?= $vars['baseUrl'] . 'img/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) ?>" alt="pf">
+            <img class="pro-pic" src="<?= ApplicationController::getInstance()->url('img/') . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) ?>" alt="pf">
+            <div class="edit-pf">
+                <form id="edit_pf-form" class="edit_pf-form" action="" type="POST" enctype="multipart/form-data">
+                    <input type="file" class="custom-file-input" id="edit_pf" name="pro-pic">
+                </form>
+            </div>
         </div>
         <div class="col-12 col-sm-8 pro-head-body">
             <div class="row no-gutters">
-                <div class="col-6">
+                <div class="col-5 col-sm-6">
                     <h5>Naam:</h5>
                 </div>
-                <div class="col-6">
+                <div class="col-7 col-sm-6">
                     <h5 class="pro-head-text">
                         <?= $vars['userInfo']['firstname'] . ' ' . $vars['userInfo']['infix'] . ' ' . $vars['userInfo']['lastname'] ?>
                     </h5>
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-6">
+                <div class="col-5 col-sm-6">
                     <h5>Email:</h5>
                 </div>
-                <div class="col-6">
+                <div class="col-7 col-sm-6">
                     <h5 class="pro-head-text">
                         <?= $vars['userInfo']['email'] ?>
                     </h5>
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-6">
+                <div class="col-5 col-sm-6">
                     <h5>Geboortedatum:</h5>
                 </div>
-                <div class="col-6">
+                <div class="col-7 col-sm-6">
                     <h5 class="pro-head-text">
                         <?= $vars['userInfo']['birthday'] ?>
                     </h5>
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-6">
+                <div class="col-5 col-sm-6">
                     <h5>Geslacht:</h5>
                 </div>
-                <div class="col-6">
+                <div class="col-7 col-sm-6">
                     <h5 class="pro-head-text">
                         <?= $vars['userInfo']['gender'] ?>
                     </h5>
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-6">
+                <div class="col-5 col-sm-6">
                     <h5>Nationaliteit:</h5>
                 </div>
-                <div class="col-6">
+                <div class="col-7 col-sm-6">
                     <h5 class="pro-head-text">
                         <?= $vars['userInfo']['nationality'] ?>
                     </h5>
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-6">
+                <div class="col-5 col-sm-6">
                     <h5>Btw-Nr:</h5>
                 </div>
-                <div class="col-6">
+                <div class="col-7 col-sm-6">
                     <h5 class="pro-head-text">
                         <?= $vars['userInfo']['number'] ?>
                     </h5>
@@ -84,8 +89,8 @@
         switch ($_SESSION["user_role"]) {
             case '2':
                 echo '
-                    <div class="profile-btn-row">
-                        <a href=" ' . $vars['baseUrl'] . 'profile_edit/zzp">
+                    <div class="form-btn">
+                        <a href="' . ApplicationController::getInstance()->url('profile_edit/zzp') . '">
                             <button class="btn profile-btn btn-primary">Profiel Bewerken</button>
                         </a>
                     </div>

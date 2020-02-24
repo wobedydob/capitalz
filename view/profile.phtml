@@ -1,13 +1,5 @@
 <?php if (isset($this->pageObj->profileForm)) : ?>
-    <div class="zzp-form">
-        <?= $this->pageObj->profileForm ?>
-    </div>
+    <?= $this->pageObj->profileForm ?>
 <?php else : ?>
-    <?php
-    echo '<div class="error-message center">
-          <span class="error-main">Deze pagina bestaat niet.</span>
-          <br>
-          <span class="error-detail">U wordt terug verwezen naar de homepage.</span>
-          </div>';
-    ?>
+    <?php $this->get_part('error') ?>
 <?php endif; ?>

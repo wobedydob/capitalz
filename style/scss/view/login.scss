@@ -1,0 +1,44 @@
+/* LOGIN */
+
+@media (min-width: 576px) {
+  .login-detail {
+    font-size: .8rem;
+  }
+
+  .login-btn {
+    width: 250px;
+  }
+
+  .login-reg {
+    text-align: center;
+    font-size: .7rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .login-head {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .login form label {
+    font-size: .8rem;
+  }
+
+  .login-detail {
+    font-size: .7rem;
+  }
+
+  .login-btn {
+    width: 150px;
+  }
+
+  .login-reg {
+    text-align: center;
+    font-size: .6rem;
+  }
+
+  .form-group {
+    margin-bottom: .5rem !important;
+  }
+}

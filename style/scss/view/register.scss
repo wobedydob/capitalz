@@ -1,0 +1,84 @@
+/* REGISTER */
+
+.register {
+  position: relative;
+  top: auto;
+  left: auto;
+  -moz-transform: translateX(0) translateY(0);
+  -webkit-transform: translateX(0) translateY(0);
+  -o-transform: translateX(0) translateY(0);
+  -ms-transform: translateX(0) translateY(0);
+  transform: translateX(0) translateY(0);
+}
+
+@media (min-width: 576px) {
+  .register-head {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .register-detail {
+    font-size: .8rem;
+  }
+
+  .reg-btn {
+    width: 350px;
+  }
+
+  .reg-bedr {
+    text-align: center;
+    font-size: .7rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .register-head {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .register form label {
+    font-size: .8rem;
+  }
+
+  .register-detail {
+    font-size: .7rem;
+  }
+
+  .reg-btn {
+    width: 250px;
+  }
+
+  .reg-bedr {
+    text-align: center;
+    font-size: .6rem;
+  }
+
+  .form-group {
+    margin-bottom: .5rem !important;
+  }
+
+  .captcha {
+    justify-content: flex-start !important;
+  }
+}
+
+.terms {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.captcha {
+  display: inline-flex;
+  justify-content: flex-end;
+}
+
+.btn-disabled {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}

@@ -2,5 +2,8 @@
 
 class ContactPage
 {
+    public function __construct()
+    {
 
+    }
 }

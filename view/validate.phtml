@@ -1,0 +1,34 @@
+<div class="container validate center on-top">
+    <h1 class="page-head">Valideer E-mail</h1>
+    <hr>
+    <form class="needs-validation validate-form" action="" method="POST" novalidate>
+        <!--Details row-->
+        <div class="form-group">
+            <h6 class="contact-text text-center">
+                Om in te kunnen loggen moet u uw E-mail valideren. Dit doet u door naar de mail te gaan die u van ons heeft ontvangen op moment van registratie,
+                daar de code over te nemen en deze hieronder in te voeren. U kunt ook de bijgevoegde link volgen, dan wordt uw E-mail direct gevalideerd.
+            </h6>
+        </div>
+        <!--Name row-->
+        <div class="form-row">
+            <div class="form-group col-12">
+                <label for="name">Code:</label><span class="required">*</span>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fas fa-hashtag"></i></div>
+                    </div>
+                    <input type="email" class="form-control" id="name" name="name"
+                           placeholder="Bijvoorbeerd: 1234" required autofocus>
+                    <div class="invalid-tooltip">Voer uw naam in!</div>
+                </div>
+                <span class="contact-detail">Voer hier de code in die u heeft gekregen van ons.</span>
+            </div>
+        </div>
+        <!--Verzend button-->
+        <hr class="hr-bottom">
+        <div class="form-btn">
+            <button type="submit" class="btn validate-btn btn-primary" name="validate_submit">Valideer E-mail</button>
+        </div>
+        <h6 class="validate-mail">Heeft u geen mail van ons ontvangen? Klik dan <a href="<?= $this->url('') ?>">hier</a>.</h6>
+    </form>
+</div>

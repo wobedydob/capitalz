@@ -1,0 +1,105 @@
+/* PROFILE */
+
+@media (min-width: 576px) {
+  .profile-btn {
+    width: 350px;
+  }
+
+  .pro-pic {
+    object-fit: cover;
+    width: 100%;
+    max-height: 200px;
+    max-width: 200px;
+  }
+
+  .pro-head-body {
+    padding: 15px;
+    display: grid;
+    align-content: center;
+    align-items: center;
+  }
+
+  .pro-head-body h5 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .profile-head-text {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .pro-pic {
+    padding: 25px;
+  }
+
+  .pf-row {
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-btn {
+    width: 250px;
+  }
+
+  .pro-pic {
+    object-fit: cover;
+    width: 100%;
+    max-height: 500px;
+    max-width: 500px;
+  }
+
+  .pro-head-body h5 {
+    font-size: 1.1rem;
+  }
+}
+
+.pf-row {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  max-width: 100%;
+}
+
+.edit-pf,
+.edit-pf form input {
+  position: absolute;
+  display: block;
+  height: 100% !important;
+  width: 100%;
+}
+
+.edit-pf:hover {
+  background: url("../../../img/svg/edit-pen.svg") no-repeat center center;
+  background-size: 20%;
+  opacity: 50%;
+}
+
+.profile-head {
+  min-height: 240px;
+  background-color: white;
+  border-radius: 15px;
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.pro-head-text {
+  color: #007bff;
+}
+
+.profile-loctation {
+  position: relative;
+  text-align: right;
+  height: 500px;
+  width: 100%;
+}
+
+#profile-map {
+  overflow: hidden;
+  background: none !important;
+  height: 500px;
+  width: 100%;
+  border: 0;
+}

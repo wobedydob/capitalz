@@ -10,7 +10,7 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
-SET time_zone = "+00:00";
+SET time_zone = "+01:00";
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT = @@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS = @@CHARACTER_SET_RESULTS */;
@@ -52,14 +52,14 @@ CREATE TABLE IF NOT EXISTS `job`
 DROP TABLE IF EXISTS `profile_co`;
 CREATE TABLE IF NOT EXISTS `profile_co`
 (
-    `profile_id`   int(7)         NOT NULL AUTO_INCREMENT,
-    `user_id`      int(7)         NOT NULL,
-    `company_name` varchar(255)   NOT NULL,
-    `state`        varchar(45)    NOT NULL,
-    `city`         varchar(45)    NOT NULL,
-    `address`      varchar(100)   NOT NULL,
-    `postal`       varchar(6)     NOT NULL,
-    `about`        text           NOT NULL,
+    `profile_id`   int(7)       NOT NULL AUTO_INCREMENT,
+    `user_id`      int(7)       NOT NULL,
+    `company_name` varchar(255) NOT NULL,
+    `state`        varchar(45)  NOT NULL,
+    `city`         varchar(45)  NOT NULL,
+    `address`      varchar(100) NOT NULL,
+    `postal`       varchar(6)   NOT NULL,
+    `about`        text         NOT NULL,
     `website`      varchar(255) NOT NULL,
     `pro_img`      varchar(255) DEFAULT NULL,
     PRIMARY KEY (`profile_id`, `user_id`)
@@ -104,16 +104,17 @@ CREATE TABLE IF NOT EXISTS `user`
     `password`  varchar(255)   NOT NULL,
     `number`    varchar(20)    NOT NULL,
     `user_role` int(7)         NOT NULL,
+    `code`      int(7) DEFAULT NULL,
     PRIMARY KEY (`user_id`),
     UNIQUE KEY `email_UNIQUE` (`email`),
     UNIQUE KEY `number_UNIQUE` (`number`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
-INSERT INTO `user` (`user_id`, `email`, `password`, `number`, `user_role`)
-VALUES (1, 'admin@mail.nl', '$2a$07$1tinr2hhyuBdTDC3ZyARSepsXiDZNGABuyz1dPDCqzGJK.mHz/u5u', NULL, 0),
-       (2, 'bedrijf@mail.nl', '$2a$07$SuDcoE3k72g9Azgjz9i2GeM0fGPJHdtfTZFxSid0EV/2tNzxbmoIe', '12345678', 1),
-       (3, 'zzp@mail.nl', '$2a$07$LVj3fDfTw7KelOjZgdbbdukF1vhT3IJpXlFLPRUY2FBuKtLHn6CJ.', 'NL-12345678-B90', 2);
+INSERT INTO `user` (`user_id`, `email`, `password`, `number`, `user_role`, `code`)
+VALUES (1, 'admin@mail.nl', '$2a$07$1tinr2hhyuBdTDC3ZyARSepsXiDZNGABuyz1dPDCqzGJK.mHz/u5u', 'NL-09876543-B21', 0, null),
+       (2, 'bedrijf@mail.nl', '$2a$07$SuDcoE3k72g9Azgjz9i2GeM0fGPJHdtfTZFxSid0EV/2tNzxbmoIe', 'NL-13579246-B80', 1, null),
+       (3, 'zzp@mail.nl', '$2a$07$LVj3fDfTw7KelOjZgdbbdukF1vhT3IJpXlFLPRUY2FBuKtLHn6CJ.', 'NL-12345678-B90', 2, null);
 -- --------------------------------------------------------
 
 --
@@ -130,14 +131,11 @@ CREATE TABLE IF NOT EXISTS `user_role`
   AUTO_INCREMENT = 3
   DEFAULT CHARSET = utf8;
 
---
--- Dumping data for table `user_role`
---
-
 INSERT INTO `user_role` (`role_id`, `role_title`)
 VALUES (0, 'admin'),
        (1, 'company'),
        (2, 'selfemployed');
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT = @OLD_CHARACTER_SET_CLIENT */;

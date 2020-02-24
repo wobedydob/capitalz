@@ -1,12 +1,11 @@
-<div id="particles-js"></div>
-<div class="container register center">
-    <h1 class="register-head">Registreren ZZP'er</h1>
+<div class="container register center on-top">
+    <h1 class="page-head">Registreren ZZP'er</h1>
     <hr>
     <?php if (!empty($vars['formMessage'])) : ?>
         <?= $vars['formMessage'] ?>
     <?php endif; ?>
     <form class="needs-validation register-zzp-form" action="" method="POST" novalidate>
-        <!--Email row-->
+        <!--E-mail row-->
         <div class="form-row">
             <div class="form-group col-12">
                 <label for="email_zzp">E-mail:</label><span class="required">*</span>
@@ -16,9 +15,9 @@
                     </div>
                     <input type="email" class="form-control" id="email_zzp" name="email"
                            placeholder="E-mail" required autofocus>
-                    <div class="invalid-tooltip">Voer een geldig email in!</div>
+                    <div class="invalid-tooltip">Voer een geldig e-mail in!</div>
                 </div>
-                <span class="register-detail">Voer een geldig email in, u krijgt een verificatie mail.</span>
+                <span class="register-detail">Voer een geldig e-mail in, u krijgt een verificatie mail.</span>
             </div>
         </div>
         <!--Wachtwoord row-->
@@ -64,7 +63,7 @@
                         <div class="input-group-text"><i class="fas fa-address-book"></i></div>
                     </div>
                     <input type="text" class="form-control" id="btw_nummer" name="number" minlength="15"
-                           placeholder="Bijvoorbeeld: NL-001234567-B34:" required>
+                           placeholder="Bijvoorbeeld: NL-012345678-B01:" required>
                     <div class="invalid-tooltip">Voer uw Btw-identificatienummer in!</div>
                 </div>
                 <span class="register-detail">Voer uw btw-identificatienummer in.</span>
@@ -84,17 +83,18 @@
                     </div>
                     <!--reCAPTCHA-->
                     <div class="captcha col-12 col-sm-6">
-                        <div class="g-recaptcha" data-sitekey="6LcB58YUAAAAAPegXRs_NuncFTfvfs-gPDiDyunC"></div>
+                        <div id="g-recaptcha" class="g-recaptcha" data-callback="captchaCheck" data-sitekey="6LcB58YUAAAAAPegXRs_NuncFTfvfs-gPDiDyunC"></div>
                     </div>
                 </div>
             </div>
         </div>
         <hr class="hr-bottom">
         <!--Register button-->
-        <div class="reg-btn-row">
-            <button type="submit" class="btn reg-btn btn-primary" name="reg_submit">Registreer</button>
+        <div class="form-btn">
+            <button id="reg_submit" type="submit" class="btn reg-btn btn-primary" name="reg_submit" disabled>Registreer</button>
+            <div class="btn-disabled"></div>
         </div>
         <!--Detail text-->
-        <h6 class="reg-bedr">Of bent u eigenaar van een bedrijf? Klik dan <a href="<?= $vars['baseUrl'] ?>register/bedrijf">hier</a>.</h6>
+        <h6 class="reg-bedr">Of bent u eigenaar van een bedrijf? Klik dan <a href="<?= ApplicationController::getInstance()->url('register/bedrijf') ?>">hier</a>.</h6>
     </form>
 </div>

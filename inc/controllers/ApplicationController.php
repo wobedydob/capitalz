@@ -6,66 +6,64 @@ class ApplicationController extends ApplicationModel
 
     public function __construct()
     {
-        $this->parse_url('http://www.capitalz.net/');
-        $this->load_page();
-        //$this->set_pageObj( new PageController( $this->urlArr ) );
+
     }
 
-    private function parse_url($baseUrl)
+    public static function getInstance()
     {
-        $varStr = str_replace($baseUrl, '', (isset($_SERVER['REDIRECT_URL']) ? $_SERVER['REDIRECT_URL'] : $_SERVER['REQUEST_URI']));
-        $urlVars = (strpos($varStr, '/') !== false ? explode('/', $varStr) : array($varStr));
-
-        $count = count($urlVars);
-
-        $urlArr['baseUrl'] = $baseUrl;
-        $urlArr['pagename'] = false;
-        $urlArr['pageVars'] = false;
-
-        if (strpos(end($urlVars), '.') !== false) return;
-
-        if ($count > 0) {
-            for ($i = 0; $i < $count; $i++) {
-                if (!empty($urlVars[$i])) {
-                    if ($i == 1) $urlArr['pagename'] = $urlVars[$i];
-                    else $urlArr['pageVars'][] = $urlVars[$i];
-                }
-            }
+        static $instance;
+        if (!$instance) {
+            $instance = new static();
+            $instance->parse_url();
+            $instance->load_page();
         }
+        return $instance;
+    }
 
+    private function parse_url()
+    {
+        $varStr = explode('/', rtrim($_REQUEST['__uri'], '/'));
+        $urlArr = [];
+        $urlArr['baseUrl'] = rtrim(str_replace($_REQUEST['__uri'], '', $_SERVER['REQUEST_URI']), '/');
+        $urlArr['pagename'] = array_shift($varStr);
+        $urlArr['pageVars'] = $varStr;
         $this->set_urlArr($urlArr);
     }
 
     private function load_page()
     {
         $page = $this->urlArr['pagename'];
-
         if (empty($page)) $page = 'home';
-
         $objName = ucfirst(strtolower($page)) . 'Page';
         $this->pageObj = new $objName($this->urlArr);
-
         if ($page == 'ajax') exit;
-
         $this->get_part('header');
-
         require 'view/' . $page . '.phtml';
-
         $this->get_part('footer');
+    }
+
+    public function url($sub_url = '')
+    {
+        $basePath = dirname(dirname(__DIR__)) . '/';
+        return rtrim(rtrim($this->urlArr['baseUrl'], '/') . '/' . rtrim($sub_url, '/'), '/') . (is_file($basePath . $sub_url) ? '' : '/');
+    }
+
+    public static function get_url($input)
+    {
+        if (substr($input, 0, 4) !== "http") $input = 'http://' . $input;
+        return $input;
     }
 
     public function get_part($name, array $vars = array())
     {
         $file = 'view/parts/' . $name . '.phtml';
-
-        if (file_exists($file)) include $file;
+        if (file_exists($file)) require $file;
         else var_dump($file);
     }
 
     public static function get_part_string($name, array $vars = array())
     {
         $file = 'view/parts/' . $name . '.phtml';
-
         if (file_exists($file)) {
             ob_start();
             require $file;
@@ -73,9 +71,7 @@ class ApplicationController extends ApplicationModel
         } else {
             $return = false;
         }
-
         ob_end_clean();
-
         return $return;
     }
 

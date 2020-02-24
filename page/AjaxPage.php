@@ -7,7 +7,6 @@ class AjaxPage
     public function __construct($urlVars)
     {
         $functionName = $urlVars['pageVars'][0];
-
         $this->$functionName();
     }
 

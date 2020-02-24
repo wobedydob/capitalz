@@ -15,10 +15,11 @@ $$ |  $$\ $$  __$$ |$$ |  $$ |$$ |  $$ |$$\ $$  __$$ |$$ | $$  /        $$ |  $$
 Made for PHP version : 7.3.12
 Made by Iwan van der Wal, Wob Jelsma & Robin van den Hoeven
  */ ?>
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+    <!--Define url-->
+    <script>window.app = {baseUrl: <?php print json_encode($this->urlArr['baseUrl']); ?> };</script>
     <!-- Include the bootstrap css and meta links. -->
     <?php
     $this->get_part('meta');
@@ -27,17 +28,19 @@ Made by Iwan van der Wal, Wob Jelsma & Robin van den Hoeven
     <!-- Pagina Titel -->
     <title>CapitalZ.net</title>
     <!-- Page icons -->
-    <link rel="shortcut icon" href="<?= $this->urlArr['baseUrl'] ?>img/icon/icon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="200x200" href="<?= $this->urlArr['baseUrl'] ?>img/icon/icon.ico">
-    <link rel="icon" href="<?= $this->urlArr['baseUrl'] ?>img/icon/icon.ico" type="image/x-icon">
-    <link rel="icon" href="<?= $this->urlArr['baseUrl'] ?>img/icon/icon.ico">
+    <link rel="shortcut icon" href="<?= $this->url('img/icon/icon.ico'); ?>">
+    <link rel="apple-touch-icon-precomposed" sizes="200x200" href="<?= $this->url('img/icon/icon.ico'); ?>">
+    <link rel="icon" href="<?= $this->url('img/icon/icon.ico'); ?>" type="image/x-icon">
+    <link rel="icon" href="<?= $this->url('img/icon/icon.ico'); ?>">
 </head>
 <body>
 <!-- Loading icon -->
-<div id="load"><span id="load-text">Loading...</span></div>
+<div id="load"><span id="load-text">Laden...</span></div>
 <!-- Page Content -->
 <main id="contents">
     <!--Navbar-->
     <?php $this->get_part('navbar'); ?>
     <!--Content-->
     <section class="content">
+        <!--Particles-->
+        <?php $this->get_part('particles'); ?>

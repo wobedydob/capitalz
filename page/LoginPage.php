@@ -13,7 +13,12 @@ class LoginPage
         if (isset($_POST['email'])) {
             $email = $_POST['email'];
             $password = $_POST['password'];
-            $this->login($email, $password);
+            if (UserController::get_validation()) {
+                $this->login($email, $password);
+            } else {
+                $this->formMessage = '<div class="alert alert-warning" role="alert">Uw E-mail is nog niet gevalideerd!</div>';
+                header("Refresh: 1; url=" . ApplicationController::getInstance()->url('validate') . "");
+            }
         }
     }
 
@@ -34,15 +39,14 @@ class LoginPage
                     $_SESSION['email'] = $record['email'];
                     $_SESSION['user_role'] = (int)$record['user_role'];
 
-
                     if ($_SESSION["user_role"] === 0) {
-                        $this->formMessage = '<div class="alert alert-warning" role="alert">Inlog geslaagd! Welkom administrator.</div>';
+                        $this->formMessage = '<div class="alert alert-warning" role="alert">Inlog geslaagd! Welkom Admin.</div>';
                         $url = "home";
                     } elseif ($_SESSION["user_role"] === 1) {
-                        $this->formMessage = '<div class="alert alert-success" role="alert">Inlog geslaagd! Welkom eigenaar bedrijf!</div>';
+                        $this->formMessage = '<div class="alert alert-success" role="alert">Inlog geslaagd! Welkom ' . UserController::get_profile_name($record['user_id'], $record['user_role']) . '</div>';
                         $url = "profile_edit/bedrijf";
                     } elseif ($_SESSION["user_role"] === 2) {
-                        $this->formMessage = '<div class="alert alert-success" role="alert">Inlog geslaagd! Welkom ZZP\'er!</div>';
+                        $this->formMessage = '<div class="alert alert-success" role="alert">Inlog geslaagd! Welkom ' . UserController::get_profile_name($record['user_id'], $record['user_role']) . '</div>';
                         $url = "profile_edit/zzp";
                     } else {
                         $this->formMessage = '<div class="alert alert-danger" role="alert"><strong>!! ERR: USER_ROLE NOT DEFINED !!</strong></div>';
@@ -61,6 +65,6 @@ class LoginPage
             $this->formMessage = '<div class="alert alert-danger" role="alert">Voer een email in!</div>';
             $url = "login";
         }
-        header("Refresh: 1; url=" . $this->urlArr['baseUrl'] . $url);
+        header("Refresh: 1; url=" . ApplicationController::getInstance()->url($url) . "");
     }
 }

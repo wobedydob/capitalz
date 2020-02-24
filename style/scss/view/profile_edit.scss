@@ -1,0 +1,46 @@
+/* PROFILE_EDIT */
+
+.profile_edit {
+  position: relative;
+  top: auto;
+  left: auto;
+  -moz-transform: translateX(0) translateY(0);
+  -webkit-transform: translateX(0) translateY(0);
+  -o-transform: translateX(0) translateY(0);
+  -ms-transform: translateX(0) translateY(0);
+  transform: translateX(0) translateY(0);
+}
+
+@media (min-width: 576px) {
+  .profile_edit-head {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .profile_edit-detail {
+    font-size: .8rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .profile_edit-head {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .profile_edit form label {
+    font-size: .8rem;
+  }
+
+  .profile_edit-detail {
+    font-size: .7rem;
+  }
+
+  .form-group {
+    margin-bottom: .5rem !important;
+  }
+}
+
+.pro_edit-btn {
+  width: 200px;
+}

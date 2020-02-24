@@ -1,0 +1,38 @@
+/* FOOTER */
+
+.footer {
+  z-index: 2;
+  position: relative;
+  bottom: 0;
+  background-color: white !important;
+  padding: .2em .4em 0;
+}
+
+.footer a {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.footer a:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.footer-copyright {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: .8em;
+  padding-bottom: .3em;
+  bottom: 0;
+}
+
+.footer-switch {
+  margin-top: -2px;
+}
+
+.footer-links {
+  position: relative;
+  right: -0.4em;
+  font-size: .8em;
+}
+
+.footer-links a {
+  margin-right: .4em;
+}

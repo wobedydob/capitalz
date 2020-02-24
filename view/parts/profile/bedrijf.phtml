@@ -1,46 +1,51 @@
-<div class="container profile">
-    <h1 class="profile-head-text">Profiel Bedrijf</h1>
+<div class="container profile pos-rel">
+    <h1 class="page-head">Profiel Bedrijf</h1>
     <hr>
     <div class="row profile-head">
         <div class="col-12 col-sm-4 pf-row">
-            <img class="pro-pic" src="<?= $vars['baseUrl'] . 'img/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) ?>" alt="pf">
+            <img class="pro-pic" src="<?= ApplicationController::getInstance()->url('img/') . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) ?>" alt="pf">
+            <div class="edit-pf">
+                <form id="edit_pf-form" class="edit_pf-form" action="" type="POST" enctype="multipart/form-data">
+                    <input type="file" class="custom-file-input" id="edit_pf" name="pro-pic">
+                </form>
+            </div>
         </div>
         <div class="col-12 col-sm-8 pro-head-body">
             <div class="row no-gutters">
-                <div class="col-6">
+                <div class="col-5 col-sm-6">
                     <h5>Naam:</h5>
                 </div>
-                <div class="col-6">
+                <div class="col-7 col-sm-6">
                     <h5 class="pro-head-text">
                         <?= $vars['userInfo']['company_name'] ?>
                     </h5>
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-6">
+                <div class="col-5 col-sm-6">
                     <h5>Email:</h5>
                 </div>
-                <div class="col-6">
+                <div class="col-7 col-sm-6">
                     <h5 class="pro-head-text">
                         <?= $vars['userInfo']['email'] ?>
                     </h5>
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-6">
+                <div class="col-5 col-sm-6">
                     <h5>Provincie:</h5>
                 </div>
-                <div class="col-6">
+                <div class="col-7 col-sm-6">
                     <h5 class="pro-head-text">
                         <?= $vars['userInfo']['state'] ?>
                     </h5>
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-6">
+                <div class="col-5 col-sm-6">
                     <h5>Adres:</h5>
                 </div>
-                <div class="col-6">
+                <div class="col-7 col-sm-6">
                     <?=
                     '<h5 class="pro-head-text mb-1"> ' . $vars['userInfo']['address'] . '</h5>' .
                     '<h5 class="pro-head-text"> ' . $vars['userInfo']['postal'] . ' ' . $vars['userInfo']['city'] . '</h5>'
@@ -48,22 +53,24 @@
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-6">
+                <div class="col-5 col-sm-6">
                     <h5>KvK-Nr:</h5>
                 </div>
-                <div class="col-6">
+                <div class="col-7 col-sm-6">
                     <h5 class="pro-head-text">
                         <?= $vars['userInfo']['number'] ?>
                     </h5>
                 </div>
             </div>
             <div class="row no-gutters">
-                <div class="col-6">
+                <div class="col-5 col-sm-6">
                     <h5>Website:</h5>
                 </div>
-                <div class="col-6">
+                <div class="col-7 col-sm-6">
                     <h5 class="pro-head-text">
-                        <?= $vars['userInfo']['website'] ?>
+                        <a href="<?= ApplicationController::get_url($vars['userInfo']['website']) ?>" target="_blank">
+                            <?= trim($vars['userInfo']['website'], 'https://') ?>
+                        </a>
                     </h5>
                 </div>
             </div>
@@ -77,7 +84,8 @@
         </p>
         <h4>Locatie:</h4>
         <div class="profile-loctation">
-            <iframe width="500" height="500" id="profile-map" src="https://maps.google.com/maps?q=<?= $vars['userInfo']['address'] . '%20' . $vars['userInfo']['city'] . '%20' . $vars['userInfo']['postal'] ?>&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+            <iframe width="500" height="500" id="profile-map"
+                    src="https://maps.google.com/maps?q=<?= $vars['userInfo']['address'] . '%20' . $vars['userInfo']['city'] . '%20' . $vars['userInfo']['postal'] ?>&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
         </div>
     </div>
     <!--Edit button-->
@@ -87,8 +95,8 @@
         switch ($_SESSION["user_role"]) {
             case '1':
                 echo '
-                    <div class="profile-btn-row">
-                        <a href=" ' . $vars['baseUrl'] . 'profile_edit/bedrijf">
+                    <div class="form-btn">
+                        <a href=" ' . ApplicationController::getInstance()->url('profile_edit/bedrijf') . '">
                             <button class="btn profile-btn btn-primary">Profiel Bewerken</button>
                         </a>
                     </div>

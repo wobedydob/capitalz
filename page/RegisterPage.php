@@ -1,7 +1,5 @@
 <?php
 
-include('autoloader.php');
-
 class RegisterPage
 {
     public $zzpForm;
@@ -13,16 +11,15 @@ class RegisterPage
     public function __construct($urlArr)
     {
         $this->urlArr = $urlArr;
-
-        // Selecting the first value in the pageVars array
-        if ($urlArr['pageVars'][0] == 'zzp') {
+        if (empty($urlArr['pageVars'][0])) {
+            header("Refresh: 2; url=" . ApplicationController::getInstance()->url('home') . "");
+        } elseif ($urlArr['pageVars'][0] == 'zzp') {
             $this->register_zzp();
-        } else if ($urlArr['pageVars'][0] == 'bedrijf') {
+        } elseif ($urlArr['pageVars'][0] == 'bedrijf') {
             $this->register_bedrijf();
         } else {
-            header("Refresh: 2; url=" . $urlArr['baseUrl'] . "home");
+            header("Refresh: 2; url=" . ApplicationController::getInstance()->url('home') . "");
         }
-
     }
 
     private function register_zzp()
@@ -32,7 +29,6 @@ class RegisterPage
             $password = ApplicationController::sanitize($_POST['password']);
             $repeat_password = ApplicationController::sanitize($_POST['repeat_password']);
             $btw_nummer = ApplicationController::sanitize($_POST['number']);
-
 
             if (isset($email)) {
                 $db = new Database();
@@ -55,8 +51,11 @@ class RegisterPage
                                         $db->bind(':password_hash', $password_hash);
                                         $db->bind(':btw_nummer', $btw_nummer);
                                         $db->execute();
-                                        $this->formMessage = '<div class="alert alert-success" role="alert">Je bent geregistreerd, je kan nu inloggen</div>';
-                                        header("refresh:1; url=" . $this->urlArr['baseUrl'] . "login");
+                                        $this->formMessage = '<div class="alert alert-success" role="alert">Registratie geslaagd! U wordt doorverwezen.</div>';
+//                                        $db->query('SELECT `user_id` FROM `user`');
+//                                        $db->execute();
+//                                        UserController::set_code((int)$user_id);
+                                        header("refresh:1; url=" . ApplicationController::getInstance()->url('validate') . "");
                                     }
                                 } else {
                                     $this->formMessage = '<div class="alert alert-danger" role="alert">De wachtwoorden komen niet overeen</div>';
@@ -108,7 +107,7 @@ class RegisterPage
                         $db->bind(':kvk_nummer', $kvk_nummer);
                         $db->execute();
                         $this->formMessage = '<div class="alert alert-success" role="alert">U bent geregistreerd! Een admin controleerd uw aanmelding. U zult dan een bevestigings mail ontvangen.</div>';
-                        header("refresh:1; url=" . $this->urlArr['baseUrl'] . "login");
+                        header("refresh:1; url=" . ApplicationController::getInstance()->url('validate') . "");
                     }
                 } else {
                     $this->formMessage = '<div class="alert alert-danger" role="alert">De wachtwoorden komen niet overeen</div>';

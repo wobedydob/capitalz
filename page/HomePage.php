@@ -2,6 +2,11 @@
 
 class HomePage
 {
+    public function __construct()
+    {
+
+    }
+
     public function SearchHome($title, $input)
     {
         $db = new Database();

@@ -1,19 +1,19 @@
 <!-- Set CSS files -->
-<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/bootstrap.css">
+<link rel="stylesheet" href="<?= $this->url('style/css/bootstrap.min.css') ?>">
 
 <!-- Fonts -->
-<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/font/font.css">
+<link rel="stylesheet" href="<?= $this->url('font/font.css') ?>">
 
-<!-- Custom CSS files -->
-<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/style.css">
-<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/hamburgers.css">
-<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/dark-mode.css">
-<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/particles.css">
-<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/cookiealert.css">
+<!-- Compiled SCSS file import -->
+<link rel="stylesheet" href="<?= $this->url('style/css/main.css') ?>">
 
-<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/view/parts/content.css">
-<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/view/parts/navbar.css">
-<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/view/parts/footer.css">
+<!-- Extra CSS files -->
+<link rel="stylesheet" href="<?= $this->url('style/css/hamburgers.css') ?>">
+<link rel="stylesheet" href="<?= $this->url('style/css/dark-mode.css') ?>">
+<link rel="stylesheet" href="<?= $this->url('style/css/particles.css') ?>">
+<link rel="stylesheet" href="<?= $this->url('style/css/cookiealert.css') ?>">
+
+<!--Icon CSS files-->
+<link rel="stylesheet" href="<?= $this->url('style/css/fontawesome.min.css') ?>">
 
 <?php if (empty($this->urlArr['pagename'])) $this->urlArr['pagename'] = 'home'; ?>
-<link rel="stylesheet" href="<?= $this->urlArr['baseUrl'] ?>/css/view/<?= $this->urlArr['pagename'] ?>.css">

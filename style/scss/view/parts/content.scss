@@ -1,0 +1,27 @@
+/* CONTENT */
+
+.content {
+  position: relative;
+  min-height: calc(100vh - 102px);
+}
+
+.invalid-tooltip {
+  right: 0;
+}
+
+.on-top {
+  z-index: 1;
+}
+
+.pos-rel {
+  z-index: 1;
+  position: relative;
+}
+
+.form-btn {
+  position: relative;
+  display: inline-block;
+  transform: translateX(-50%);
+  margin-left: 50%;
+  margin-bottom: .6rem;
+}

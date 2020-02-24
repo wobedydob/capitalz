@@ -1,0 +1,10 @@
+<?php
+$particles_home = ['home', 'login', 'logout', 'register', 'validate'];
+$particles = ['about', 'contact', 'create', 'error', 'forgotpassword', 'profile', 'profile_edit', 'task', 'task_bedrijf', 'task_zzp', 'tasklist'];
+if (in_array($this->urlArr['pagename'], $particles_home)) {
+    echo '<div id="particles-home-js"></div>';
+} elseif (in_array($this->urlArr['pagename'], $particles)) {
+    echo '<div id="particles-js"></div>';
+} else {
+    return;
+}

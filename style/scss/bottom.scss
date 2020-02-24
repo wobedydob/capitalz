@@ -1,0 +1,35 @@
+/*
+
+$$$$$$\                      $$\   $$\               $$\ $$$$$$$$\                          $$\
+$$  __$$\                     \__|  $$ |              $$ |\____$$  |                         $$ |
+$$ /  \__| $$$$$$\   $$$$$$\  $$\ $$$$$$\    $$$$$$\  $$ |    $$  /     $$$$$$$\   $$$$$$\ $$$$$$\
+$$ |       \____$$\ $$  __$$\ $$ |\_$$  _|   \____$$\ $$ |   $$  /      $$  __$$\ $$  __$$\\_$$  _|
+$$ |       $$$$$$$ |$$ /  $$ |$$ |  $$ |     $$$$$$$ |$$ |  $$  /       $$ |  $$ |$$$$$$$$ | $$ |
+$$ |  $$\ $$  __$$ |$$ |  $$ |$$ |  $$ |$$\ $$  __$$ |$$ | $$  /        $$ |  $$ |$$   ____| $$ |$$\
+\$$$$$$  |\$$$$$$$ |$$$$$$$  |$$ |  \$$$$  |\$$$$$$$ |$$ |$$$$$$$$\ $$\ $$ |  $$ |\$$$$$$$\  \$$$$  |
+ \______/  \_______|$$  ____/ \__|   \____/  \_______|\__|\________|\__|\__|  \__| \_______|  \____/
+                    $$ |
+                    $$ |
+                    \__|
+
+Made for PHP version : 7.3.12
+Made by Iwan van der Wal, Wob Jelsma & Robin van den Hoeven
+*/
+
+// VIEW
+@import "view/about";
+@import "view/contact";
+@import "view/create";
+@import "view/forgotpassword";
+@import "view/home";
+@import "view/login";
+@import "view/profile";
+@import "view/profile_edit";
+@import "view/register";
+@import "view/task";
+@import "view/tasklist";
+@import "view/validate";
+
+// PARTS
+@import "view/parts/footer";
+@import "view/parts/error";

@@ -1,5 +1,5 @@
-<div class="container create" xmlns="http://www.w3.org/1999/html">
-    <h1 class="create-head">Taak Aanmaken</h1>
+<div class="container create on-top" xmlns="http://www.w3.org/1999/html">
+    <h1 class="page-head">Taak Aanmaken</h1>
     <hr>
     <?php if (!empty($this->pageObj->formMessage)) : ?>
         <?= $this->pageObj->formMessage ?>
@@ -145,7 +145,7 @@
         </div>
         <!--Done button-->
         <hr class="hr-bottom">
-        <div class="create-btn-row">
+        <div class="form-btn">
             <button type="submit" class="btn create-btn btn-primary" name="create_submit">Taak Uploaden</button>
         </div>
     </form>

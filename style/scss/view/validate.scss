@@ -1,0 +1,55 @@
+/* VALIDATE */
+
+@media (min-width: 576px) {
+  .validate-head {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .validate-detail {
+    font-size: .8rem;
+  }
+
+  .validate-text,
+  .validate-item {
+    font-size: .9rem;
+  }
+
+  .validate-btn {
+    width: 250px;
+  }
+
+  .validate-mail {
+    text-align: center;
+    font-size: .7rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .validate-head {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .validate form label {
+    font-size: .8rem;
+  }
+
+  .validate-detail {
+    font-size: .7rem;
+  }
+
+  .validate-text,
+  .validate-item {
+    font-size: .8rem;
+  }
+
+  .validate-btn {
+    width: 200px;
+  }
+
+  .validate-mail {
+    text-align: center;
+    font-size: .6rem;
+  }
+}

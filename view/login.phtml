@@ -1,6 +1,5 @@
-<div id="particles-js"></div>
-<div class="container login center">
-    <h1 class="login-head ">Login</h1>
+<div class="container login center on-top">
+    <h1 class="page-head ">Login</h1>
     <hr>
     <?php if (!empty($this->pageObj->formMessage)) : ?>
         <?= $this->pageObj->formMessage ?>
@@ -35,7 +34,7 @@
                         <div class="input-group-text"><i class="fas fa-fw fa-eye toggle-password"></i></div>
                     </div>
                 </div>
-                <span class="login-detail">Wachtwoord vergeten? Klik <a href="<?= $this->urlArr['baseUrl'] ?>forgotpassword">hier</a>.</span>
+                <span class="login-detail">Wachtwoord vergeten? Klik <a href="<?= $this->url('forgotpassword') ?>">hier</a>.</span>
             </div>
         </div>
         <!--Onthoud row-->
@@ -47,9 +46,9 @@
         </div>
         <!--Login button-->
         <hr class="hr-bottom">
-        <div class="login-btn-row">
+        <div class="form-btn">
             <button type="submit" class="btn login-btn btn-primary" name="login_submit">Log in</button>
         </div>
-        <h6 class="login-reg">Heeft u nog geen account? Klik dan <a href="<?= $this->urlArr['baseUrl'] ?>register/zzp">hier</a>.</h6>
+        <h6 class="login-reg">Heeft u nog geen account? Klik dan <a href="<?= $this->url('register/zzp') ?>">hier</a>.</h6>
     </form>
 </div>

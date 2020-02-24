@@ -1,6 +1,5 @@
 <?php
 
-
 class Task_zzpPage
 {
     public $taskList;
@@ -10,7 +9,6 @@ class Task_zzpPage
 //        $this->show_result();
         $this->taskList();
     }
-
 
     public function taskList()
     {
@@ -31,4 +29,3 @@ class Task_zzpPage
         $this->taskList = $taskStr;
     }
 }
-

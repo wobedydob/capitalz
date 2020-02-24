@@ -2,14 +2,12 @@
 
 class TasklistPage
 {
-
     public $taskList;
 
     public function __construct()
     {
         $this->getTasks();
     }
-
 
     public function getTasks()
     {
@@ -134,5 +132,4 @@ class TasklistPage
         }
         $this->taskList = $taskStr;
     }
-
 }

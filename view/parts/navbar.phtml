@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light">
-    <a href="<?= $this->urlArr['baseUrl'] ?>">
+    <a href="<?= $this->url(); ?>">
         <div class="logo">
             <?= $this->svg_helper("logo"); ?>
         </div>
@@ -18,19 +18,18 @@
                         echo '
                             <li class="nav-item">
                                 <a class="nav-link" href="http://localhost/phpmyadmin/db_structure.php?server=1&db=capitalz_db" target="_blank">
-                                    <i class="fas fa-database"></i> Database
-                                </a>
+                                    <i class="fas fa-database"></i> Database</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="profile-link nav-link" href="" id="dropdown" role="button" data-toggle="dropdown">
-                                    <img class="profile-img-link" src=" ' . $this->urlArr['baseUrl'] . 'img/default_profile/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . ' " alt="pf link">
+                                    <img class="profile-img-link" src="' . $this->url('img/default_profile/') . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . '" alt="pf link">
                                 </a>
                                 <div class="dropdown-menu pro-drop">
-                                    <img class="pro-img-drop" src=" ' . $this->urlArr['baseUrl'] . 'img/default_profile/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . ' " alt="pf drop">
+                                    <img class="pro-img-drop" src="' . $this->url('img/default_profile/') . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . '" alt="pf drop">
                                     <h3 class="pro-name-drop">' . UserController::get_profile_name($_SESSION['id'], $_SESSION['user_role']) . '</h3>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href=" ' . $this->urlArr['baseUrl'] . ' ">Beheer Opdrachten</a>
-                                    <a class="dropdown-item" href=" ' . $this->urlArr['baseUrl'] . ' ">Beheer Gebruikers</a>
+                                    <a class="dropdown-item" href="' . $this->url() . '">Beheer Opdrachten</a>
+                                    <a class="dropdown-item" href="' . $this->url() . '">Beheer Gebruikers</a>
                                 </div>
                             </li>
                         ';
@@ -38,21 +37,21 @@
                     case '1':
                         echo '
                             <li class="nav-item">
-                                <a class="nav-btn nav-link" href=" ' . $this->urlArr['baseUrl'] . 'create">
+                                <a class="nav-btn nav-link" href="' . $this->url('create') . '">
                                     <button class="btn btn-primary"><i class="fas fa-plus"></i> Maak Opdracht</button>
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="profile-link nav-link" href="" id="dropdown" role="button" data-toggle="dropdown">
-                                    <img class="profile-img-link" src=" ' . $this->urlArr['baseUrl'] . 'img/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . ' " alt="pf link">
+                                    <img class="profile-img-link" src="' . $this->url('img/') . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . '" alt="pf link">
                                 </a>
                                 <div class="dropdown-menu pro-drop">
-                                    <img class="pro-img-drop" src=" ' . $this->urlArr['baseUrl'] . 'img/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . ' " alt="pf drop">
+                                    <img class="pro-img-drop" src="' . $this->url('img/') . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . '" alt="pf drop">
                                     <h3 class="pro-name-drop">' . UserController::get_profile_name($_SESSION['id'], $_SESSION['user_role']) . '</h3>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href=" ' . $this->urlArr['baseUrl'] . 'profile/bedrijf ">Profiel</a>
+                                    <a class="dropdown-item" href="' . $this->url('profile/bedrijf') . '">Mijn Profiel</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href=" ' . $this->urlArr['baseUrl'] . ' ">Gemaakte Opdrachten</a>
+                                    <a class="dropdown-item" href="' . $this->url() . '">Gemaakte Opdrachten</a>
                                 </div>
                             </li>
                         ';
@@ -60,32 +59,31 @@
                     case '2':
                         echo '
                             <li class="nav-item">
-                                <a class="nav-link" href=" ' . $this->urlArr['baseUrl'] . 'task_zzp">
-                                    <i class="fas fa-receipt"></i> Mijn Opdrachten
-                                </a>
+                                <a class="nav-link" href="' . $this->url('task_zzp') . '">
+                                    <i class="fas fa-receipt"></i> Mijn Opdrachten</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="profile-link nav-link" href="" id="dropdown" role="button" data-toggle="dropdown">
-                                    <img class="profile-img-link" src=" ' . $this->urlArr['baseUrl'] . 'img/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . ' " alt="pf link">
+                                    <img class="profile-img-link" src="' . $this->url('img/') . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . '" alt="pf link">
                                 </a>
                                 <div class="dropdown-menu pro-drop">
-                                    <img class="pro-img-drop" src=" ' . $this->urlArr['baseUrl'] . 'img/' . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . ' " alt="pf drop">
+                                    <img class="pro-img-drop" src="' . $this->url('img/') . UserController::get_profile_picture($_SESSION['id'], $_SESSION['user_role']) . '" alt="pf drop">
                                     <h3 class="pro-name-drop">' . UserController::get_profile_name($_SESSION['id'], $_SESSION['user_role']) . '</h3>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href=" ' . $this->urlArr['baseUrl'] . 'profile/zzp ">Profiel</a>
+                                    <a class="dropdown-item" href="' . $this->url('profile/zzp') . '">Mijn Profiel</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href=" ' . $this->urlArr['baseUrl'] . ' ">Mijn Opdracten</a>
+                                    <a class="dropdown-item" href="' . $this->url('task_zzp') . '">Mijn Opdracten</a>
                                 </div>
                             </li>
                         ';
                         break;
                     default:
-                        header("Refresh: 1; url=" . $this->urlArr['baseUrl'] . "home");
+                        header("Refresh: 1; url=" . $this->url('home') . "");
                         break;
                 }
                 echo '
                     <li class="nav-item">
-                        <a class="nav-link" href=" ' . $this->urlArr['baseUrl'] . 'logout">
+                        <a class="nav-link" href="' . $this->url('logout') . '">
                             <i class="fas fa-sign-out-alt"></i> Uitloggen
                         </a>
                     </li>
@@ -93,7 +91,7 @@
             } else {
                 echo '
                     <li class="nav-item">
-                        <a class="nav-link" href=" ' . $this->urlArr['baseUrl'] . 'login">
+                        <a class="nav-link" href="' . $this->url('login') . '">
                             <i class="fas fa-sign-in-alt"></i> Log in
                         </a>
                     </li>
@@ -104,8 +102,8 @@
                             <button class="btn btn-primary"><i class="fas fa-user-plus"></i> Registreer</button>
                         </a>
                         <div class="dropdown-menu pro-drop-register">
-                            <a class="dropdown-item reg-drop" href=" ' . $this->urlArr['baseUrl'] . 'register/zzp "><i class="fas fa-user-tie"></i> ZZP\'er</a>
-                            <a class="dropdown-item reg-drop" href=" ' . $this->urlArr['baseUrl'] . 'register/bedrijf "><button class="btn btn-primary btn-drop"><i class="far fa-building"></i> Bedrijf</button></a>
+                            <a class="dropdown-item reg-drop" href="' . $this->url('register/zzp') . '"><i class="fas fa-user-tie"></i> ZZP\'er</a>
+                            <a class="dropdown-item reg-drop" href="' . $this->url('register/bedrijf') . '"><button class="btn btn-primary btn-drop"><i class="far fa-building"></i> Bedrijf</button></a>
                         </div>
                     </li>
                 ';

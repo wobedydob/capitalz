@@ -1,0 +1,14 @@
+/* TASK */
+
+@media (min-width: 576px) {
+  .task-head-text {
+    font-size: 3rem;
+    text-align: center;
+  }
+}
+
+.task-img {
+  filter: blur(.05em);
+  max-height: 250px;
+  width: 100%;
+}

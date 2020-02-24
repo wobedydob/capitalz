@@ -7,8 +7,7 @@ class LogoutPage
     public function __construct($urlArr)
     {
         $this->urlArr = $urlArr;
-
         unset($_SESSION["user_role"]);
-        header("Refresh: 1; url=" . $urlArr['baseUrl'] . "home");
+        header("Refresh: 1; url=" . ApplicationController::getInstance()->url('home') . "");
     }
 }
